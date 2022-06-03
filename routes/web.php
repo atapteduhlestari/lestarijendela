@@ -1,18 +1,31 @@
 <?php
 
+use App\Http\Controllers\ProductCategoryController;
+use App\Http\Controllers\ProductController;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
-
 Route::get('/', function () {
-    return view('welcome');
+    echo 'lestari jendela';
 });
+
+Route::middleware(['auth'])->group(function () {
+    Route::get('/dashboard', function () {
+        return view('dashboard.index');
+    });
+
+    Route::get('/home', function () {
+        return view('home');
+    });
+
+    Route::resource('product', ProductController::class);
+    Route::resource('category', ProductCategoryController::class)->parameters([
+        'ProductCategory' => 'category',
+    ]);
+});
+
+Auth::routes([
+    'register' => false,
+    'reset' => false,
+    'verify' => false,
+]);
