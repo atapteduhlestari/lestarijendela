@@ -18,8 +18,8 @@ Route::middleware(['auth'])->group(function () {
         return view('home');
     });
 
-    Route::resource('product', ProductController::class);
-    Route::resource('category', ProductCategoryController::class)->parameters([
+    Route::resource('/product', ProductController::class);
+    Route::resource('/category', ProductCategoryController::class)->parameters([
         'ProductCategory' => 'category',
     ]);
 });
