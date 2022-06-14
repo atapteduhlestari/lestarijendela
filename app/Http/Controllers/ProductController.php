@@ -46,7 +46,12 @@ class ProductController extends Controller
     {
         $categories = ProductCategory::get();
         $subCategories = ProductSubCategory::get();
-        return view('dashboard.product.edit', compact('product', 'categories', 'subCategories'));
+
+        return view('dashboard.product.edit', compact(
+            'product',
+            'categories',
+            'subCategories'
+        ));
     }
 
     public function update(Request $request, Product $product)

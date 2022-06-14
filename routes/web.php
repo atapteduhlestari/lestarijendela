@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ProductCategoryController;
 use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Auth;
@@ -9,19 +10,16 @@ Route::get('/', function () {
     echo 'lestari jendela';
 });
 
-Route::middleware(['auth'])->group(function () {
-    Route::get('/dashboard', function () {
-        return view('dashboard.index');
-    });
+Route::get('/home', function () {
+    echo 'lestari jendela';
+});
 
-    Route::get('/home', function () {
-        return view('home');
-    });
+Route::middleware(['auth'])->group(function () {
+    Route::get('/dashboard', [DashboardController::class, 'index']);
 
     Route::resource('/product', ProductController::class);
-    Route::resource('/category', ProductCategoryController::class)->parameters([
-        'ProductCategory' => 'category',
-    ]);
+
+    Route::resource('/product-category', ProductCategoryController::class);
 });
 
 Auth::routes([

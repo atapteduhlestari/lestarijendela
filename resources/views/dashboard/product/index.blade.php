@@ -17,10 +17,10 @@
                         Add <i class="fas fa-plus-circle"></i>
                     </button>
                 </div>
-                <a href="/category" class="btn btn-info btn-sm mr-1">
+                <a href="/product-category" class="btn btn-info btn-sm mr-1">
                     Category
                 </a>
-                <a href="/sub-category" class="btn btn-success btn-sm">
+                <a href="/product-sub-category" class="btn btn-success btn-sm">
                     Sub Category
                 </a>
             </div>
@@ -33,14 +33,14 @@
             </div>
             <div class="card-body">
                 <div class="table-responsive">
-                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                    <table class="table table-borderless" id="dataTable" width="100%" cellspacing="0">
                         <thead>
                             <tr>
                                 <th>#</th>
                                 <th>Name</th>
                                 <th>Category</th>
                                 <th>Sub Category</th>
-                                <th>Actions</th>
+                                <th class="text-center">Actions</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -48,8 +48,8 @@
                                 <tr>
                                     <td>{{ $loop->iteration }}</td>
                                     <td>{{ $product->title }}</td>
-                                    <td>{{ $product->category->title }}</td>
-                                    <td>{{ $product->subCategory->title }}</td>
+                                    <td>{{ $product->category->title ?? '' }}</td>
+                                    <td>{{ $product->subCategory->title ?? '' }}</td>
                                     <td>
                                         <div class="d-flex justify-content-around">
                                             <div>
@@ -130,7 +130,7 @@
                         </div>
                         <div class="row">
                             <div class="col-md-6 mb-3">
-                                <label for="deskripsi">deskripsiription</label>
+                                <label for="deskripsi">Description</label>
                                 <textarea class="form-control @error('deskripsi') is-invalid @enderror" id="deskripsi" name="deskripsi" cols="10"
                                     rows="5">{{ old('deskripsi') }}</textarea>
                             </div>
