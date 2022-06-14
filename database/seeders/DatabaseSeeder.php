@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use App\Models\ProductCategory;
 use App\Models\ProductSubCategory;
+use App\Models\Profile;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -19,5 +20,8 @@ class DatabaseSeeder extends Seeder
         $this->call(ProductSubCategorySeeder::class);
         $this->call(UserSeeder::class);
         // \App\Models\User::factory(10)->create();
+
+        //ary sitepu
+        $this->call(ProfileSeeder::class);
     }
 }

@@ -52,6 +52,12 @@
             <i class="fas fa-fw fa-table"></i>
             <span>Blog</span></a>
     </li>
+
+    <li class="nav-item">
+        <a class="nav-link" href="/profile">
+            <i class="fas fa-fw fa-table"></i>
+            <span>Profile</span></a>
+    </li>
     <!-- Divider -->
     <hr class="sidebar-divider d-none d-md-block">
 

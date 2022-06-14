@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProductCategoryController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -22,6 +23,10 @@ Route::middleware(['auth'])->group(function () {
     Route::resource('/category', ProductCategoryController::class)->parameters([
         'ProductCategory' => 'category',
     ]);
+    
+
+    //ary sitepu
+    Route::resource('/profile', ProfileController::class);
 });
 
 Auth::routes([
