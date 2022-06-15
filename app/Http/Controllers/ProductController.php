@@ -65,7 +65,7 @@ class ProductController extends Controller
 
         $product->update($data);
 
-        return redirect()->back()->with('success', 'Success!');
+        return redirect()->back()->with('success', 'Succe ss!');
     }
 
     public function destroy(Product $product)
