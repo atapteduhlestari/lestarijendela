@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\FaqController;
 use App\Http\Controllers\ProductCategoryController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
@@ -23,6 +24,7 @@ Route::middleware(['auth'])->group(function () {
     //ary sitepu
     Route::resource('/profile', ProfileController::class);
     Route::resource('/product-category', ProductCategoryController::class);
+    Route::resource('/faq', FaqController::class);
 
 });
 
