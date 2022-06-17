@@ -19,7 +19,7 @@
                 <a href="/product" class="btn btn-info btn-sm mr-1">
                     Product
                 </a>
-                <a href="/sub-category" class="btn btn-success btn-sm">
+                <a href="/product-sub-category" class="btn btn-success btn-sm">
                     Sub Category
                 </a>
             </div>

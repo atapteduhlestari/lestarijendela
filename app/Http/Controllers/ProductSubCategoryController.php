@@ -2,84 +2,69 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\ProductSubCategory;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
+use App\Models\ProductCategory;
+use App\Models\ProductSubCategory;
 
 class ProductSubCategoryController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index()
     {
-        //
+        $subCategories = ProductSubCategory::get();
+        $categories = ProductCategory::get();
+        return view('dashboard.product.sub_category.index', compact('subCategories', 'categories'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
         //
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'title' => 'required',
+        ]);
+
+        $data = $request->all();
+        $data['slug'] = Str::slug($request->title);
+
+        ProductSubCategory::create($data);
+        return redirect()->back()->with('success', 'Success!');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\ProductSubCategory  $productSubCategory
-     * @return \Illuminate\Http\Response
-     */
     public function show(ProductSubCategory $productSubCategory)
     {
         //
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\ProductSubCategory  $productSubCategory
-     * @return \Illuminate\Http\Response
-     */
     public function edit(ProductSubCategory $productSubCategory)
     {
-        //
+        $categories = ProductCategory::get();
+        return view('dashboard.product.sub_category.edit', compact('productSubCategory', 'categories'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\ProductSubCategory  $productSubCategory
-     * @return \Illuminate\Http\Response
-     */
     public function update(Request $request, ProductSubCategory $productSubCategory)
     {
-        //
+        $request->validate([
+            'title' => 'required',
+        ]);
+
+        $data = $request->all();
+        $data['slug'] = Str::slug($request->title);
+
+        $productSubCategory->update($data);
+        return redirect()->back()->with('success', 'Success!');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\ProductSubCategory  $productSubCategory
-     * @return \Illuminate\Http\Response
-     */
     public function destroy(ProductSubCategory $productSubCategory)
     {
-        //
+        $productSubCategory->products()
+            ->where('sub_category_id', $productSubCategory->id)
+            ->update(['sub_category_id' => null]);
+
+        $productSubCategory->delete();
+        return redirect()->back()->with('success', 'Success!');
     }
 }

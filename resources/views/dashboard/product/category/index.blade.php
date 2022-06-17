@@ -20,7 +20,7 @@
                 <a href="/product" class="btn btn-info btn-sm mr-1">
                     Product
                 </a>
-                <a href="/sub-category" class="btn btn-success btn-sm">
+                <a href="/product-sub-category" class="btn btn-success btn-sm">
                     Sub Category
                 </a>
             </div>
@@ -80,7 +80,7 @@
     <!-- Modal -->
     <div class="modal fade" id="addNewRecord" data-backdrop="static" data-keyboard="false" tabindex="-1"
         aria-labelledby="addNewRecordLabel" aria-hidden="true">
-        <div class="modal-dialog modal-xl modal-dialog-scrollable">
+        <div class="modal-dialog modal-dialog-scrollable">
             <div class="modal-content">
                 <div class="modal-header bg-gradient-dark">
                     <h5 class="modal-title text-white" id="addNewRecordLabel">Form - Add New Category</h5>
@@ -91,15 +91,11 @@
                 <div class="modal-body">
                     <form action="/product-category" method="POST" id="formAdd" enctype="multipart/form-data">
                         @csrf
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label for="title">Category Name</label>
-                                    <input type="text" name="title" id="title"
-                                        class="form-control  @error('title') is-invalid @enderror"
-                                        value="{{ old('title') }}" autofocus autocomplete="off">
-                                </div>
-                            </div>
+                        <div class="form-group mb-3">
+                            <label for="title">Category Name</label>
+                            <input type="text" name="title" id="title"
+                                class="form-control  @error('title') is-invalid @enderror" value="{{ old('title') }}"
+                                autofocus autocomplete="off">
                         </div>
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                         <button type="submit" id="btnSubmit" class="btn btn-primary">Submit</button>
