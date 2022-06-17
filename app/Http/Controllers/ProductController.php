@@ -6,7 +6,9 @@ use App\Models\Product;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use App\Models\ProductCategory;
+use App\Models\ProductImage;
 use App\Models\ProductSubCategory;
+use Illuminate\Support\Facades\Storage;
 
 class ProductController extends Controller
 {
@@ -71,6 +73,36 @@ class ProductController extends Controller
     public function destroy(Product $product)
     {
         $product->delete();
+        return redirect()->back()->with('success', 'Success!');
+    }
+
+    public function createImage(Product $product)
+    {
+        return view('dashboard.product.image.create', compact('product'));
+    }
+
+    public function saveImage(Request $request)
+    {
+        $request->validate([
+            'url' => 'required|file|max:5120'
+        ]);
+
+        $data = $request->all();
+
+        $file = $request->file('url');
+        $imageUrl = $file->storeAs('assets/dashboard/img/product', $file->hashName());
+        $data['url'] = $imageUrl;
+
+        ProductImage::create($data);
+        return redirect()->back()->with('success', 'Success!');
+    }
+
+    public function deleteImage($imageId)
+    {
+        $image = ProductImage::find($imageId);
+        Storage::delete($image->url);
+        $image->delete();
+
         return redirect()->back()->with('success', 'Success!');
     }
 }

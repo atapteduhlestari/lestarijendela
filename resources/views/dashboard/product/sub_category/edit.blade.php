@@ -19,7 +19,7 @@
                 <a href="/product" class="btn btn-info btn-sm mr-1">
                     Product
                 </a>
-                <a href="/product-sub-category" class="btn btn-success btn-sm">
+                <a href="/sub-category" class="btn btn-success btn-sm">
                     Sub Category
                 </a>
             </div>
@@ -31,7 +31,7 @@
                 <h6 class="m-0 font-weight-bold text-primary">List Product</h6>
             </div>
             <div class="card-body">
-                <form action="/product-category/{{ $productCategory->id }}" method="POST" id="formAdd"
+                <form action="/product-sub-category/{{ $productSubCategory->id }}" method="POST" id="formAdd"
                     enctype="multipart/form-data">
                     @csrf
                     @method('PUT')
@@ -41,7 +41,21 @@
                                 <label for="title">Product Name</label>
                                 <input type="text" name="title" id="title"
                                     class="form-control  @error('title') is-invalid @enderror"
-                                    value="{{ old('title', $productCategory->title) }}" autofocus autocomplete="off">
+                                    value="{{ old('title', $productSubCategory->title) }}" autofocus autocomplete="off">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="category_id">Category</label>
+                                <select class="form-control @error('category_id') is-invalid @enderror" name="category_id"
+                                    id="category_id">
+                                    <option value=""></option>
+                                    @foreach ($categories as $category)
+                                        <option value="{{ $category->id }}"
+                                            {{ old('category_id', $productSubCategory->category_id) == $category->id ? 'selected' : '' }}>
+                                            {{ $category->title }}</option>
+                                    @endforeach
+                                </select>
                             </div>
                         </div>
                     </div>

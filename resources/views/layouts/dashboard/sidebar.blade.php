@@ -28,8 +28,7 @@
             <i class="fas fa-fw fa-wrench"></i>
             <span>Pengaturan</span>
         </a>
-        <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
-            data-parent="#accordionSidebar">
+        <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <h6 class="collapse-header">Custom Utilities:</h6>
                 <a class="collapse-item" href="utilities-color.html">Colors</a>
@@ -74,7 +73,7 @@
 
     <!-- Sidebar Message -->
     <div class="sidebar-card d-none d-lg-flex">
-        <img class="sidebar-card-illustration mb-2" src="/assets/dashboard/img/undraw_rocket.svg" alt="...">
+        <img class="sidebar-card-illustration mb-2" src="/assets/img/logo.png" alt="logo lestari jendela">
     </div>
 
 </ul>

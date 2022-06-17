@@ -20,4 +20,14 @@ class Product extends Model
     {
         return $this->belongsTo(ProductSubCategory::class, 'sub_category_id');
     }
+
+    public function images()
+    {
+        return $this->hasMany(ProductImage::class, 'product_id');
+    }
+
+    public function takeImageAttribute($query)
+    {
+        return "/storage/" . $query->url;
+    }
 }

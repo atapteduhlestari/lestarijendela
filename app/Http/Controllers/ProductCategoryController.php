@@ -57,6 +57,14 @@ class ProductCategoryController extends Controller
 
     public function destroy(ProductCategory $productCategory)
     {
+        $productCategory->products()
+            ->where('category_id', $productCategory->id)
+            ->update(['category_id' => null]);
+
+        $productCategory->subCategories()
+            ->where('category_id', $productCategory->id)
+            ->update(['category_id' => null]);
+
         $productCategory->delete();
         return redirect()->back()->with('success', 'Success!');
     }
