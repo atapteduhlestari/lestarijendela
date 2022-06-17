@@ -22,5 +22,6 @@ class DatabaseSeeder extends Seeder
 
         //ary sitepu
         $this->call(ProfileSeeder::class);
+        $this->call(FaqSeeder::class);
     }
 }

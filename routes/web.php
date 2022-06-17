@@ -34,6 +34,8 @@ Route::middleware(['auth'])->group(function () {
 
     //ary sitepu
     Route::resource('/profile', ProfileController::class);
+    Route::resource('/faq', FaqController::class);
+
 });
 
 Auth::routes([
