@@ -9,6 +9,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\PostCategoryController;
 use App\Http\Controllers\ProductCategoryController;
 use App\Http\Controllers\ProductSubCategoryController;
+use App\Http\Controllers\FaqController;
 
 Route::get('/', function () {
     echo 'lestari jendela';
