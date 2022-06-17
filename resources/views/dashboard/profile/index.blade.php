@@ -8,7 +8,7 @@
     <div class="container-fluid">
 
         <!-- Page Heading -->
-        <h1 class="h3 mb-2 text-gray-800">Product</h1>
+        <h1 class="h3 mb-2 text-gray-800">Profile</h1>
         <div class="my-4">
             <div class="d-flex">
                 <div class="flex-grow-1">
@@ -17,12 +17,7 @@
                         Add <i class="fas fa-plus-circle"></i>
                     </button>
                 </div>
-                <a href="/category" class="btn btn-info btn-sm mr-1">
-                    Category
-                </a>
-                <a href="/sub-category" class="btn btn-success btn-sm">
-                    Sub Category
-                </a>
+               
             </div>
         </div>
 
@@ -53,16 +48,16 @@
                                     <td>
                                         <div class="d-flex justify-content-around">
                                             <div>
-                                                <a title="Edit Data" href="/product/edit"
+                                                <a title="Edit Data" href="/profile/{{$profile->id}}/edit"
                                                     class="btn btn-outline-dark text-xs">Edit</a>
                                             </div>
                                             <div>
-                                                <form action="/product/" method="post" id="deleteForm">
+                                                <form action="/profile/{{$profile->id}}" method="post" id="deleteForm">
                                                     @csrf
                                                     @method('delete')
                                                     <button title="Delete Data" class="btn btn-outline-danger text-xs"
                                                         onclick="return false" id="deleteButton"
-                                                        data-id="">
+                                                        data-id="{{$profile->id}}">
                                                         <i class="fas fa-trash-alt"></i>
                                                     </button>
                                                 </form>
@@ -143,10 +138,10 @@
         $(document).on('click', '#deleteButton', function(e) {
             e.preventDefault();
             let id = $(this).data('id');
-            formDelete.attr('action', `/product/${id}`)
+            formDelete.attr('action', `/profile/${id}`)
             Swal.fire({
-                title: 'Are you sure?',
-                text: "You won't be able to revert this!",
+                title: 'Apakah Anda Yakin?.',
+                text: "Anda Ingin menghapus data ini",
                 icon: 'warning',
                 showCancelButton: true,
                 confirmButtonColor: '#3085d6',

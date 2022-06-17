@@ -67,9 +67,9 @@ class ProfileController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
-    {
-        //
+    public function edit(Profile $profile)
+    {    
+        return view('dashboard.profile.edit',compact('profile'));
     }
 
     /**
@@ -79,9 +79,17 @@ class ProfileController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Profile $profile)
     {
-        //
+        $request->validate([
+            'name' => 'required'
+        ]);
+
+        $data = $request->all();
+
+        $profile->update($data);
+
+        return redirect('profile')->with('success', 'Success!');
     }
 
     /**
@@ -90,8 +98,10 @@ class ProfileController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Profile $profile)
     {
-        //
+        $profile->delete();
+
+        return redirect()->back()->with('success', 'Success!');
     }
 }
