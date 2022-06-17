@@ -50,14 +50,14 @@
                                         <div class="d-flex justify-content-around">
                                             <div>
                                                 <a title="Edit Data" href="/product-category/{{ $category->id }}/edit"
-                                                    class="btn btn-outline-dark text-xs">Edit</a>
+                                                    class="btn btn-outline-dark btn-sm">Edit</a>
                                             </div>
                                             <div>
                                                 <form action="/product-category/{{ $category->id }}" method="post"
                                                     id="deleteForm">
                                                     @csrf
                                                     @method('delete')
-                                                    <button title="Delete Data" class="btn btn-outline-danger text-xs"
+                                                    <button title="Delete Data" class="btn btn-outline-danger btn-sm"
                                                         onclick="return false" id="deleteButton"
                                                         data-id="{{ $category->id }}">
                                                         <i class="fas fa-trash-alt"></i>

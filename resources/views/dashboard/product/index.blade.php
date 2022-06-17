@@ -52,15 +52,18 @@
                                     <td>{{ $product->subCategory->title ?? '' }}</td>
                                     <td>
                                         <div class="d-flex justify-content-around">
+                                            <a class="btn btn-outline-dark btn-sm"
+                                                href="/product-image/create/{{ $product->id }}">Add
+                                                Image</a>
                                             <div>
                                                 <a title="Edit Data" href="/product/{{ $product->id }}/edit"
-                                                    class="btn btn-outline-dark text-xs">Edit</a>
+                                                    class="btn btn-outline-dark btn-sm">Edit</a>
                                             </div>
                                             <div>
                                                 <form action="/product/{{ $product->id }}" method="post" id="deleteForm">
                                                     @csrf
                                                     @method('delete')
-                                                    <button title="Delete Data" class="btn btn-outline-danger text-xs"
+                                                    <button title="Delete Data" class="btn btn-outline-danger btn-sm"
                                                         onclick="return false" id="deleteButton"
                                                         data-id="{{ $product->id }}">
                                                         <i class="fas fa-trash-alt"></i>
@@ -137,8 +140,8 @@
 
                             <div class="col-md-6 mb-3">
                                 <label for="spesifikasi">Spesification</label>
-                                <textarea class="form-control @error('spesifikasi') is-invalid @enderror" id="spesifikasi" name="spesifikasi" cols="10"
-                                    rows="5">{{ old('spesifikasi') }}</textarea>
+                                <textarea class="form-control @error('spesifikasi') is-invalid @enderror" id="spesifikasi" name="spesifikasi"
+                                    cols="10" rows="5">{{ old('spesifikasi') }}</textarea>
                             </div>
                         </div>
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>

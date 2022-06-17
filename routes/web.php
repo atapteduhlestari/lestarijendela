@@ -22,6 +22,9 @@ Route::middleware(['auth'])->group(function () {
     Route::resource('/product', ProductController::class);
     Route::resource('/product-category', ProductCategoryController::class);
     Route::resource('/product-sub-category', ProductSubCategoryController::class);
+    Route::get('/product-image/create/{product}', [ProductController::class, 'createImage']);
+    Route::post('/product-image', [ProductController::class, 'saveImage']);
+    Route::delete('/product-image/{id}', [ProductController::class, 'deleteImage']);
 
     //ary sitepu
     Route::resource('/profile', ProfileController::class);
