@@ -2,10 +2,8 @@
 
 namespace Database\Seeders;
 
-use App\Models\ProductCategory;
-use App\Models\ProductSubCategory;
-use App\Models\Profile;
 use Illuminate\Database\Seeder;
+use Database\Seeders\PostCategorySeeder;
 
 class DatabaseSeeder extends Seeder
 {
@@ -16,6 +14,7 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
+        $this->call(PostCategorySeeder::class);
         $this->call(ProductCategorySeeder::class);
         $this->call(ProductSubCategorySeeder::class);
         $this->call(UserSeeder::class);

@@ -1,5 +1,5 @@
 @extends('layouts.dashboard.master')
-@section('title', 'Product')
+@section('title', 'Product Category')
 @push('styles')
     <link href="/assets/dashboard/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
 @endpush
@@ -37,7 +37,7 @@
                         <thead>
                             <tr>
                                 <th>#</th>
-                                <th>Name</th>
+                                <th>Title</th>
                                 <th class="text-center">Actions</th>
                             </tr>
                         </thead>
@@ -89,10 +89,10 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <form action="/product-category" method="POST" id="formAdd" enctype="multipart/form-data">
+                    <form action="/product-category" method="POST" id="formAdd">
                         @csrf
                         <div class="form-group mb-3">
-                            <label for="title">Category Name</label>
+                            <label for="title">Title</label>
                             <input type="text" name="title" id="title"
                                 class="form-control  @error('title') is-invalid @enderror" value="{{ old('title') }}"
                                 autofocus autocomplete="off">

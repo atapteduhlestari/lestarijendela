@@ -1,5 +1,5 @@
 @extends('layouts.dashboard.master')
-@section('title', 'Product')
+@section('title', 'Product Sub Category Edit')
 @push('styles')
     <link href="/assets/dashboard/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
 @endpush
@@ -8,11 +8,11 @@
     <div class="container-fluid">
 
         <!-- Page Heading -->
-        <h1 class="h3 mb-2 text-gray-800">Product Category</h1>
+        <h1 class="h3 mb-2 text-gray-800">Edit Product - Sub Category</h1>
         <div class="my-4">
             <div class="d-flex">
                 <div class="flex-grow-1">
-                    <a href="/product-category" class="btn btn-secondary btn-sm mr-1">
+                    <a href="/product-sub-category" class="btn btn-secondary btn-sm mr-1">
                         Back
                     </a>
                 </div>
@@ -28,7 +28,7 @@
         <!-- DataTales Example -->
         <div class="card shadow mb-4">
             <div class="card-header py-3">
-                <h6 class="m-0 font-weight-bold text-primary">List Product</h6>
+                <h6 class="m-0 font-weight-bold text-primary">Form</h6>
             </div>
             <div class="card-body">
                 <form action="/product-sub-category/{{ $productSubCategory->id }}" method="POST" id="formAdd"
@@ -36,15 +36,15 @@
                     @csrf
                     @method('PUT')
                     <div class="row">
-                        <div class="col-md-6">
+                        <div class="col-md-6 mb-3">
                             <div class="form-group">
-                                <label for="title">Product Name</label>
+                                <label for="title">Title</label>
                                 <input type="text" name="title" id="title"
                                     class="form-control  @error('title') is-invalid @enderror"
                                     value="{{ old('title', $productSubCategory->title) }}" autofocus autocomplete="off">
                             </div>
                         </div>
-                        <div class="col-md-6">
+                        <div class="col-md-6 mb-3">
                             <div class="form-group">
                                 <label for="category_id">Category</label>
                                 <select class="form-control @error('category_id') is-invalid @enderror" name="category_id"

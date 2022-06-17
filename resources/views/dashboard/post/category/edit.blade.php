@@ -1,5 +1,5 @@
 @extends('layouts.dashboard.master')
-@section('title', 'Product Category Edit')
+@section('title', 'post Category Edit')
 @push('styles')
     <link href="/assets/dashboard/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
 @endpush
@@ -8,19 +8,16 @@
     <div class="container-fluid">
 
         <!-- Page Heading -->
-        <h1 class="h3 mb-2 text-gray-800">Edit Product - Category</h1>
+        <h1 class="h3 mb-2 text-gray-800">Edit Post - Category</h1>
         <div class="my-4">
             <div class="d-flex">
                 <div class="flex-grow-1">
-                    <a href="/product-category" class="btn btn-secondary btn-sm mr-1">
+                    <a href="/post-category" class="btn btn-secondary btn-sm mr-1">
                         Back
                     </a>
                 </div>
-                <a href="/product" class="btn btn-info btn-sm mr-1">
-                    Product
-                </a>
-                <a href="/product-sub-category" class="btn btn-success btn-sm">
-                    Sub Category
+                <a href="/post" class="btn btn-success btn-sm">
+                    Post
                 </a>
             </div>
         </div>
@@ -31,7 +28,7 @@
                 <h6 class="m-0 font-weight-bold text-primary">Form</h6>
             </div>
             <div class="card-body">
-                <form action="/product-category/{{ $productCategory->id }}" method="POST" id="formAdd">
+                <form action="/post-category/{{ $postCategory->id }}" method="POST" id="formAdd">
                     @csrf
                     @method('PUT')
                     <div class="row">
@@ -40,7 +37,7 @@
                                 <label for="title">Title</label>
                                 <input type="text" name="title" id="title"
                                     class="form-control  @error('title') is-invalid @enderror"
-                                    value="{{ old('title', $productCategory->title) }}" autofocus autocomplete="off">
+                                    value="{{ old('title', $postCategory->title) }}" autofocus autocomplete="off">
                             </div>
                         </div>
                     </div>

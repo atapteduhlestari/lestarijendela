@@ -37,7 +37,7 @@
                         <thead>
                             <tr>
                                 <th>#</th>
-                                <th>Name</th>
+                                <th>Title</th>
                                 <th>Category</th>
                                 <th>Sub Category</th>
                                 <th class="text-center">Actions</th>
@@ -95,7 +95,7 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <form action="/product" method="POST" id="formAdd" enctype="multipart/form-data">
+                    <form action="/product" method="POST" id="formAdd">
                         @csrf
                         <div class="row">
                             <div class="col-md-6 mb-3">
@@ -122,9 +122,9 @@
                                     @endforeach
                                 </select>
                             </div>
-                            <div class="col-md-6">
+                            <div class="col-md-6 mb-3">
                                 <div class="form-group">
-                                    <label for="title">Product Name</label>
+                                    <label for="title">Title</label>
                                     <input type="text" name="title" id="title"
                                         class="form-control  @error('title') is-invalid @enderror"
                                         value="{{ old('title') }}" autofocus autocomplete="off">

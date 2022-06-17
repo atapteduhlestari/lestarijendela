@@ -1,5 +1,5 @@
 @extends('layouts.dashboard.master')
-@section('title', 'Product Sub Category')
+@section('title', 'Post Category')
 @push('styles')
     <link href="/assets/dashboard/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
 @endpush
@@ -8,7 +8,7 @@
     <div class="container-fluid">
 
         <!-- Page Heading -->
-        <h1 class="h3 mb-2 text-gray-800">Product Sub Category</h1>
+        <h1 class="h3 mb-2 text-gray-800">Post Category</h1>
         <div class="my-4">
             <div class="d-flex">
                 <div class="flex-grow-1">
@@ -17,11 +17,8 @@
                         Add <i class="fas fa-plus-circle"></i>
                     </button>
                 </div>
-                <a href="/product" class="btn btn-info btn-sm mr-1">
-                    Product
-                </a>
-                <a href="/product-category" class="btn btn-success btn-sm">
-                    Category
+                <a href="/post" class="btn btn-success btn-sm">
+                    Post
                 </a>
             </div>
         </div>
@@ -29,7 +26,7 @@
         <!-- DataTales Example -->
         <div class="card shadow mb-4">
             <div class="card-header py-3">
-                <h6 class="m-0 font-weight-bold text-primary">List Sub Category</h6>
+                <h6 class="m-0 font-weight-bold text-primary">List Category</h6>
             </div>
             <div class="card-body">
                 <div class="table-responsive">
@@ -42,24 +39,24 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($subCategories as $sub)
+                            @foreach ($categories as $category)
                                 <tr>
                                     <td>{{ $loop->iteration }}</td>
-                                    <td>{{ $sub->title }}</td>
+                                    <td>{{ $category->title }}</td>
                                     <td>
                                         <div class="d-flex justify-content-around">
                                             <div>
-                                                <a title="Edit Data" href="/product-sub-category/{{ $sub->id }}/edit"
+                                                <a title="Edit Data" href="/post-category/{{ $category->id }}/edit"
                                                     class="btn btn-outline-dark btn-sm">Edit</a>
                                             </div>
                                             <div>
-                                                <form action="/product-sub-category/{{ $sub->id }}" method="post"
+                                                <form action="/post-category/{{ $category->id }}" method="post"
                                                     id="deleteForm">
                                                     @csrf
                                                     @method('delete')
                                                     <button title="Delete Data" class="btn btn-outline-danger btn-sm"
                                                         onclick="return false" id="deleteButton"
-                                                        data-id="{{ $sub->id }}">
+                                                        data-id="{{ $category->id }}">
                                                         <i class="fas fa-trash-alt"></i>
                                                     </button>
                                                 </form>
@@ -89,25 +86,13 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <form action="/product-category" method="POST" id="formAdd">
+                    <form action="/post-category" method="POST" id="formAdd">
                         @csrf
                         <div class="form-group mb-3">
                             <label for="title">Title</label>
                             <input type="text" name="title" id="title"
                                 class="form-control  @error('title') is-invalid @enderror" value="{{ old('title') }}"
                                 autofocus autocomplete="off">
-                        </div>
-                        <div class="form-group mb-3">
-                            <label for="category_id">Category</label>
-                            <select class="form-control @error('category_id') is-invalid @enderror" name="category_id"
-                                id="category_id">
-                                <option value=""></option>
-                                @foreach ($categories as $category)
-                                    <option value="{{ $category->id }}"
-                                        {{ old('category_id') == $category->id ? 'selected' : '' }}>
-                                        {{ $category->title }}</option>
-                                @endforeach
-                            </select>
                         </div>
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                         <button type="submit" id="btnSubmit" class="btn btn-primary">Submit</button>
@@ -131,7 +116,7 @@
         $(document).on('click', '#deleteButton', function(e) {
             e.preventDefault();
             let id = $(this).data('id');
-            formDelete.attr('action', `/product-sub-category/${id}`)
+            formDelete.attr('action', `/post-category/${id}`)
             Swal.fire({
                 title: 'Are you sure?',
                 text: "You won't be able to revert this!",
