@@ -1,21 +1,21 @@
 @extends('layouts.dashboard.master')
-@section('title', 'Product Image')
+@section('title', 'Post Image')
 @section('content')
     <!-- Begin Page Content -->
     <div class="container-fluid">
         <!-- DataTales Example -->
         <div class="card shadow mb-4">
             <div class="card-header py-3">
-                <h6 class="m-0 font-weight-bold text-primary">Product Images</h6>
+                <h6 class="m-0 font-weight-bold text-primary">Post Images</h6>
             </div>
             <div class="card-body">
                 <div class="mb-5 p-2">
                     <div class="row">
-                        @foreach ($product->images as $image)
+                        @foreach ($post->images as $image)
                             <div class="col-md-6 mb-3">
                                 <img height="100" class="mb-3" src="{{ '/storage/' . $image->url }}" alt="">
                                 <br>
-                                <form action="/product-image/{{ $image->id }}" method="post" id="deleteForm">
+                                <form action="/post-image/{{ $image->id }}" method="post" id="deleteForm">
                                     @csrf
                                     @method('delete')
                                     <button title="Delete Data" class="btn btn-outline-danger btn-sm" onclick="return false"
@@ -27,9 +27,9 @@
                         @endforeach
                     </div>
                 </div>
-                <form action="/product-image" method="POST" enctype="multipart/form-data">
+                <form action="/post-image" method="POST" enctype="multipart/form-data">
                     @csrf
-                    <input type="hidden" name="product_id" value="{{ $product->id }}">
+                    <input type="hidden" name="post_id" value="{{ $post->id }}">
                     <div class="col-md-6">
                         <div class="form-group mb-3">
                             <label for="url">Add Image</label>
@@ -58,7 +58,7 @@
         $(document).on('click', '#deleteButton', function(e) {
             e.preventDefault();
             let id = $(this).data('id');
-            formDelete.attr('action', `/product-image/${id}`)
+            formDelete.attr('action', `/post-image/${id}`)
             Swal.fire({
                 title: 'Are you sure?',
                 text: "You won't be able to revert this!",

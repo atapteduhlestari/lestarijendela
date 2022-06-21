@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\FaqController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
@@ -30,12 +31,14 @@ Route::middleware(['auth'])->group(function () {
 
     Route::resource('/post', PostController::class);
     Route::resource('/post-category', PostCategoryController::class);
+    Route::get('/post-image/create/{post}', [PostController::class, 'createImage']);
+    Route::post('/post-image', [PostController::class, 'saveImage']);
+    Route::delete('/post-image/{id}', [PostController::class, 'deleteImage']);
 
 
     //ary sitepu
     Route::resource('/profile', ProfileController::class);
     Route::resource('/faq', FaqController::class);
-
 });
 
 Auth::routes([

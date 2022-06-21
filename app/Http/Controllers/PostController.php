@@ -5,7 +5,9 @@ namespace App\Http\Controllers;
 use App\Models\Post;
 use Illuminate\Support\Str;
 use App\Models\PostCategory;
+use App\Models\PostImage;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class PostController extends Controller
 {
@@ -67,6 +69,36 @@ class PostController extends Controller
     public function destroy(Post $post)
     {
         $post->delete();
+        return redirect()->back()->with('success', 'Success!');
+    }
+
+    public function createImage(Post $post)
+    {
+        return view('dashboard.post.image.create', compact('post'));
+    }
+
+    public function saveImage(Request $request)
+    {
+        $request->validate([
+            'url' => 'required|file|max:5120'
+        ]);
+
+        $data = $request->all();
+
+        $file = $request->file('url');
+        $imageUrl = $file->storeAs('assets/dashboard/img/post', $file->hashName());
+        $data['url'] = $imageUrl;
+
+        PostImage::create($data);
+        return redirect()->back()->with('success', 'Success!');
+    }
+
+    public function deleteImage($imageId)
+    {
+        $image = PostImage::find($imageId);
+        Storage::delete($image->url);
+        $image->delete();
+
         return redirect()->back()->with('success', 'Success!');
     }
 }
