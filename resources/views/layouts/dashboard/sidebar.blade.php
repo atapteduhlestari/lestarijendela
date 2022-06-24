@@ -62,11 +62,11 @@
             <span>FAQ</span></a>
     </li>
 
-    
+
     <li class="nav-item {{ request()->is('highlight*') ? 'active' : '' }}">
         <a class="nav-link" href="/highlight">
             <i class="fas fa-chevron-right"></i>
-            <span>Hightlight Product</span></a>
+            <span>Highlight</span></a>
     </li>
     <!-- Divider -->
     <hr class="sidebar-divider d-none d-md-block">

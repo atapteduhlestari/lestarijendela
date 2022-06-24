@@ -20,7 +20,7 @@
 
 <body class="animsition">
     @include('layouts.visitor.topbar')
-    @include('layouts.visitor.components.slider')
+    @include('layouts.visitor.components.slider', $sliders)
     @include('layouts.visitor.components.banner')
     @yield('content')
     @include('layouts.visitor.footer')
