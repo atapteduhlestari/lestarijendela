@@ -3,7 +3,6 @@
 <script src="/assets/visitor/vendor/bootstrap/js/popper.js"></script>
 <script src="/assets/visitor/vendor/bootstrap/js/bootstrap.min.js"></script>
 <script src="/assets/visitor/vendor/select2/select2.min.js"></script>
-
 <script>
     $(".js-select2").each(function() {
         $(this).select2({
@@ -12,19 +11,15 @@
         });
     })
 </script>
-
 <script src="/assets/visitor/vendor/daterangepicker/moment.min.js"></script>
 <script src="/assets/visitor/vendor/daterangepicker/daterangepicker.js"></script>
 <script src="/assets/visitor/vendor/slick/slick.min.js"></script>
 <script src="/assets/visitor/js/slick-custom.js"></script>
 <script src="/assets/visitor/vendor/parallax100/parallax100.js"></script>
-
 <script>
     $('.parallax100').parallax100();
 </script>
-
 <script src="/assets/visitor/vendor/MagnificPopup/jquery.magnific-popup.min.js"></script>
-
 <script>
     $('.gallery-lb').each(function() { // the containers for all your galleries
         $(this).magnificPopup({
@@ -37,10 +32,8 @@
         });
     });
 </script>
-
 <script src="/assets/visitor/vendor/isotope/isotope.pkgd.min.js"></script>
 <script src="/assets/visitor/vendor/sweetalert/sweetalert.min.js"></script>
-
 <script>
     $('.js-addwish-b2').on('click', function(e) {
         e.preventDefault();
@@ -76,9 +69,7 @@
         });
     });
 </script>
-
 <script src="/assets/visitor/vendor/perfect-scrollbar/perfect-scrollbar.min.js"></script>
-
 <script>
     $('.js-pscroll').each(function() {
         $(this).css('position', 'relative');
@@ -94,5 +85,4 @@
         })
     });
 </script>
-
 <script src="/assets/visitor/js/main.js"></script>
