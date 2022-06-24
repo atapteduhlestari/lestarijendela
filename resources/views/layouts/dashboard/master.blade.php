@@ -7,9 +7,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="robots" content="noindex, nofollow">
-    <meta name="author" content="edward evbert">
-    {{-- <link rel="icon" type="image/png" href="/assets/app/images/logo/logo.png"> --}}
+    <meta name="author" content="IT-HO">
     <meta name="csrf-token" content="{{ csrf_token() }}">
+
+    <link rel="icon" type="image/png" href="/assets/img/logo.png">
     <title>@yield('title', 'Jendela Lestari')</title>
 
     <!-- Custom fonts for this template-->

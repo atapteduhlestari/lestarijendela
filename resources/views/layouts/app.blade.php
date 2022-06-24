@@ -7,7 +7,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
-    <meta name="author" content="">
+    <meta name="author" content="IT-HO">
+    <link rel="icon" type="image/png" href="/assets/img/logo.png">
 
     <title>Lestari Jendela - Login</title>
 
@@ -21,7 +22,7 @@
     <link href="/assets/dashboard/css/sb-admin-2.css" rel="stylesheet">
     <style>
         .bg-login-image {
-            background: url("/assets/dashboard/img/login.jpg");
+            background: url("/assets/img/logo.png");
             background-position: center;
             background-size: cover;
         }
@@ -43,7 +44,6 @@
             /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
         }
-
     </style>
 </head>
 

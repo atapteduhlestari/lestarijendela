@@ -10,14 +10,11 @@ use App\Http\Controllers\PostCategoryController;
 use App\Http\Controllers\ProductCategoryController;
 use App\Http\Controllers\ProductSubCategoryController;
 use App\Http\Controllers\FaqController;
+use App\Http\Controllers\HomeController;
 
-Route::get('/', function () {
-    echo 'lestari jendela';
-});
+Route::get('/', [HomeController::class, 'index']);
+Route::get('/home', [HomeController::class, 'index']);
 
-Route::get('/home', function () {
-    echo 'lestari jendela';
-});
 
 Route::middleware(['auth'])->group(function () {
     Route::get('/dashboard', [DashboardController::class, 'index']);

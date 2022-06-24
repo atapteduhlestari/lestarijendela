@@ -1,5 +1,4 @@
 @extends('layouts.app')
-
 @section('content')
     <div class="container">
 
@@ -9,8 +8,10 @@
                 <div class="card o-hidden border-0 p-5 bg-transparent">
                     <div class="card-body p-0">
                         <!-- Nested Row within Card Body -->
-                        <div class="row">
-                            <div class="col-lg-6 d-none d-lg-block bg-login-image rounded shadow"></div>
+                        <div class="row align-items-center">
+                            <div class="col-lg-6 mb-3">
+                                <img class="col" src="/assets/img/logo.png" alt="">
+                            </div>
                             <div class="col-lg-6">
                                 <div class="p-5">
                                     <div class="text-center">
