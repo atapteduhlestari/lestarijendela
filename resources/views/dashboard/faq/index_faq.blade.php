@@ -80,9 +80,6 @@
                     <?php $row_count++; } ?>
                 </div>
 
-            </div>
-
-        </div>
 
         <!-- Modal -->
         <div class="modal fade" id="addNewRecord" data-backdrop="static" data-keyboard="false" tabindex="-1"
@@ -108,6 +105,7 @@
                                     <label for="category_id">ANSWER</label>
                                     <textarea type="email" class="form-control" name="answer"> </textarea>
                                 </div>
+
                             </div>
 
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
