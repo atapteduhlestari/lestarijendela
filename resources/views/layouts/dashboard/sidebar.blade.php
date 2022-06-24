@@ -12,7 +12,7 @@
     <hr class="sidebar-divider my-0">
 
     <!-- Nav Item - Dashboard -->
-    <li class="nav-item active">
+    <li class="nav-item {{ request()->is('dashboard*') ? 'active' : '' }}">
         <a class="nav-link" href="/dashboard">
             <i class="fas fa-fw fa-tachometer-alt"></i>
             <span>Dashboard</span></a>
@@ -20,9 +20,7 @@
 
     <!-- Divider -->
     <hr class="sidebar-divider">
-
-    <!-- Nav Item - Utilities Collapse Menu -->
-    <li class="nav-item">
+    {{-- <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
             aria-expanded="true" aria-controls="collapseUtilities">
             <i class="fas fa-fw fa-wrench"></i>
@@ -37,30 +35,30 @@
                 <a class="collapse-item" href="utilities-other.html">Other</a>
             </div>
         </div>
-    </li>
+    </li> --}}
 
 
     <!-- Nav Item - Tables -->
-    <li class="nav-item">
+    <li class="nav-item {{ request()->is('product*') ? 'active' : '' }}">
         <a class="nav-link" href="/product">
-            <i class="fas fa-fw fa-table"></i>
+            <i class="fas fa-chevron-right"></i>
             <span>Product</span></a>
     </li>
-    <li class="nav-item">
+    <li class="nav-item {{ request()->is('post*') ? 'active' : '' }}">
         <a class="nav-link" href="/post">
-            <i class="fas fa-fw fa-table"></i>
+            <i class="fas fa-chevron-right"></i>
             <span>Blog</span></a>
     </li>
 
-    <li class="nav-item">
+    <li class="nav-item {{ request()->is('profile*') ? 'active' : '' }}">
         <a class="nav-link" href="/profile">
-            <i class="fas fa-fw fa-table"></i>
+            <i class="fas fa-chevron-right"></i>
             <span>Profile</span></a>
     </li>
 
-    <li class="nav-item">
+    <li class="nav-item {{ request()->is('faq*') ? 'active' : '' }}">
         <a class="nav-link" href="/faq">
-            <i class="fas fa-fw fa-table"></i>
+            <i class="fas fa-chevron-right"></i>
             <span>FAQ</span></a>
     </li>
     <!-- Divider -->

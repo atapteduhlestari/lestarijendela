@@ -80,7 +80,7 @@ class PostController extends Controller
     public function saveImage(Request $request)
     {
         $request->validate([
-            'url' => 'required|file|max:5120'
+            'url' => 'required|file|max:10240'
         ]);
 
         $data = $request->all();
