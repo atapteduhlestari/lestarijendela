@@ -34,7 +34,6 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/post-image', [PostController::class, 'saveImage']);
     Route::delete('/post-image/{id}', [PostController::class, 'deleteImage']);
 
-
     //ary sitepu
     Route::resource('/profile', ProfileController::class);
     Route::resource('/faq', FaqController::class);
