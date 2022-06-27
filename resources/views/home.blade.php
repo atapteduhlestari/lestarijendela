@@ -1,8 +1,8 @@
 @extends('layouts.visitor.master')
 @section('title', 'Homepage | Lestari Jendela')
 @section('content')
-    @include('layouts.visitor.components.slider', $sliders)
-    @include('layouts.visitor.components.banner')
+@include('layouts.visitor.components.slider', $sliders)
+@include('layouts.visitor.components.banner')
 
     <!-- Product -->
     <section class="bg0 p-t-23 p-b-130">

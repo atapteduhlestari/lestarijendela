@@ -1,5 +1,6 @@
 <?php
 
+
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
@@ -12,10 +13,16 @@ use App\Http\Controllers\ProductSubCategoryController;
 use App\Http\Controllers\FaqController;
 use App\Http\Controllers\HighlightController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ContactController;
+
 
 
 Route::get('/', [HomeController::class, 'index']);
 Route::get('/home', [HomeController::class, 'index']);
+
+Route::get('/contact', [ContactController::class, 'index']);    
+
+
 
 
 Route::middleware(['auth'])->group(function () {
@@ -51,8 +58,9 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/hightlight-banner', [HighlightController::class, 'saveBanner']);
     Route::post('/hightlight-banner/{id}', [HighlightController::class, 'updateBanner']);
     Route::delete('/hightlight-banner/{id}', [HighlightController::class, 'deleteBanner']);
-
 });
+
+    
 
 Auth::routes([
     'register' => false,
