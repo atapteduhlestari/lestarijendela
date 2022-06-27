@@ -17991,20 +17991,20 @@ iframe {
     object-position: center;
 }
 
-.img-h-250 {
+.h-200 {
+    height: 200px;
+}
+
+.h-250 {
     height: 250px;
 }
 
-.img-h-300 {
+.h-300 {
     height: 300px;
 }
 
-.img-h-350 {
+.h-350 {
     height: 350px;
-}
-
-.img-h-400 {
-    height: 400px;
 }
 
 .wrap-pic-s,

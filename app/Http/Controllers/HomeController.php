@@ -12,6 +12,15 @@ class HomeController extends Controller
         $sliders = Slider::get();
         $products = Product::get();
 
-        return view('home', compact('sliders', 'products'));
+        return view('home', compact(
+            'sliders',
+            'products'
+        ));
+    }
+
+    public function productIndex()
+    {
+        $products = Product::get();
+        return view('visitor.product.index', compact('products'));
     }
 }

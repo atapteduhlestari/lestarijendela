@@ -15,15 +15,7 @@
                     </a>
 
                     <a href="#" class="flex-c-m trans-04 p-lr-25">
-                        My Account
-                    </a>
-
-                    <a href="#" class="flex-c-m trans-04 p-lr-25">
                         EN
-                    </a>
-
-                    <a href="#" class="flex-c-m trans-04 p-lr-25">
-                        USD
                     </a>
                 </div>
             </div>
@@ -49,37 +41,30 @@
                             </ul>
                         </li> --}}
 
-                        <li>
+                        <li class="{{ request()->is('/') || request()->is('home') ? 'active-menu' : '' }}">
                             <a href="/">
                                 <i class="zmdi zmdi-home"></i>
                             </a>
                         </li>
 
-<<<<<<< HEAD
-                        <li class="label1" data-label1="hot">
-                            <a href="/">Product</a>
+                        <li class="label1 {{ request()->is('home/product*') ? 'active-menu' : '' }} }}"
+                            data-label1="hot">
+                            <a href="/home/product">Product</a>
                         </li>
-=======
-                         <li>
-                             <a href="/contact">Contact</a>
-                         </li>
-                     </ul>
-                 </div>
->>>>>>> 3abacc2d0611ff275b91eae256859d845e581e9d
 
-                        <li>
+                        <li class="{{ request()->is('home/gallery*') ? 'active-menu' : '' }} }}">
                             <a href="shoping-cart.html">Gallery</a>
                         </li>
 
-                        <li class="active-menu">
+                        <li class="">
                             <a href="blog.html">Blog</a>
                         </li>
 
-                        <li>
+                        <li class="{{ request()->is('home/about*') ? 'active-menu' : '' }} }}">
                             <a href="about.html">About</a>
                         </li>
 
-                        <li>
+                        <li class="{{ request()->is('home/contact*') ? 'active-menu' : '' }} }}">
                             <a href="contact.html">Contact</a>
                         </li>
                     </ul>
@@ -90,6 +75,7 @@
                     <div class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 js-show-modal-search">
                         <i class="zmdi zmdi-search"></i>
                     </div>
+                </div>
             </nav>
         </div>
     </div>
@@ -161,7 +147,7 @@
             </li>
 
             <li>
-                <a href="shoping-cart.html">Features</a>
+                <a href="shoping-cart.html">Gallery</a>
             </li>
 
             <li>

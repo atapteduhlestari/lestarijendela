@@ -638,6 +638,11 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
     -ms-box-shadow: 0 0px 3px 0px rgba(0, 0, 0, 0.2);
 }
 
+.fix-menu-desktop .main-menu>li>a,
+.fix-menu-desktop .icon-header-item {
+    color: #fff;
+}
+
 .header-v2 .fix-menu-desktop.container-menu-desktop {
     height: 70px;
 }
@@ -3276,20 +3281,9 @@ input.num-product::-webkit-inner-spin-button {
 }
 
 /*---------------------------------------------*/
-
-.product-hover {
-    cursor: pointer;
-    transition: all .25s cubic-bezier(0.165, 0.84, 0.44, 1);
-}
-
-.product-hover:hover {
-    -webkit-transform: scale(1.05, 1.05);
-    transform: scale(1.05, 1.05);
-    box-shadow: 0 15px 20px rgba(0, 0, 0, 0.1);
-}
-
 .hov-img0 {
     display: block;
+    cursor: pointer;
     overflow: hidden;
 }
 

@@ -26,17 +26,17 @@ class Product extends Model
         return $this->hasMany(ProductImage::class, 'product_id');
     }
 
-    public function gettakeImageAttribute()
+    public function getTakeImageAttribute()
     {
         return "/storage/" . $this->url;
     }
 
-    public function firstImage($query)
+    public function getFirstImageAttribute()
     {
         $default =  '/assets/img/no-image.png';
 
-        if ($query->images->first())
-            return "/storage/" .  $query->images->first()->url;
+        if ($this->images->first())
+            return "/storage/" .  $this->images->first()->url;
         else
             return $default;
     }

@@ -19,7 +19,7 @@ use App\Http\Controllers\HomeController;
 Route::get('/', [HomeController::class, 'index']);
 Route::get('/home', [HomeController::class, 'index']);
 
-Route::get('/home', [HomeController::class, 'productIndex']);
+Route::get('/home/product', [HomeController::class, 'productIndex']);
 
 //ary
 
