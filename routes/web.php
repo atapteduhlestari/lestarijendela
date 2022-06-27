@@ -21,6 +21,7 @@ Route::get('/', [HomeController::class, 'index']);
 Route::get('/home', [HomeController::class, 'index']);
 
 Route::get('/home/product', [HomeController::class, 'productIndex']);
+Route::get('/home/product/{product:slug}', [HomeController::class, 'productShow']);
 
 //ary
 Route::get('/profile-contact', [PageController::class, 'contactIndex']);

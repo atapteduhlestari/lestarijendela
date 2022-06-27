@@ -15,19 +15,19 @@
                 <table class="table-borderless stext-107 cl7" width="100%">
                     <tr>
                         <td><i class="fa fa-phone"></i></td>
-                        <td>:</td>
+                        <td>:&nbsp;</td>
                         <td>(021) 8646-506</td>
                     </tr>
                     <tr>
                         <td><i class="fa fa-envelope-open"></i></td>
-                        <td>:</td>
+                        <td>:&nbsp;</td>
                         <td>info@lestarijendela.com</td>
                     </tr>
                     <tr>
                         <td><i class="fa fa-chrome"></i></td>
-                        <td>:</td>
+                        <td>:&nbsp;</td>
                         <td>
-                            <a href="www.lestarijendela.com">www.lestarijendela.com</a>
+                            <a class=" cl1 hov-cl0" href="www.lestarijendela.com">www.lestarijendela.com</a>
                         </td>
                     </tr>
                 </table>

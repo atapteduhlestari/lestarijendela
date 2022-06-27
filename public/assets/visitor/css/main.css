@@ -1535,11 +1535,11 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
 }
 
 .slick3-dot-overlay:hover {
-    border-color: #ccc;
+    border-color: #222;
 }
 
 .slick3-dots .slick-active .slick3-dot-overlay {
-    border-color: #ccc;
+    border-color: #222;
 }
 
 
