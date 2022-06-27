@@ -1,6 +1,8 @@
 @extends('layouts.visitor.master')
 @section('title', 'Homepage | Lestari Jendela')
 @section('content')
+
+    {{-- Components --}}
     @include('layouts.visitor.components.slider', $sliders)
     @include('layouts.visitor.components.banner')
 

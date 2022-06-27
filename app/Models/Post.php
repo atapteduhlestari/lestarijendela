@@ -19,4 +19,9 @@ class Post extends Model
     {
         return $this->hasMany(PostImage::class, 'post_id');
     }
+
+    public function gettakeImageAttribute()
+    {
+        return "/storage/" . $this->url;
+    }
 }

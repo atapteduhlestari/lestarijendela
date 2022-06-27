@@ -17,6 +17,7 @@ use App\Http\Controllers\HomeController;
 Route::get('/', [HomeController::class, 'index']);
 Route::get('/home', [HomeController::class, 'index']);
 
+Route::get('/home', [HomeController::class, 'productIndex']);
 
 Route::middleware(['auth'])->group(function () {
     Route::get('/dashboard', [DashboardController::class, 'index']);
@@ -51,7 +52,6 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/hightlight-banner', [HighlightController::class, 'saveBanner']);
     Route::post('/hightlight-banner/{id}', [HighlightController::class, 'updateBanner']);
     Route::delete('/hightlight-banner/{id}', [HighlightController::class, 'deleteBanner']);
-
 });
 
 Auth::routes([

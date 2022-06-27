@@ -26,9 +26,9 @@ class Product extends Model
         return $this->hasMany(ProductImage::class, 'product_id');
     }
 
-    public function takeImageAttribute($query)
+    public function gettakeImageAttribute()
     {
-        return "/storage/" . $query->url;
+        return "/storage/" . $this->url;
     }
 
     public function firstImage($query)
