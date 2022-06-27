@@ -68,6 +68,12 @@
             <i class="fas fa-chevron-right"></i>
             <span>Highlight</span></a>
     </li>
+
+    <li class="nav-item {{ request()->is('feedback*') ? 'active' : '' }}">
+        <a class="nav-link" href="/feedback">
+            <i class="fas fa-chevron-right"></i>
+            <span>Feedbacks</span></a>
+    </li>
     <!-- Divider -->
     <hr class="sidebar-divider d-none d-md-block">
 
