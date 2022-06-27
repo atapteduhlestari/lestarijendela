@@ -1,11 +1,11 @@
     <!-- Banner -->
     <div class="sec-banner bg0 p-t-95 p-b-55">
         <div class="container">
-            <div class="p-b-10 mb-5">
+            {{-- <div class="p-b-10 mb-5">
                 <h3 class="ltext-103 text-center cl5">
                     PREMIUM WINDOWS & DOORS SYSTEM
                 </h3>
-            </div>
+            </div> --}}
             <div class="row">
                 <div class="col-md-6 p-b-30 m-lr-auto">
                     <!-- Block1 -->

@@ -30,4 +30,14 @@ class Product extends Model
     {
         return "/storage/" . $query->url;
     }
+
+    public function firstImage($query)
+    {
+        $default =  '/assets/img/no-image.png';
+
+        if ($query->images->first())
+            return "/storage/" .  $query->images->first()->url;
+        else
+            return $default;
+    }
 }

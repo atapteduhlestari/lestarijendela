@@ -170,7 +170,7 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
     position: fixed;
     width: 40px;
     height: 38px;
-    bottom: 0px;
+    bottom: 75px;
     right: 40px;
     background-color: #87C440;
     opacity: 0.5;
@@ -178,7 +178,7 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
     align-items: center;
     z-index: 1000;
     cursor: pointer;
-    transition: all 0.4s;
+    transition: all .5s;
     -webkit-transition: all 0.4s;
     -o-transition: all 0.4s;
     -moz-transition: all 0.4s;
@@ -197,7 +197,7 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
 
 @media (max-width: 575px) {
     .btn-back-to-top {
-        bottom: 0px;
+        bottom: 50px;
         right: 15px;
     }
 }

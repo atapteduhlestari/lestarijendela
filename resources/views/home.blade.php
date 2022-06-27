@@ -1,6 +1,9 @@
 @extends('layouts.visitor.master')
 @section('title', 'Homepage | Lestari Jendela')
 @section('content')
+    @include('layouts.visitor.components.slider', $sliders)
+    @include('layouts.visitor.components.banner')
+
     <!-- Product -->
     <section class="bg0 p-t-23 p-b-130">
         <div class="container">
@@ -32,129 +35,40 @@
                     </div>
                 </div>
             </div>
-
             <div class="row isotope-grid">
-                <div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item">
-                    <!-- Block2 -->
-                    <div class="block2">
-                        <div class="block2-pic hov-img0 product-hover">
-                            <img loading="lazy" class="img-responsive img-h-300" src="/assets/visitor/images/block/1.jpg"
-                                alt="IMG-PRODUCT">
-                        </div>
-
-                        <div class="block2-txt flex-w flex-t p-t-14">
-                            <div class="block2-txt-child1 flex-col-l ">
-                                <a href="product-detail.html" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
-                                    Esprit Ruffle Shirt
-                                </a>
-
-                                <span class="stext-105 cl3">
-                                    $16.64
-                                </span>
+                @foreach ($products as $product)
+                    <div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item">
+                        <!-- Block2 -->
+                        <div class="block2">
+                            <div class="block2-pic hov-img0 product-hover">
+                                <img loading="lazy" class="img-responsive img-h-300"
+                                    src="{{ $product->firstImage($product) }}" alt="IMG-PRODUCT">
                             </div>
 
-                            <div class="block2-txt-child2 flex-r p-t-3">
-                                <a href="#" class="btn-addwish-b2 dis-block pos-relative js-addwish-b2">
-                                    <img loading="lazy" class="icon-heart1 dis-block trans-04"
-                                        src="/assets/visitor/images/icons/icon-heart-01.png" alt="ICON">
-                                    <img loading="lazy" class="icon-heart2 dis-block trans-04 ab-t-l"
-                                        src="/assets/visitor/images/icons/icon-heart-02.png" alt="ICON">
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item">
-                    <!-- Block2 -->
-                    <div class="block2">
-                        <div class="block2-pic hov-img0 product-hover">
-                            <img loading="lazy" class="img-responsive img-h-300" src="/assets/visitor/images/block/1.jpg"
-                                alt="IMG-PRODUCT">
-                        </div>
+                            <div class="block2-txt flex-w flex-t p-t-14">
+                                <div class="block2-txt-child1 flex-col-l ">
+                                    <a href="product-detail.html" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
+                                        Esprit Ruffle Shirt
+                                    </a>
 
-                        <div class="block2-txt flex-w flex-t p-t-14">
-                            <div class="block2-txt-child1 flex-col-l ">
-                                <a href="product-detail.html" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
-                                    Esprit Ruffle Shirt
-                                </a>
+                                    <span class="stext-105 cl3">
+                                        $16.64
+                                    </span>
+                                </div>
 
-                                <span class="stext-105 cl3">
-                                    $16.64
-                                </span>
-                            </div>
-
-                            <div class="block2-txt-child2 flex-r p-t-3">
-                                <a href="#" class="btn-addwish-b2 dis-block pos-relative js-addwish-b2">
-                                    <img loading="lazy" class="icon-heart1 dis-block trans-04"
-                                        src="/assets/visitor/images/icons/icon-heart-01.png" alt="ICON">
-                                    <img loading="lazy" class="icon-heart2 dis-block trans-04 ab-t-l"
-                                        src="/assets/visitor/images/icons/icon-heart-02.png" alt="ICON">
-                                </a>
+                                <div class="block2-txt-child2 flex-r p-t-3">
+                                    <a href="#" class="btn-addwish-b2 dis-block pos-relative js-addwish-b2">
+                                        <img loading="lazy" class="icon-heart1 dis-block trans-04"
+                                            src="/assets/visitor/images/icons/icon-heart-01.png" alt="ICON">
+                                        <img loading="lazy" class="icon-heart2 dis-block trans-04 ab-t-l"
+                                            src="/assets/visitor/images/icons/icon-heart-02.png" alt="ICON">
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item">
-                    <!-- Block2 -->
-                    <div class="block2">
-                        <div class="block2-pic hov-img0 product-hover">
-                            <img loading="lazy" class="img-responsive img-h-300" src="/assets/visitor/images/block/1.jpg"
-                                alt="IMG-PRODUCT">
-                        </div>
+                @endforeach
 
-                        <div class="block2-txt flex-w flex-t p-t-14">
-                            <div class="block2-txt-child1 flex-col-l ">
-                                <a href="product-detail.html" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
-                                    Esprit Ruffle Shirt
-                                </a>
-
-                                <span class="stext-105 cl3">
-                                    $16.64
-                                </span>
-                            </div>
-
-                            <div class="block2-txt-child2 flex-r p-t-3">
-                                <a href="#" class="btn-addwish-b2 dis-block pos-relative js-addwish-b2">
-                                    <img loading="lazy" class="icon-heart1 dis-block trans-04"
-                                        src="/assets/visitor/images/icons/icon-heart-01.png" alt="ICON">
-                                    <img loading="lazy" class="icon-heart2 dis-block trans-04 ab-t-l"
-                                        src="/assets/visitor/images/icons/icon-heart-02.png" alt="ICON">
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item">
-                    <!-- Block2 -->
-                    <div class="block2">
-                        <div class="block2-pic hov-img0 product-hover">
-                            <img loading="lazy" class="img-responsive img-h-300" src="/assets/visitor/images/block/1.jpg"
-                                alt="IMG-PRODUCT">
-                        </div>
-
-                        <div class="block2-txt flex-w flex-t p-t-14">
-                            <div class="block2-txt-child1 flex-col-l ">
-                                <a href="product-detail.html" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
-                                    Esprit Ruffle Shirt
-                                </a>
-
-                                <span class="stext-105 cl3">
-                                    $16.64
-                                </span>
-                            </div>
-
-                            <div class="block2-txt-child2 flex-r p-t-3">
-                                <a href="#" class="btn-addwish-b2 dis-block pos-relative js-addwish-b2">
-                                    <img loading="lazy" class="icon-heart1 dis-block trans-04"
-                                        src="/assets/visitor/images/icons/icon-heart-01.png" alt="ICON">
-                                    <img loading="lazy" class="icon-heart2 dis-block trans-04 ab-t-l"
-                                        src="/assets/visitor/images/icons/icon-heart-02.png" alt="ICON">
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
             </div>
 
             <!-- Pagination -->

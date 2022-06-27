@@ -5,14 +5,13 @@ namespace App\Http\Controllers;
 use App\Models\Slider;
 use App\Models\Banner;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class HighlightController extends Controller
 {
     public function index()
     {
         $sliders = Slider::get();
-      
-
         return view('dashboard.highlight.indexHighlight', compact('sliders'));
     }
 
@@ -33,52 +32,48 @@ class HighlightController extends Controller
         Slider::create($data);
         return redirect()->back()->with('success', 'Success!');
     }
+
     public function editSlider($id)
     {
-
         $slider = Slider::find($id);
-
         return view('dashboard.highlight.edit', compact('slider'));
     }
 
     public function updateSlider(Request $request, $id)
     {
-
         $slider = Slider::find($id);
 
         $request->validate([
             'heading' => 'required',
             'description' => 'required',
-            'url' => 'required|file|max:10240'
+            'url' => 'file|max:10240'
         ]);
 
         $data = $request->all();
 
-
-        $file = $request->file('url');
-        $imageUrl = $file->storeAs('assets/dashboard/images/slider', $file->hashName());
-        $data['url'] = $imageUrl;
+        if ($request->file('url')) {
+            Storage::delete($slider->url);
+            $file = $request->file('url');
+            $imageUrl = $file->storeAs('assets/dashboard/images/slider', $file->hashName());
+            $data['url'] = $imageUrl;
+        } else {
+            $data['url'] = $slider->url;
+        }
 
         $slider->update($data);
-
-        return redirect()->action([HighlightController::class, 'index'])->with('success', 'Success!');
-        
+        return redirect()->back()->with('success', 'Success!');
     }
 
     public function deleteSlider($id)
     {
-
         $slider = Slider::find($id);
-
         $slider->delete($id);
-
         return redirect()->back()->with('success', 'Success!');
     }
 
     public function banner()
     {
         $banners = Banner::get();
-
         return view('dashboard.highlight.banner.index', compact('banners'));
     }
 
@@ -97,15 +92,13 @@ class HighlightController extends Controller
         $data['url'] = $imageUrl;
 
         Banner::create($data);
-        return redirect()->action([HighlightController::class, 'banner'])->with('success', 'Success!');
+        return redirect()->back()->with('success', 'Success!');
     }
 
     public function editBanner($id)
     {
 
         $banner = Banner::find($id);
-       
-
         return view('dashboard.highlight.banner.edit', compact('banner'));
     }
 
@@ -117,30 +110,28 @@ class HighlightController extends Controller
         $request->validate([
             'heading' => 'required',
             'description' => 'required',
-            'url' => 'required|file|max:10240'
+            'url' => 'file|max:10240'
         ]);
 
         $data = $request->all();
 
-    
-
-
-        $file = $request->file('url');
-        $imageUrl = $file->storeAs('assets/dashboard/images/slider', $file->hashName());
-        $data['url'] = $imageUrl;
+        if ($request->file('url')) {
+            Storage::delete($banner->url);
+            $file = $request->file('url');
+            $imageUrl = $file->storeAs('assets/dashboard/images/slider', $file->hashName());
+            $data['url'] = $imageUrl;
+        } else {
+            $data['url'] = $banner->url;
+        }
 
         $banner->update($data);
-
-        return redirect()->action([HighlightController::class, 'banner'])->with('success', 'Success!');
-        
+        return redirect()->back()->with('success', 'Success!');
     }
 
     public function deleteBanner($id)
     {
         $banner = Banner::find($id);
-
         $banner->delete($id);
-
-        return redirect()->action([HighlightController::class, 'banner'])->with('success', 'Success!');
+        return redirect()->back()->with('success', 'Success!');
     }
 }
