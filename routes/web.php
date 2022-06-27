@@ -1,5 +1,6 @@
 <?php
 
+
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
@@ -14,10 +15,14 @@ use App\Http\Controllers\HighlightController;
 use App\Http\Controllers\HomeController;
 
 
+
 Route::get('/', [HomeController::class, 'index']);
 Route::get('/home', [HomeController::class, 'index']);
 
 Route::get('/home', [HomeController::class, 'productIndex']);
+
+//ary
+
 
 Route::middleware(['auth'])->group(function () {
     Route::get('/dashboard', [DashboardController::class, 'index']);
@@ -53,6 +58,8 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/hightlight-banner/{id}', [HighlightController::class, 'updateBanner']);
     Route::delete('/hightlight-banner/{id}', [HighlightController::class, 'deleteBanner']);
 });
+
+
 
 Auth::routes([
     'register' => false,

@@ -55,9 +55,17 @@
                             </a>
                         </li>
 
+<<<<<<< HEAD
                         <li class="label1" data-label1="hot">
                             <a href="/">Product</a>
                         </li>
+=======
+                         <li>
+                             <a href="/contact">Contact</a>
+                         </li>
+                     </ul>
+                 </div>
+>>>>>>> 3abacc2d0611ff275b91eae256859d845e581e9d
 
                         <li>
                             <a href="shoping-cart.html">Gallery</a>

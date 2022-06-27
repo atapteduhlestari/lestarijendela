@@ -2,11 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Profile;
-use Illuminate\Support\Str;
 use Illuminate\Http\Request;
+use App\Models\Profile;
 
-class ProfileController extends Controller
+class ContactController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,11 +14,11 @@ class ProfileController extends Controller
      */
     public function index()
     {
+        $contact = Profile::get();
 
-        $profiles = Profile::get();
-        
+       
 
-        return view('dashboard.profile.index', compact('profiles'));
+        return view('visitor.contact.index', compact('contact'));
     }
 
     /**
@@ -40,14 +39,7 @@ class ProfileController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
-            'name' => 'required',
-        ]);
-
-        $data = $request->all();
-        Profile::create($data);
-
-        return redirect()->back()->with('success', 'Success!');
+        //
     }
 
     /**
@@ -67,9 +59,9 @@ class ProfileController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Profile $profile)
-    {    
-        return view('dashboard.profile.edit',compact('profile'));
+    public function edit($id)
+    {
+        //
     }
 
     /**
@@ -79,17 +71,9 @@ class ProfileController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Profile $profile)
+    public function update(Request $request, $id)
     {
-        $request->validate([
-            'name' => 'required'
-        ]);
-
-        $data = $request->all();
-
-        $profile->update($data);
-
-        return redirect('profile')->with('success', 'Success!');
+        //
     }
 
     /**
@@ -98,11 +82,8 @@ class ProfileController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Profile $profile)
+    public function destroy($id)
     {
-        $profile->delete();
-
-        return redirect()->back()->with('success', 'Success!');
+        //
     }
-
 }
