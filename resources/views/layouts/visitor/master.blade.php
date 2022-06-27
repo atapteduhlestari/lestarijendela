@@ -12,7 +12,9 @@
     <link rel="stylesheet" type="text/css" href="/assets/visitor/fonts/linearicons-v1.0.0/icon-font.min.css">
     <link rel="stylesheet" type="text/css" href="/assets/visitor/vendor/animate/animate.css">
     <link rel="stylesheet" type="text/css" href="/assets/visitor/vendor/css-hamburgers/hamburgers.min.css">
+    <link rel="stylesheet" type="text/css" href="/assets/visitor/vendor/animsition/css/animsition.min.css">
     <link rel="stylesheet" type="text/css" href="/assets/visitor/vendor/slick/slick.css">
+    <link rel="stylesheet" type="text/css" href="/assets/visitor/vendor/MagnificPopup/magnific-popup.css">
     <link rel="stylesheet" type="text/css" href="/assets/visitor/vendor/perfect-scrollbar/perfect-scrollbar.css">
     <link rel="stylesheet" type="text/css" href="/assets/visitor/css/util.css">
     <link rel="stylesheet" type="text/css" href="/assets/visitor/css/main.css">

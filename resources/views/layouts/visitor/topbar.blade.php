@@ -6,7 +6,7 @@
         <div class="top-bar">
             <div class="content-topbar flex-sb-m h-full container">
                 <div class="left-top-bar">
-                    Free shipping for standard order over $100
+                    Premium Windows & Doors System
                 </div>
 
                 <div class="right-top-bar flex-w h-full">
@@ -25,8 +25,8 @@
             <nav class="limiter-menu-desktop container">
 
                 <!-- Logo desktop -->
-                <a href="#" class="logo">
-                    <img src="/assets/visitor/images/icons/logo-01.png" alt="IMG-LOGO">
+                <a href="/" class="logo">
+                    <img src="/assets/img/logo.png" alt="IMG-LOGO">
                 </a>
 
                 <!-- Menu desktop -->
@@ -108,7 +108,7 @@
         <ul class="topbar-mobile">
             <li>
                 <div class="left-top-bar">
-                    Free shipping for standard order over $100
+                    Premium Windows & Doors System
                 </div>
             </li>
 
