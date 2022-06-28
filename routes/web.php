@@ -11,10 +11,11 @@ use App\Http\Controllers\PostCategoryController;
 use App\Http\Controllers\ProductCategoryController;
 use App\Http\Controllers\ProductSubCategoryController;
 use App\Http\Controllers\FaqController;
+use App\Http\Controllers\FeedbackController;
 use App\Http\Controllers\HighlightController;
 use App\Http\Controllers\HomeController;
-
-
+use App\Http\Controllers\PageController;
+use App\Http\Controllers\FeedbackVisitorController;
 
 Route::get('/', [HomeController::class, 'index']);
 Route::get('/home', [HomeController::class, 'index']);
@@ -23,7 +24,8 @@ Route::get('/home/product', [HomeController::class, 'productIndex']);
 Route::get('/home/product/{product:slug}', [HomeController::class, 'productShow']);
 
 //ary
-
+Route::get('/profile-contact', [PageController::class, 'contactIndex']);
+Route::resource('/feedback', FeedbackVisitorController::class);
 
 Route::middleware(['auth'])->group(function () {
     Route::get('/dashboard', [DashboardController::class, 'index']);
@@ -58,6 +60,11 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/hightlight-banner', [HighlightController::class, 'saveBanner']);
     Route::post('/hightlight-banner/{id}', [HighlightController::class, 'updateBanner']);
     Route::delete('/hightlight-banner/{id}', [HighlightController::class, 'deleteBanner']);
+
+    //feedback admin
+    Route::get('/feedback', [Feedbackcontroller::class, 'index']);
+    Route::delete('/feedback-delete/{id}', [FeedbackController::class, 'deleteFeedback']);
+    Route::get('/feedback/{id}/detail', [FeedbackController::class, 'detailFeedback']);
 });
 
 

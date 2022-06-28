@@ -65,7 +65,7 @@
                         </li>
 
                         <li class="{{ request()->is('home/contact*') ? 'active-menu' : '' }} }}">
-                            <a href="contact.html">Contact</a>
+                            <a href="/profile-contact">Contact</a>
                         </li>
                     </ul>
                 </div>

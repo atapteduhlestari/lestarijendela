@@ -5,20 +5,17 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Profile;
 
-class ContactController extends Controller
+class PageController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function contactIndex()
     {
-        $contact = Profile::get();
-
-       
-
-        return view('visitor.contact.index', compact('contact'));
+        $contacts = Profile::get();
+        return view('visitor.contact.index', compact('contacts'));
     }
 
     /**
