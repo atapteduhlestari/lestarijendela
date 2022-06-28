@@ -16,6 +16,7 @@
     <link rel="stylesheet" type="text/css" href="/assets/visitor/vendor/slick/slick.css">
     <link rel="stylesheet" type="text/css" href="/assets/visitor/vendor/MagnificPopup/magnific-popup.css">
     <link rel="stylesheet" type="text/css" href="/assets/visitor/vendor/perfect-scrollbar/perfect-scrollbar.css">
+    @stack('styles')
     <link rel="stylesheet" type="text/css" href="/assets/visitor/css/util.css">
     <link rel="stylesheet" type="text/css" href="/assets/visitor/css/main.css">
 </head>

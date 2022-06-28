@@ -40,4 +40,33 @@ class Product extends Model
         else
             return $default;
     }
+
+    public function scopeFilter($query, $filters)
+    {
+        $query->when(
+            $filters['title'] ?? false,
+            fn ($query, $title) => $query->where('title', 'like', "%$title%")
+        );
+
+        $query->when($filters['category'] ?? false, function ($query, $category) {
+            return $query->whereHas(
+                'category',
+                fn ($q) => ($q->where('slug', $category))
+            );
+        });
+
+        $query->when($filters['subCategory'] ?? false, function ($query, $subCategory) {
+            return $query->whereHas(
+                'subCategory',
+                fn ($q) => ($q->where('slug', $subCategory))
+            );
+        });
+    }
+
+    public function relatedProduct($id)
+    {
+        return Product::where('category_id', $id)
+            ->where('id', '<>', $id)
+            ->take(4)->get();
+    }
 }

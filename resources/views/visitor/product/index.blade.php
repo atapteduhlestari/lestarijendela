@@ -1,4 +1,7 @@
 @extends('layouts.visitor.master')
+@push('styles')
+    <link href="/assets/visitor/vendor/selectize/selectize.css" rel="stylesheet">
+@endpush
 @section('title', 'Product')
 @section('content')
 
@@ -11,6 +14,41 @@
                         <h3 class="mtext-105 cl6">
                             All Products
                         </h3>
+                        @if (request('title') || request('category') || request('subCategory'))
+                            <div class="p-t-15">
+                                <table class="stext-105 table table-borderless">
+                                    @if (request('title'))
+                                        <tr>
+                                            <td>Title</td>
+                                            <td>:</td>
+                                            <td>{{ request('title') }}</td>
+                                        </tr>
+                                    @endif
+
+                                    @if (request('category'))
+                                        <tr>
+                                            <td>Category</td>
+                                            <td>:</td>
+                                            <td>{{ request('category') }}</td>
+                                        </tr>
+                                    @endif
+
+                                    @if (request('subCategory'))
+                                        <tr>
+                                            <td>Sub Category</td>
+                                            <td>:</td>
+                                            <td>{{ request('subCategory') }}</td>
+                                        </tr>
+                                    @endif
+
+                                    <tr>
+                                        <td>Results</td>
+                                        <td>:</td>
+                                        <td>{{ $products->count() }}</td>
+                                    </tr>
+                                </table>
+                            </div>
+                        @endif
                     </div>
                 </div>
 
@@ -20,42 +58,54 @@
                         <i class="icon-close-filter cl2 m-r-6 fs-15 trans-04 zmdi zmdi-close dis-none"></i>
                         Filter
                     </div>
-
-                    <div class="flex-c-m stext-106 cl6 size-105 bor4 pointer hov-btn3 trans-04 m-tb-4 js-show-search">
-                        <i class="icon-search cl2 m-r-6 fs-15 trans-04 zmdi zmdi-search"></i>
-                        <i class="icon-close-search cl2 m-r-6 fs-15 trans-04 zmdi zmdi-close dis-none"></i>
-                        Search
-                    </div>
-                </div>
-
-                <!-- Search product -->
-                <div class="dis-none panel-search w-full p-t-10 p-b-15 ">
-                    <div class="bor8 dis-flex p-l-15">
-                        <button class="size-113 flex-c-m fs-16 cl2 hov-cl1 trans-04">
-                            <i class="zmdi zmdi-search"></i>
-                        </button>
-
-                        <input class="mtext-107 cl2 size-114 plh2 p-r-15" type="text" name="search-product"
-                            placeholder="Search">
-                    </div>
                 </div>
 
                 <!-- Filter -->
                 <div class="dis-none panel-filter w-full p-t-10 stext-106 cl6">
                     <form action="">
                         <div class="wrap-filter flex-w bg6 w-full p-lr-40 p-t-27 p-lr-15-sm">
-                            <div class="col-md-6 p-r-15 p-b-27">
+                            <div class="col-md-6 p-r-15 p-b-5">
                                 <div class="form-group">
-                                    <label for="">Keywords</label>
-                                    <input class="form-control" type="text">
+                                    <label for="">Title</label>
+                                    <input name="title" id="title" class="form-control" type="text"
+                                        value="{{ request('title') }}">
                                 </div>
                             </div>
-                            <div class="col-md-6 p-r-15 p-b-27">
+                            <div class="col-md-6 p-r-15 p-b-5">
                                 <div class="form-group">
                                     <label for="">Category</label>
-                                    <input class="form-control" type="text">
-
+                                    <select name="category" id="category" class="form-control">
+                                        <option value=""></option>
+                                        @foreach ($categories as $category)
+                                            <option value="{{ $category->slug }}"
+                                                {{ $category->slug == request('category') ? 'selected' : '' }}>
+                                                {{ $category->title }}
+                                            </option>
+                                        @endforeach
+                                    </select>
                                 </div>
+                            </div>
+                            <div class="col-md-6 p-r-15 p-b-5">
+                                <div class="form-group">
+                                    <label for="">Sub Category</label>
+                                    <select name="subCategory" id="subCategory" class="form-control">
+                                        <option value=""></option>
+                                        @foreach ($subCategories as $sub)
+                                            <option value="{{ $sub->slug }}"
+                                                {{ $sub->slug == request('subCategory') ? 'selected' : '' }}>
+                                                {{ $sub->title }}
+                                            </option>
+                                        @endforeach
+                                    </select>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="wrap-filter flex-w bg6 w-full p-lr-40 p-t-5 p-lr-15-sm  p-b-10">
+                            <div class="col-md-6 p-r-15">
+                                <button class="btn btn-sm btn-outline-dark px-5" type="submit">
+                                    <i class="zmdi zmdi-search"></i> Search
+                                </button>
                             </div>
                         </div>
                     </form>
@@ -96,10 +146,24 @@
             </div>
 
             {{-- <div class="flex-c-m flex-w w-full p-t-45">
-                <a href="#" class="flex-c-m stext-101 cl5 size-103 bg2 bor1 hov-btn1 p-lr-15 trans-04">
-                    Load More
-                </a>
-            </div> --}}
+<a href="#" class="flex-c-m stext-101 cl5 size-103 bg2 bor1 hov-btn1 p-lr-15 trans-04">
+Load More
+</a>
+</div> --}}
         </div>
     </div>
 @endsection
+@push('scripts')
+    <script src="/assets/visitor/vendor/selectize/selectize.js"></script>
+    <script>
+        $("#category").selectize({
+            create: false,
+            sortField: "text",
+        });
+
+        $("#subCategory").selectize({
+            create: false,
+            sortField: "text",
+        });
+    </script>
+@endpush

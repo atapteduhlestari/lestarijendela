@@ -8,7 +8,7 @@
 
 
     <!-- Product -->
-    <section class="bg0 p-t-23 p-b-130">
+    <section class="bg0 p-t-23 p-b-50">
         <div class="container">
             <div class="p-b-10">
                 <h3 class="ltext-103 cl5">
@@ -73,21 +73,11 @@
                 @endforeach
 
             </div>
-
-            <!-- Pagination -->
-            <div class="flex-c-m flex-w w-full p-t-38">
-                <a href="#" class="flex-c-m how-pagination1 trans-04 m-all-7 active-pagination1">
-                    1
-                </a>
-
-                <a href="#" class="flex-c-m how-pagination1 trans-04 m-all-7">
-                    2
-                </a>
-            </div>
         </div>
     </section>
+
     <!-- Blog -->
-    <section class="sec-blog bg0 p-t-60 p-b-90">
+    <section class="sec-blog bg0 p-t-10 p-b-90">
         <div class="container">
             <div class="p-b-66">
                 <h3 class="ltext-105 cl5 txt-center respon1">

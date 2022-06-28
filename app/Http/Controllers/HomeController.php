@@ -2,15 +2,17 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Product;
 use App\Models\Slider;
+use App\Models\Product;
+use App\Models\ProductCategory;
+use App\Models\ProductSubCategory;
 
 class HomeController extends Controller
 {
     public function index()
     {
         $sliders = Slider::get();
-        $products = Product::get();
+        $products = Product::take(4)->get();
 
         return view('home', compact(
             'sliders',
@@ -20,8 +22,19 @@ class HomeController extends Controller
 
     public function productIndex()
     {
-        $products = Product::paginate(12);
-        return view('visitor.product.index', compact('products'));
+        $data = request()->all();
+
+        $products = Product::filter($data)
+            ->orderBy('title', 'ASC')->paginate(12);
+
+        $categories = ProductCategory::get();
+        $subCategories = ProductSubCategory::get();
+
+        return view('visitor.product.index', compact(
+            'products',
+            'categories',
+            'subCategories'
+        ));
     }
 
     public function productShow(Product $product)
