@@ -32,10 +32,15 @@ class PageController extends Controller
     public function blogIndex()
     { 
 
-       $posts = Post::with('category')->get();
+        $posts = Post::all();
+        $categories = PostCategory::with('posts')->get();
+       
 
-      
-        return view('visitor.blog.index', compact('posts'));
+       
+
+    //    $posts = Post::with('category', 'images')->get();
+    //    $categories = PostCategory::with('posts')->get();
+        return view('visitor.blog.index', compact('posts', 'categories'));
     }
 
     public function faqIndex()

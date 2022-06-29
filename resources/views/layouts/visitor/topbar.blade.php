@@ -10,7 +10,7 @@
                 </div>
 
                 <div class="right-top-bar flex-w h-full">
-                    <a href="#" class="flex-c-m trans-04 p-lr-25">
+                    <a href="/faq-visitor" class="flex-c-m trans-04 p-lr-25">
                         Help & FAQs
                     </a>
 
@@ -68,9 +68,9 @@
                             <a href="/profile-contact">Contact</a>
                         </li>
 
-                        <li class="{{ request()->is('home/contact*') ? 'active-menu' : '' }} }}">
+                        {{-- <li class="{{ request()->is('home/contact*') ? 'active-menu' : '' }} }}">
                             <a href="/faq-visitor">FAQ</a>
-                        </li>
+                        </li> --}}
                     </ul>
                 </div>
 
@@ -118,7 +118,7 @@
 
             <li>
                 <div class="right-top-bar flex-w h-full">
-                    <a href="#" class="flex-c-m p-lr-10 trans-04">
+                    <a href="/faq" class="flex-c-m p-lr-10 trans-04">
                         Help & FAQs
                     </a>
 

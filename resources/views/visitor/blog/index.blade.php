@@ -20,9 +20,9 @@
 							<a href="blog-detail.html" class="hov-img0 how-pos5-parent">
                                 {{-- <img src="()" alt="IMG-BLOG"> --}}
 
-                                {{-- @foreach($images as $image)
-								<img src="{{ '/storage/' . $image->url }}" alt="IMG-BLOG">
-                                @endforeach --}}
+                                
+								{{-- <img src="{{ '/storage/' . $data->posts['url'] }}" alt="IMG-BLOG"> --}}
+                                
 								<div class="flex-col-c-m size-123 bg9 how-pos5">
 									<span class="ltext-107 cl2 txt-center">
 										22
@@ -54,7 +54,7 @@
 
                                         
 										<span>
-										
+											{{$data->category['title']}}
 											<span class="cl12 m-l-4 m-r-6">|</span>
 										</span>
                                         
@@ -107,12 +107,13 @@
 
 							<ul>
                                
-                                
+                                @foreach($categories as $category)
 								<li class="bor18">
 									<a href="/blog//detail" class="dis-block stext-115 cl6 hov-cl1 trans-04 p-tb-8 p-lr-4">
-									
+									{{$category->title}}
 									</a>
 								</li>
+								@endforeach
                           
 								
 							</ul>
@@ -224,33 +225,7 @@
 							</ul>
 						</div>
 
-						<div class="p-t-50">
-							<h4 class="mtext-112 cl2 p-b-27">
-								Tags
-							</h4>
-
-							<div class="flex-w m-r--5">
-								<a href="#" class="flex-c-m stext-107 cl6 size-301 bor7 p-lr-15 hov-tag1 trans-04 m-r-5 m-b-5">
-									Fashion
-								</a>
-
-								<a href="#" class="flex-c-m stext-107 cl6 size-301 bor7 p-lr-15 hov-tag1 trans-04 m-r-5 m-b-5">
-									Lifestyle
-								</a>
-
-								<a href="#" class="flex-c-m stext-107 cl6 size-301 bor7 p-lr-15 hov-tag1 trans-04 m-r-5 m-b-5">
-									Denim
-								</a>
-
-								<a href="#" class="flex-c-m stext-107 cl6 size-301 bor7 p-lr-15 hov-tag1 trans-04 m-r-5 m-b-5">
-									Streetstyle
-								</a>
-
-								<a href="#" class="flex-c-m stext-107 cl6 size-301 bor7 p-lr-15 hov-tag1 trans-04 m-r-5 m-b-5">
-									Crafts
-								</a>
-							</div>
-						</div>
+						
 					</div>
 				</div>
 			</div>
