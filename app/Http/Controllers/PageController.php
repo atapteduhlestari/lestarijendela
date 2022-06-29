@@ -32,7 +32,8 @@ class PageController extends Controller
     public function blogIndex()
     {
         $posts = Post::with('category')->paginate(6);
-        return view('visitor.blog.index', compact('posts'));
+        $categories = PostCategory::get();
+        return view('visitor.blog.index', compact('posts', 'categories'));
 
     }
 
