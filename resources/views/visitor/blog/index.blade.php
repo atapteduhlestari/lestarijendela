@@ -32,14 +32,17 @@
 							</a>
 
 							<div class="p-t-32">
-								<h4 class="p-b-15">
-									<a href="blog-detail.html" class="ltext-108 cl2 hov-cl1 trans-04">
-										{{$data->title}}
-									</a>
-								</h4>
+                                <h4 class="p-b-5">
+                                    <a href="/home/blog/{{ $data->slug }}" class="ltext-108 cl2 hov-cl1 trans-04">
+                                        {{ $data->title }}
+                                    </a>
+                                </h4>
+                                <a href="" class="mtext-106 cl6 hov-cl1 trans-04">
+                                    {{ $data->category->title }}
+                                </a>
 
 								<p class="stext-117 cl6">
-									{{$data->deskripsi}}
+                                    {!! limitString($data->deskripsi, 300, '...') !!}
 								</p>
 
 								<div class="flex-w flex-sb-m p-t-18">
@@ -48,21 +51,12 @@
 											<span class="cl4">By</span> Admin  
 											<span class="cl12 m-l-4 m-r-6">|</span>
 										</span>
-
-                                        
-										<span>
-											{{$data->category['title']}}
-											<span class="cl12 m-l-4 m-r-6">|</span>
-										</span>
-                                        
-
-										<span>
-											8 Comments
-										</span>
+                                      
 									</span>
 
-									<a href="blog-detail.html" class="stext-101 cl2 hov-cl1 trans-04 m-tb-10">
-										Continue Reading
+                                    <a href="/home/blog/{{ $data->slug }}"
+                                        class="stext-101 cl2 hov-cl1 trans-04 m-tb-10">
+                                        Continue Reading
 
 										<i class="fa fa-long-arrow-right m-l-9"></i>
 									</a>
@@ -75,15 +69,9 @@
 						
 
 						<!-- Pagination -->
-						<div class="flex-l-m flex-w w-full p-t-10 m-lr--7">
-							<a href="#" class="flex-c-m how-pagination1 trans-04 m-all-7 active-pagination1">
-								1
-							</a>
-
-							<a href="#" class="flex-c-m how-pagination1 trans-04 m-all-7">
-								2
-							</a>
-						</div>
+						<div class="d-flex justify-content-center">
+                            {{ $posts->withQueryString()->links('pagination::custom') }}
+                        </div>
 					</div>
 				</div>
 
@@ -104,13 +92,13 @@
 
 							<ul>
                                
-                                
+                                @foreach($categories as $category)
 								<li class="bor18">
-									<a href="/blog//detail" class="dis-block stext-115 cl6 hov-cl1 trans-04 p-tb-8 p-lr-4">
-									
+									<a href="/home/blog-category/{{$category->slug}}" class="dis-block stext-115 cl6 hov-cl1 trans-04 p-tb-8 p-lr-4">
+									{{$category->title}}
 									</a>
 								</li>
-                          
+                          @endforeach
 								
 							</ul>
 						</div>
@@ -221,33 +209,7 @@
 							</ul>
 						</div>
 
-						<div class="p-t-50">
-							<h4 class="mtext-112 cl2 p-b-27">
-								Tags
-							</h4>
-
-							<div class="flex-w m-r--5">
-								<a href="#" class="flex-c-m stext-107 cl6 size-301 bor7 p-lr-15 hov-tag1 trans-04 m-r-5 m-b-5">
-									Fashion
-								</a>
-
-								<a href="#" class="flex-c-m stext-107 cl6 size-301 bor7 p-lr-15 hov-tag1 trans-04 m-r-5 m-b-5">
-									Lifestyle
-								</a>
-
-								<a href="#" class="flex-c-m stext-107 cl6 size-301 bor7 p-lr-15 hov-tag1 trans-04 m-r-5 m-b-5">
-									Denim
-								</a>
-
-								<a href="#" class="flex-c-m stext-107 cl6 size-301 bor7 p-lr-15 hov-tag1 trans-04 m-r-5 m-b-5">
-									Streetstyle
-								</a>
-
-								<a href="#" class="flex-c-m stext-107 cl6 size-301 bor7 p-lr-15 hov-tag1 trans-04 m-r-5 m-b-5">
-									Crafts
-								</a>
-							</div>
-						</div>
+						
 					</div>
 				</div>
 			</div>

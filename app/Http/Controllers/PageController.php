@@ -37,6 +37,14 @@ class PageController extends Controller
 
     }
 
+    public function blogCategory(PostCategory $postCategory)
+    {
+        $categories = PostCategory::get();
+        $posts = $postCategory->posts()->paginate(6);
+        return view('visitor.blog.index', compact('categories', 'posts'));
+      
+    }
+
     public function faqIndex()
     {
         $faqs = Faq::get();
@@ -54,33 +62,16 @@ class PageController extends Controller
         return $post;
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
-        //
+
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
-        //
+        
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function show($id)
     {
         //
