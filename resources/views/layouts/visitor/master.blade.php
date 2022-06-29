@@ -21,7 +21,7 @@
     <link rel="stylesheet" type="text/css" href="/assets/visitor/css/main.css">
 </head>
 
-<body class="animsition">
+<body class="">
     @include('layouts.visitor.topbar')
     @yield('content')
     @include('layouts.visitor.footer')

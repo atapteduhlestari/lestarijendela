@@ -23,6 +23,9 @@ Route::get('/home', [HomeController::class, 'index']);
 Route::get('/home/product', [HomeController::class, 'productIndex']);
 Route::get('/home/product/{product:slug}', [HomeController::class, 'productShow']);
 
+Route::get('/home/gallery', [HomeController::class, 'galleryIndex']);
+
+
 //ary
 Route::get('/home/contact', [PageController::class, 'contactIndex']);
 Route::resource('/home/feedback', FeedbackVisitorController::class);
