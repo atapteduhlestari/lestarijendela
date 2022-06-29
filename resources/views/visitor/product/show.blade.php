@@ -83,7 +83,7 @@
                                 </li>
 
                                 <li class="nav-item p-b-10">
-                                    <a class="nav-link" data-toggle="tab" href="#information" role="tab">
+                                    <a class="nav-link" data-toggle="tab" href="#spesification" role="tab">
                                         Spesification
                                     </a>
                                 </li>
@@ -94,19 +94,14 @@
                                 <!-- - -->
                                 <div class="tab-pane fade show active" id="description" role="tabpanel">
                                     <div class="how-pos2 p-lr-15-md">
-                                        <p class="stext-102 cl6">
-                                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate in beatae
-                                            sapiente
-                                            quo quidem deleniti minima eius atque voluptas! Quia nemo aperiam neque omnis
-                                            sunt
-                                            voluptas atque voluptatibus sed illum!
-
-                                        </p>
+                                        <div class="stext-102 cl6">
+                                            {!! $product->deskripsi !!}
+                                        </div>
                                     </div>
                                 </div>
 
                                 <!-- - -->
-                                <div class="tab-pane fade" id="information" role="tabpanel">
+                                <div class="tab-pane fade" id="spesification" role="tabpanel">
                                     <div class="row mx-auto">
                                         <div class="col">
                                             <ul class="p-lr-28 p-lr-15-sm">

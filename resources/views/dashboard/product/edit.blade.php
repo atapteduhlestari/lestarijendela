@@ -1,7 +1,7 @@
 @extends('layouts.dashboard.master')
-@section('title', 'Product')
+@section('title', 'Product | Edit')
 @push('styles')
-    <link href="/assets/dashboard/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/dashboard/vendor/summernote/summernote-bs4.min.css">
 @endpush
 @section('content')
     <!-- Begin Page Content -->
@@ -69,13 +69,13 @@
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-md-6 mb-3">
+                        <div class="col-md mb-3">
                             <label for="deskripsi">Description</label>
                             <textarea class="form-control @error('deskripsi') is-invalid @enderror" id="deskripsi" name="deskripsi" cols="10"
                                 rows="5">{{ old('deskripsi', $product->deskripsi) }}</textarea>
                         </div>
 
-                        <div class="col-md-6 mb-3">
+                        <div class="col-md mb-3">
                             <label for="spesifikasi">Spesification</label>
                             <textarea class="form-control @error('spesifikasi') is-invalid @enderror" id="spesifikasi" name="spesifikasi"
                                 cols="10" rows="5">{{ old('spesifikasi', $product->spesifikasi) }}</textarea>
@@ -87,3 +87,39 @@
         </div>
     </div>
 @endsection
+@push('scripts')
+    <script src="/assets/dashboard/vendor/summernote/summernote-bs4.min.js"></script>
+    <script>
+        $('#deskripsi').summernote({
+            tabsize: 2,
+            height: 250,
+            toolbar: [
+                ['style', ['style', 'strikethrough', 'superscript', 'subscript']],
+                ['font', ['bold', 'underline', 'italic', 'clear']],
+                ['fontname', ['fontname']],
+                ['fontsize', ['fontsize']],
+                ['color', ['color']],
+                ['para', ['ul', 'ol', 'paragraph']],
+                ['table', ['table']],
+                ['insert', ['link', 'picture', 'video']],
+                ['view', ['fullscreen', 'codeview', 'help']],
+            ],
+        });
+
+        $('#spesifikasi').summernote({
+            tabsize: 2,
+            height: 250,
+            toolbar: [
+                ['style', ['style', 'strikethrough', 'superscript', 'subscript']],
+                ['font', ['bold', 'underline', 'italic', 'clear']],
+                ['fontname', ['fontname']],
+                ['fontsize', ['fontsize']],
+                ['color', ['color']],
+                ['para', ['ul', 'ol', 'paragraph']],
+                ['table', ['table']],
+                ['insert', ['link', 'picture', 'video']],
+                ['view', ['fullscreen', 'codeview', 'help']],
+            ],
+        });
+    </script>
+@endpush

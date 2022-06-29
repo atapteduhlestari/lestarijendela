@@ -113,7 +113,7 @@
             </div>
 
             <div class="row isotope-grid">
-                @foreach ($products as $product)
+                @forelse ($products as $product)
                     <div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item">
                         <!-- Block2 -->
                         <div class="block2">
@@ -139,7 +139,11 @@
                             </div>
                         </div>
                     </div>
-                @endforeach
+                @empty
+                    <div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item">
+                        No Items
+                    </div>
+                @endforelse
             </div>
             <div class="d-flex justify-content-center">
                 {{ $products->withQueryString()->links('pagination::custom') }}

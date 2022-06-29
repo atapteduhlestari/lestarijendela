@@ -1,5 +1,7 @@
 <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
-
+    <a href="/" title="Homepage" class="btn btn-outline-dark btn-sm border-0" type="button">
+        <i class="fas fa-home"></i>
+    </a>
     <!-- Sidebar Toggle (Topbar) -->
     <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
         <i class="fa fa-bars"></i>
