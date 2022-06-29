@@ -34,17 +34,16 @@ class FeedbackVisitorController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
-            'email' => 'required',
+        $request->validate(
+            [
+            'email' => 'required|email',
             'description' => 'required'
-        ]);
+            ],
+    );
 
         $data = $request->all();
-
-        
         Feedback::create($data);
-
-        return redirect()->back()->with('success', 'Success!');
+        return redirect()->back()->with('success', 'Message send. Thank you');
     }
 
     /**

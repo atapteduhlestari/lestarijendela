@@ -26,6 +26,14 @@ Route::get('/home/product/{product:slug}', [HomeController::class, 'productShow'
 //ary
 Route::get('/profile-contact', [PageController::class, 'contactIndex']);
 Route::resource('/feedback', FeedbackVisitorController::class);
+Route::get('/about', [PageController::class, 'aboutIndex']);
+
+//blog
+Route::get('/blog/', [PageController::class, 'blogIndex']);
+Route::get('/category/show/{posts}', [PageController::class], 'categoryBlog');
+Route::get('/blog/{id}/detail', [PageController::class, 'blogDetail']);
+
+Route::get('/faq-visitor', [PageController::class, 'faqIndex']);
 
 Route::middleware(['auth'])->group(function () {
     Route::get('/dashboard', [DashboardController::class, 'index']);
