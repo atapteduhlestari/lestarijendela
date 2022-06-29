@@ -6,7 +6,6 @@
     @include('layouts.visitor.components.slider', $sliders)
     @include('layouts.visitor.components.banner')
 
-
     <!-- Product -->
     <section class="bg0 p-t-23 p-b-50">
         <div class="container">

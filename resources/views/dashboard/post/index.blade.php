@@ -1,7 +1,8 @@
 @extends('layouts.dashboard.master')
 @section('title', 'Post')
 @push('styles')
-    <link href="/assets/dashboard/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/dashboard/vendor/datatables/dataTables.bootstrap4.min.css">
+    <link rel="stylesheet" href="/assets/dashboard/vendor/summernote/summernote-bs4.min.css">
 @endpush
 @section('content')
     <!-- Begin Page Content -->
@@ -115,7 +116,7 @@
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-md-6 mb-3">
+                            <div class="col-md mb-3">
                                 <label for="deskripsi">Description</label>
                                 <textarea class="form-control @error('deskripsi') is-invalid @enderror" id="deskripsi" name="deskripsi" cols="10"
                                     rows="5">{{ old('deskripsi') }}</textarea>
@@ -133,12 +134,29 @@
     <!-- Page level plugins -->
     <script src="/assets/dashboard/vendor/datatables/jquery.dataTables.min.js"></script>
     <script src="/assets/dashboard/vendor/datatables/dataTables.bootstrap4.min.js"></script>
+    <script src="/assets/dashboard/vendor/summernote/summernote-bs4.min.js"></script>
 
     <!-- Page level custom scripts -->
     <script src="/assets/dashboard/js/demo/datatables-demo.js"></script>
 
     <script>
         let formDelete = $('#deleteForm');
+
+        $('#deskripsi').summernote({
+            tabsize: 2,
+            height: 250,
+            toolbar: [
+                ['style', ['style', 'strikethrough', 'superscript', 'subscript']],
+                ['font', ['bold', 'underline', 'italic', 'clear']],
+                ['fontname', ['fontname']],
+                ['fontsize', ['fontsize']],
+                ['color', ['color']],
+                ['para', ['ul', 'ol', 'paragraph']],
+                ['table', ['table']],
+                ['insert', ['link', 'picture', 'video']],
+                ['view', ['fullscreen', 'codeview', 'help']],
+            ],
+        });
 
         $(document).on('click', '#deleteButton', function(e) {
             e.preventDefault();

@@ -74,7 +74,8 @@
                             <textarea class="form-control @error('deskripsi') is-invalid @enderror" id="deskripsi" name="deskripsi" cols="10"
                                 rows="5">{{ old('deskripsi', $product->deskripsi) }}</textarea>
                         </div>
-
+                    </div>
+                    <div class="row">
                         <div class="col-md mb-3">
                             <label for="spesifikasi">Spesification</label>
                             <textarea class="form-control @error('spesifikasi') is-invalid @enderror" id="spesifikasi" name="spesifikasi"
