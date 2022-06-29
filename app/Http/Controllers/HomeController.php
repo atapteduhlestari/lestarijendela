@@ -41,4 +41,9 @@ class HomeController extends Controller
     {
         return view('visitor.product.show', compact('product'));
     }
+
+    public function galleryIndex()
+    {
+        return 'under construction';
+    }
 }

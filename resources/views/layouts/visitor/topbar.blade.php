@@ -33,9 +33,9 @@
                 <div class="menu-desktop">
                     <ul class="main-menu">
                         {{-- <li>
-                            <a href="index.html">Home</a>
+                            <a href="/">Home</a>
                             <ul class="sub-menu">
-                                <li><a href="index.html">Homepage 1</a></li>
+                                <li><a href="/">Homepage 1</a></li>
                                 <li><a href="home-02.html">Homepage 2</a></li>
                                 <li><a href="home-03.html">Homepage 3</a></li>
                             </ul>
@@ -53,7 +53,7 @@
                         </li>
 
                         <li class="{{ request()->is('home/gallery*') ? 'active-menu' : '' }}">
-                            <a href="shoping-cart.html">Gallery</a>
+                            <a href="/home/gallery">Gallery</a>
                         </li>
 
                         <li class="{{ request()->is('home/blog*') ? 'active-menu' : '' }}">
@@ -84,7 +84,7 @@
     <div class="wrap-header-mobile">
         <!-- Logo moblie -->
         <div class="logo-mobile">
-            <a href="index.html"><img src="/assets/visitor/images/icons/logo-01.png" alt="IMG-LOGO"></a>
+            <a href="/"><img src="/assets/visitor/images/icons/logo-01.png" alt="IMG-LOGO"></a>
         </div>
 
         <!-- Icon header -->
@@ -127,9 +127,9 @@
 
         <ul class="main-menu-m">
             {{-- <li>
-                <a href="index.html">Home</a>
+                <a href="/">Home</a>
                 <ul class="sub-menu-m">
-                    <li><a href="index.html">Homepage 1</a></li>
+                    <li><a href="/">Homepage 1</a></li>
                     <li><a href="home-02.html">Homepage 2</a></li>
                     <li><a href="home-03.html">Homepage 3</a></li>
                 </ul>
