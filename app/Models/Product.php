@@ -35,7 +35,7 @@ class Product extends Model
     {
         $default =  '/assets/img/no-image.png';
 
-        if ($this->images->first())
+        if ($this->images()->exists())
             return "/storage/" .  $this->images->first()->url;
         else
             return $default;

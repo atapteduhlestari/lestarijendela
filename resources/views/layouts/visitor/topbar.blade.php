@@ -10,7 +10,7 @@
                 </div>
 
                 <div class="right-top-bar flex-w h-full">
-                    <a href="#" class="flex-c-m trans-04 p-lr-25">
+                    <a href="/home/FAQs" class="flex-c-m trans-04 p-lr-25">
                         Help & FAQs
                     </a>
 
@@ -47,29 +47,25 @@
                             </a>
                         </li>
 
-                        <li class="label1 {{ request()->is('home/product*') ? 'active-menu' : '' }} }}"
+                        <li class="label1 {{ request()->is('home/product*') ? 'active-menu' : '' }}"
                             data-label1="hot">
                             <a href="/home/product">Product</a>
                         </li>
 
-                        <li class="{{ request()->is('home/gallery*') ? 'active-menu' : '' }} }}">
+                        <li class="{{ request()->is('home/gallery*') ? 'active-menu' : '' }}">
                             <a href="shoping-cart.html">Gallery</a>
                         </li>
 
-                        <li class="">
-                            <a href="/blog">Blog</a>
+                        <li class="{{ request()->is('home/blog*') ? 'active-menu' : '' }}">
+                            <a href="/home/blog">Blog</a>
                         </li>
 
-                        <li class="{{ request()->is('home/about*') ? 'active-menu' : '' }} }}">
-                            <a href="/about">About</a>
+                        <li class="{{ request()->is('home/about*') ? 'active-menu' : '' }}">
+                            <a href="/home/about">About</a>
                         </li>
 
-                        <li class="{{ request()->is('home/contact*') ? 'active-menu' : '' }} }}">
-                            <a href="/profile-contact">Contact</a>
-                        </li>
-
-                        <li class="{{ request()->is('home/contact*') ? 'active-menu' : '' }} }}">
-                            <a href="/faq-visitor">FAQ</a>
+                        <li class="{{ request()->is('home/contact*') ? 'active-menu' : '' }}">
+                            <a href="/home/contact">Contact</a>
                         </li>
                     </ul>
                 </div>
@@ -118,7 +114,7 @@
 
             <li>
                 <div class="right-top-bar flex-w h-full">
-                    <a href="#" class="flex-c-m p-lr-10 trans-04">
+                    <a href="/home/FAQs" class="flex-c-m p-lr-10 trans-04">
                         Help & FAQs
                     </a>
 
@@ -142,28 +138,28 @@
                 </span>
             </li> --}}
 
-            <li>
+            <li class="{{ request()->is('/') || request()->is('home') ? 'active-menu' : '' }}">
                 <a href="/">Home</a>
             </li>
 
-            <li>
-                <a href="/" class="label1 rs1" data-label1="hot">Product</a>
+            <li class="{{ request()->is('home/product*') ? 'active-menu' : '' }}">
+                <a href="/home/product" class="label1 rs1" data-label1="hot">Product</a>
             </li>
 
-            <li>
-                <a href="shoping-cart.html">Gallery</a>
+            <li class="{{ request()->is('home/gallery*') ? 'active-menu' : '' }}">
+                <a href="/gallery">Gallery</a>
             </li>
 
-            <li>
-                <a href="blog.html">Blog</a>
+            <li class="{{ request()->is('home/blog*') ? 'active-menu' : '' }}">
+                <a href="/home/blog">Blog</a>
             </li>
 
-            <li>
-                <a href="about.html">About</a>
+            <li class="{{ request()->is('home/about*') ? 'active-menu' : '' }}">
+                <a href="/home/about">About</a>
             </li>
 
-            <li>
-                <a href="contact.html">Contact</a>
+            <li class="{{ request()->is('home/contact*') ? 'active-menu' : '' }}">
+                <a href="/home/contact">Contact</a>
             </li>
         </ul>
     </div>

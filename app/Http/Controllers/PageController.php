@@ -30,11 +30,9 @@ class PageController extends Controller
     }
 
     public function blogIndex()
-    { 
+    {
 
-       $posts = Post::with('category')->get();
-
-      
+        $posts = Post::with('category')->paginate(6);
         return view('visitor.blog.index', compact('posts'));
     }
 
@@ -50,13 +48,9 @@ class PageController extends Controller
         return view('visitor.blog.category', compact('category'));
     }
 
-    public function blogDetail($id)
+    public function blogDetail(POST $post)
     {
-        $images = PostImage::find($id);
-        $posts = Post::find($id);
-        $categories = PostCategory::find($id);
-
-        
+        return $post;
     }
 
     /**
