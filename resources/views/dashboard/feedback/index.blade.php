@@ -1,5 +1,5 @@
 @extends('layouts.dashboard.master')
-@section('title', 'FAQ')
+@section('title', 'Feedback | Lestari Jendela')
 @push('styles')
     <link href="/assets/dashboard/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
 @endpush

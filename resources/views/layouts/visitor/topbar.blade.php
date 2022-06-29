@@ -57,15 +57,19 @@
                         </li>
 
                         <li class="">
-                            <a href="blog.html">Blog</a>
+                            <a href="/blog">Blog</a>
                         </li>
 
                         <li class="{{ request()->is('home/about*') ? 'active-menu' : '' }} }}">
-                            <a href="about.html">About</a>
+                            <a href="/about">About</a>
                         </li>
 
                         <li class="{{ request()->is('home/contact*') ? 'active-menu' : '' }} }}">
                             <a href="/profile-contact">Contact</a>
+                        </li>
+
+                        <li class="{{ request()->is('home/contact*') ? 'active-menu' : '' }} }}">
+                            <a href="/faq-visitor">FAQ</a>
                         </li>
                     </ul>
                 </div>

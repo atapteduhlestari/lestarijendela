@@ -4,6 +4,11 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Profile;
+use App\Models\PostCategory;
+use App\Models\PostImage;
+use App\Models\Post;
+use App\Models\Faq;
+
 
 class PageController extends Controller
 {
@@ -16,6 +21,42 @@ class PageController extends Controller
     {
         $contacts = Profile::get();
         return view('visitor.contact.index', compact('contacts'));
+    }
+
+    public function aboutIndex()
+    {
+        $abouts = Profile::get();
+        return view('visitor.about.index', compact('abouts'));
+    }
+
+    public function blogIndex()
+    { 
+
+       $posts = Post::with('category')->get();
+
+      
+        return view('visitor.blog.index', compact('posts'));
+    }
+
+    public function faqIndex()
+    {
+        $faqs = Faq::get();
+
+        return view('visitor.faq.index', compact('faqs'));
+    }
+
+    public function categoryBlog(PostCategory $category)
+    {
+        return view('visitor.blog.category', compact('category'));
+    }
+
+    public function blogDetail($id)
+    {
+        $images = PostImage::find($id);
+        $posts = Post::find($id);
+        $categories = PostCategory::find($id);
+
+        
     }
 
     /**
