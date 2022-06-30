@@ -26,6 +26,11 @@ class Product extends Model
         return $this->hasMany(ProductImage::class, 'product_id');
     }
 
+    public function documents()
+    {
+        return $this->hasMany(ProductFile::class, 'product_id');
+    }
+
     public function getTakeImageAttribute()
     {
         return "/storage/" . $this->url;
@@ -63,10 +68,10 @@ class Product extends Model
         });
     }
 
-    public function relatedProduct($id)
+    public function relatedProduct($categoryId, $id)
     {
-        return Product::where('category_id', $id)
-            ->where('id', '<>', $id)
+        return Product::where('category_id', $categoryId)
+            ->where('id', '!=', $id)
             ->take(4)->get();
     }
 }

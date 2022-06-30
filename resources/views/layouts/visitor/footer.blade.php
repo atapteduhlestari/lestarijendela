@@ -41,28 +41,28 @@
                 <ul>
                     <li class="p-b-10">
                         <a href="#" class="stext-112 cl7 hov-cl1 trans-04">
-                            <i class="fa fa-caret-right"></i>
+                            <i class="zmdi zmdi-circle"></i>
                             PRODUCT
                         </a>
                     </li>
 
                     <li class="p-b-10">
                         <a href="#" class="stext-112 cl7 hov-cl1 trans-04">
-                            <i class="fa fa-caret-right"></i>
+                            <i class="zmdi zmdi-circle"></i>
                             UPVC
                         </a>
                     </li>
 
                     <li class="p-b-10">
                         <a href="#" class="stext-112 cl7 hov-cl1 trans-04">
-                            <i class="fa fa-caret-right"></i>
+                            <i class="zmdi zmdi-circle"></i>
                             ALUMINIUM
                         </a>
                     </li>
 
                     <li class="p-b-10">
                         <a href="#" class="stext-112 cl7 hov-cl1 trans-04">
-                            <i class="fa fa-caret-right"></i>
+                            <i class="zmdi zmdi-circle"></i>
                             GALLERY
                         </a>
                     </li>
@@ -76,14 +76,14 @@
 
                 <li class="p-b-10">
                     <a href="#" class="stext-112 cl7 hov-cl1 trans-04">
-                        <i class="fa fa-caret-right"></i>
+                        <i class="zmdi zmdi-circle"></i>
                         ABOUT
                     </a>
                 </li>
 
                 <li class="p-b-10">
                     <a href="#" class="stext-112 cl7 hov-cl1 trans-04">
-                        <i class="fa fa-caret-right"></i>
+                        <i class="zmdi zmdi-circle"></i>
                         FAQs
                     </a>
                 </li>
@@ -98,7 +98,7 @@
                     </a>
 
                     <a href="#" class="fs-18 cl7 hov-cl1 trans-04 m-r-16">
-                        <i class="fa fa-pinterest-p"></i>
+                        <i class="fa fa-youtube"></i>
                     </a>
                 </div>
             </div>
