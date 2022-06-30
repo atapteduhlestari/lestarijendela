@@ -35,18 +35,18 @@
                 </div>
                 <div class="col-md-6">
                         <label for="title">Telfon</label>
-                        <input type="text" name="no_tlp" id="title" class="form-control" value="{{ old('no_tlp' ,$profile->no_tlp)}}" >
+                        <input type="text" name="no_tlp" id="title" class="form-control @error('no_tlp') is-invalid @enderror" value="{{ old('no_tlp' ,$profile->no_tlp)}}" >
                 </div>
 
                 <div class="col-md-6">
                     <label for="title">Address</label>
-                    <input type="text" name="address" id="title" class="form-control" value="{{ old('address' ,$profile->address)}}" >
+                    <input type="text" name="address" id="title" class="form-control @error('address') is-invalid @enderror" value="{{ old('address' ,$profile->address)}}" >
             </div>
             </div>
             <div class="row">
                 <div class="col-md-6 mb-3">
                     <label for="deskripsi">deskripsiription</label>
-                    <textarea class="form-control" id="deskripsi" name="description" cols="10"
+                    <textarea class="form-control @error('description') is-invalid @enderror" id="deskripsi" name="description" cols="10"
                         rows="5">{{ old('description' ,$profile->description) }}</textarea>
                 </div>
             </div>
