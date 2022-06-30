@@ -16,12 +16,11 @@ class HomeController extends Controller
         $sliders = Slider::get();
         $products = Product::take(4)->get();
         $posts = Post::take(3)->get();
-        $profile = Profile::first();
 
         return view('home', compact(
             'sliders',
             'products',
-            'posts'
+            'posts',
         ));
     }
 

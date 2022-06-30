@@ -9,19 +9,18 @@
                 <img class="img-responsive" height="75" src="/assets/img/logo.png" alt="">
                 <p class="stext-107 cl7">
                     Any questions? Let us know in <br>
-                    Jababeka 1, Jl. Jababeka XVIIB Unit U20A
-                    Harja Mekar, Cikarang Utara, Bekasi, 13450 Indonesia.
+                    {{ $profile->address }}
                 </p>
                 <table class="table-borderless stext-107 cl7" width="100%">
                     <tr>
                         <td><i class="fa fa-phone"></i></td>
                         <td>:&nbsp;</td>
-                        <td>(021) 8646-506</td>
+                        <td>{{ $profile->no_tlp }}</td>
                     </tr>
                     <tr>
                         <td><i class="fa fa-envelope-open"></i></td>
                         <td>:&nbsp;</td>
-                        <td>info@lestarijendela.com</td>
+                        <td>{{ $profile->email }}</td>
                     </tr>
                     <tr>
                         <td><i class="fa fa-chrome"></i></td>

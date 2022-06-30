@@ -43,7 +43,7 @@ class ProfileController extends Controller
         $request->validate([
             'name' => 'required',
             'email' => 'required|email:rfc',
-            'no_tlp' => 'required|numeric',
+            'no_tlp' => 'required',
             'address' => 'required',
             'description' => 'required',
         ]);
@@ -91,7 +91,7 @@ class ProfileController extends Controller
         $request->validate([
             'name' => 'required',
             'email' => 'required|email:rfc',
-            'no_tlp' => 'required|numeric',
+            'no_tlp' => 'required',
             'address' => 'required',
             'description' => 'required',
         ]);
@@ -100,7 +100,7 @@ class ProfileController extends Controller
 
         $profile->update($data);
 
-        return redirect('profile')->with('success', 'Success!');
+        return redirect()->back()->with('success', 'Success!');
     }
 
     /**

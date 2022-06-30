@@ -116,9 +116,9 @@
                         </div>
                         <div class="row mt-3">
                             <div class="col-md-6 mb-3">
-                                <label for="deskripsi">description</label>
+                                <label for="deskripsi">Description</label>
                                 <textarea class="form-control @error('description') is-invalid @enderror" id="deskripsi" name="description"
-                                    cols="10" rows="5"> {{ 'description' }}</textarea>
+                                    cols="10" rows="5"> {{ old('description') }}</textarea>
                             </div>
                         </div>
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
