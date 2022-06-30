@@ -9,7 +9,7 @@
  <div class="container-fluid">
 
     <!-- Page Heading -->
-    <h1 class="h3 mb-2 text-gray-800">Highlight</h1>
+    <h1 class="h3 mb-2 text-gray-800">Highlight Slider</h1>
     <div class="my-4">
         <div class="d-flex">
             <div class="flex-grow-1">
@@ -108,16 +108,16 @@
                     <div class="row">
                         <div class="col-md-6 mb-3">
                             <label for="category_id">Heading</label>
-                            <input type="text" class="form-control @error('heading') is-invalid @enderror" name="heading">
+                            <input type="text" class="form-control @error('heading') is-invalid @enderror" name="heading" value="{{old('heading')}}">
                         </div>
                         <div class="col-md-6 mb-3">
                             <label for="category_id">Images</label>
-                            <input type="file" class="form-control @error('url') is-invalid @enderror" name="url">
+                            <input type="file" class="form-control @error('url') is-invalid @enderror" name="url" value="{{old('url')}}">
                         </div>
                         <div class="col-md-6 mb-3">
                             <div class="form-group">
                                 <label for="category_id">Description</label>
-                                <textarea name="description" id="" class="form-control @error('description') is-invalid @enderror"></textarea>
+                                <textarea name="description" id="" class="form-control @error('description') is-invalid @enderror">{{old('description')}}</textarea>
                             </div>
                         </div>
                     </div>
