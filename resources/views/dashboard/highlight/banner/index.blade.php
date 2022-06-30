@@ -7,7 +7,7 @@
 
 <div class="container-fluid">
 
-    <h1>Banners</h1>
+    <h1>Highlight Banners</h1>
 
     <div class="my-4">
         <div class="d-flex">
@@ -17,8 +17,8 @@
                     Add <i class="fas fa-plus-circle"></i>
                 </button>
             </div>
-            <a href="/banner" class="btn btn-info btn-sm mr-1">
-                Banners
+            <a href="/highlight" class="btn btn-info btn-sm mr-1">
+                slider
             </a>
             {{-- <a href="/product-sub-category" class="btn btn-success btn-sm">
                 Sub Category
@@ -103,16 +103,16 @@ aria-labelledby="addNewRecordLabel" aria-hidden="true">
                 <div class="row">
                     <div class="col-md-6 mb-3">
                         <label for="category_id">Heading</label>
-                        <input type="text" class="form-control @error('heading') is-invalid @enderror" name="heading">
+                        <input type="text" class="form-control @error('heading') is-invalid @enderror" name="heading" value="{{old('heading')}}">
                     </div>
                     <div class="col-md-6 mb-3">
                         <label for="category_id">Images</label>
-                        <input type="file" class="form-control @error('url') is-invalid @enderror" name="url">
+                        <input type="file" class="form-control @error('url') is-invalid @enderror" name="url" value="{{old('url')}}">
                     </div>
                     <div class="col-md-6 mb-3">
                         <div class="form-group">
                             <label for="category_id">Description</label>
-                            <textarea name="description" id="" class="form-control @error('description') is-invalid @enderror"></textarea>
+                            <textarea name="description" id="" class="form-control @error('description') is-invalid @enderror"> {{old('description')}} </textarea>
                         </div>
                     </div>
                 </div>

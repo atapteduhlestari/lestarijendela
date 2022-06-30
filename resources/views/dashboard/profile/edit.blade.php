@@ -27,27 +27,27 @@
                 <div class="col-md-6 mb-3">
                     <label for="">Profile Name</label>
                    <input type="text" class="form-control  @error('name') is-invalid @enderror" 
-                   name="name" value="{{$profile->name}}" >
+                   name="name" value="{{ old('name' ,$profile->name)}}" >
                 </div>
                 <div class="col-md-6 mb-3">
                     <label for="category_id">Email</label>
-                   <input type="email" class="form-control" name="email" value="{{$profile->email}}" >
+                   <input type="email" class="form-control" name="email" value="{{ old('email' ,$profile->email)}}" >
                 </div>
                 <div class="col-md-6">
                         <label for="title">Telfon</label>
-                        <input type="text" name="no_tlp" id="title" class="form-control" value="{{$profile->no_tlp}}" >
+                        <input type="text" name="no_tlp" id="title" class="form-control" value="{{ old('no_tlp' ,$profile->no_tlp)}}" >
                 </div>
 
                 <div class="col-md-6">
                     <label for="title">Address</label>
-                    <input type="text" name="address" id="title" class="form-control" value="{{$profile->address}}" >
+                    <input type="text" name="address" id="title" class="form-control" value="{{ old('address' ,$profile->address)}}" >
             </div>
             </div>
             <div class="row">
                 <div class="col-md-6 mb-3">
                     <label for="deskripsi">deskripsiription</label>
                     <textarea class="form-control" id="deskripsi" name="description" cols="10"
-                        rows="5">{{ $profile->description }}</textarea>
+                        rows="5">{{ old('description' ,$profile->description) }}</textarea>
                 </div>
             </div>
             <button type="submit" id="btnSubmit" class="btn btn-primary">Update</button>

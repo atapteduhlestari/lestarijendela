@@ -99,11 +99,11 @@
                                 <div class="col-md-6 mb-3">
                                     <label for="">QUESTION</label>
                                     <input type="text" class="form-control @error('question') is-invalid @enderror"
-                                        name="question">
+                                        name="question" value="{{old('question')}}" >
                                 </div>
                                 <div class="col-md-6 mb-3">
                                     <label for="category_id">ANSWER</label>
-                                    <textarea type="email" class="form-control @error('answer') is-invalid @enderror" name="answer"> </textarea>
+                                    <textarea type="email" class="form-control @error('answer') is-invalid @enderror" name="answer"> {{old('answer')}} </textarea>
                                 </div>
 
                             </div>

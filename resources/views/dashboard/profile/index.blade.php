@@ -93,30 +93,32 @@
                             <div class="col-md-6 mb-3">
                                 <label for="">Profile Name</label>
                                 <input type="text" class="form-control  @error('name') is-invalid @enderror"
-                                    name="name">
+                                    name="name" value="{{ old('name') }}">
                             </div>
                             <div class="col-md-6 mb-3">
                                 <label for="category_id">Email</label>
                                 <input type="email" class="form-control @error('email') is-invalid @enderror"
-                                    name="email">
+                                    name="email" value="{{ old('email') }}">
                             </div>
                             <div class="col-md-6">
                                 <label for="title">Telfon</label>
                                 <input type="text" name="no_tlp" id="title"
-                                    class="form-control @error('no_tlp') is-invalid @enderror">
+                                    class="form-control @error('no_tlp') is-invalid @enderror"
+                                    value="{{ old('no_tlp') }}">
                             </div>
 
                             <div class="col-md-6">
                                 <label for="title">Address</label>
                                 <input type="text" name="address" id="title"
-                                    class="form-control @error('address') is-invalid @enderror">
+                                    class="form-control @error('address') is-invalid @enderror"
+                                    value="{{ old('address') }}">
                             </div>
                         </div>
                         <div class="row mt-3">
                             <div class="col-md-6 mb-3">
-                                <label for="deskripsi">deskripsiription</label>
-                                <textarea class="form-control @error('description') is-invalid @enderror" id="deskripsi" name="description "
-                                    cols="10" rows="5"></textarea>
+                                <label for="deskripsi">description</label>
+                                <textarea class="form-control @error('description') is-invalid @enderror" id="deskripsi" name="description"
+                                    cols="10" rows="5"> {{ 'description' }}</textarea>
                             </div>
                         </div>
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>

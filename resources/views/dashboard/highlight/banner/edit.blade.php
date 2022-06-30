@@ -5,9 +5,9 @@
 @endpush
 @section('content')
 
-<div class="container">
+<div class="container-fluid">
 
-    <a href="/highlight" class="btn btn-outline-success text-xs mb-3"> 
+    <a href="/banner" class="btn btn-outline-success text-xs mb-3"> 
         <i class="far fa-arrow-alt-circle-left"></i> Back to Table </a>
 </div>
 
@@ -29,15 +29,15 @@
                     <input type="hidden" value="{{$banner->id}}">
                     <div class="col-md-6 mb-3">
                         <label for="category_id">Heading</label>
-                        <input type="text" class="form-control @error('heading') is-invalid @enderror" name="heading" value="{{$banner->heading}}">
+                        <input type="text" class="form-control @error('heading') is-invalid @enderror" name="heading" value="{{old('heading' ,$banner->heading)}}">
                     </div>
                     <div class="col-md-6 mb-3">
                         <label for="category_id">Images</label>
-                        <input type="file" class="form-control @error('url') is-invalid @enderror" name="url">
+                        <input type="file" class="form-control @error('url') is-invalid @enderror" name="url" value="{{old('url', $banner->url)}}">
                     </div>
                     <div class="col-md-6 mb-3">
                             <label for="category_id">Description</label>
-                            <textarea name="description" id="" class="form-control @error('description') is-invalid @enderror"> {{$banner->description}} </textarea>
+                            <textarea name="description" id="" class="form-control @error('description') is-invalid @enderror"> {{old('description' ,$banner->description)}} </textarea>
                     </div>
                     <div class="col-md-6 mb-3">
                         <label for="category_id">Images</label>
