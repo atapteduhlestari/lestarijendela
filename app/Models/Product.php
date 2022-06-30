@@ -63,10 +63,10 @@ class Product extends Model
         });
     }
 
-    public function relatedProduct($id)
+    public function relatedProduct($categoryId, $id)
     {
-        return Product::where('category_id', $id)
-            ->where('id', '<>', $id)
+        return Product::where('category_id', $categoryId)
+            ->where('id', '!=', $id)
             ->take(4)->get();
     }
 }

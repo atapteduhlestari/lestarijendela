@@ -70,92 +70,60 @@
                         <h4 class="mtext-105 cl2 js-name-detail p-b-5">
                             {{ $product->title }}
                         </h4>
+
+                        <p class="stext-102 cl3 p-t-23">
+                            uPVC stands for unplasticised polyvinyl chloride, it is a strong and low-maintenance but
+                            lightweight plastic building material.
+                        </p>
+
                     </div>
+                </div>
+            </div>
+            <div class="bor10 m-t-50 p-t-43 p-b-40">
+                <!-- Tab01 -->
+                <div class="tab01">
+                    <!-- Nav tabs -->
+                    <ul class="nav nav-tabs" role="tablist">
+                        <li class="nav-item p-b-10">
+                            <a class="nav-link active" data-toggle="tab" href="#description" role="tab">Description</a>
+                        </li>
 
-                    <div class="bor10 m-t-10 p-t-43 p-b-40">
-                        <!-- Tab01 -->
-                        <div class="tab01">
-                            <!-- Nav tabs -->
-                            <ul class="nav nav-tabs" role="tablist">
-                                <li class="nav-item p-b-10">
-                                    <a class="nav-link active" data-toggle="tab" href="#description"
-                                        role="tab">Description</a>
-                                </li>
+                        <li class="nav-item p-b-10">
+                            <a class="nav-link" data-toggle="tab" href="#spesification" role="tab">
+                                Spesification
+                            </a>
+                        </li>
 
-                                <li class="nav-item p-b-10">
-                                    <a class="nav-link" data-toggle="tab" href="#spesification" role="tab">
-                                        Spesification
-                                    </a>
-                                </li>
-                            </ul>
+                        <li class="nav-item p-b-10">
+                            <a class="nav-link" data-toggle="tab" href="#downloads" role="tab">Download</a>
+                        </li>
+                    </ul>
 
-                            <!-- Tab panes -->
-                            <div class="tab-content p-t-43">
-                                <!-- - -->
-                                <div class="tab-pane fade show active" id="description" role="tabpanel">
-                                    <div class="how-pos2 p-lr-15-md">
-                                        <div class="stext-102 cl6">
-                                            {!! $product->deskripsi !!}
-                                        </div>
-                                    </div>
-                                </div>
+                    <!-- Tab panes -->
+                    <div class="tab-content p-t-43">
+                        <!-- - -->
+                        <div class="tab-pane fade show active" id="description" role="tabpanel">
+                            <div class="how-pos2 p-lr-15-md">
+                                <p class="stext-102 cl6">
+                                    {!! $product->deskripsi !!}
+                                </p>
+                            </div>
+                        </div>
 
-                                <!-- - -->
-                                <div class="tab-pane fade" id="spesification" role="tabpanel">
-                                    <div class="row mx-auto">
-                                        <div class="col">
-                                            <ul class="p-lr-28 p-lr-15-sm">
-                                                <li class="flex-w flex-t p-b-7">
-                                                    <span class="stext-102 cl3 size-205">
-                                                        Weight
-                                                    </span>
+                        <!-- - -->
+                        <div class="tab-pane fade" id="spesification" role="tabpanel">
+                            <div class="how-pos2 p-lr-15-md">
+                                <p class="stext-102 cl6">
+                                    {!! $product->spesifikasi !!}
+                                </p>
+                            </div>
+                        </div>
 
-                                                    <span class="stext-102 cl6 size-206">
-                                                        0.79 kg
-                                                    </span>
-                                                </li>
-
-                                                <li class="flex-w flex-t p-b-7">
-                                                    <span class="stext-102 cl3 size-205">
-                                                        Dimensions
-                                                    </span>
-
-                                                    <span class="stext-102 cl6 size-206">
-                                                        110 x 33 x 100 cm
-                                                    </span>
-                                                </li>
-
-                                                <li class="flex-w flex-t p-b-7">
-                                                    <span class="stext-102 cl3 size-205">
-                                                        Materials
-                                                    </span>
-
-                                                    <span class="stext-102 cl6 size-206">
-                                                        60% cotton
-                                                    </span>
-                                                </li>
-
-                                                <li class="flex-w flex-t p-b-7">
-                                                    <span class="stext-102 cl3 size-205">
-                                                        Color
-                                                    </span>
-
-                                                    <span class="stext-102 cl6 size-206">
-                                                        Black, Blue, Grey, Green, Red, White
-                                                    </span>
-                                                </li>
-
-                                                <li class="flex-w flex-t p-b-7">
-                                                    <span class="stext-102 cl3 size-205">
-                                                        Size
-                                                    </span>
-
-                                                    <span class="stext-102 cl6 size-206">
-                                                        XL, L, M, S
-                                                    </span>
-                                                </li>
-                                            </ul>
-                                        </div>
+                        <!-- - -->
+                        <div class="tab-pane fade" id="downloads" role="tabpanel">
+                            <div class="row">
+                                <div class="col-sm-10 col-md-8 col-lg-6 m-lr-auto">
+                                    <div class="p-b-30 m-lr-15-sm">
                                     </div>
                                 </div>
                             </div>
@@ -164,6 +132,7 @@
                 </div>
             </div>
         </div>
+
     </section>
 
 
@@ -179,7 +148,7 @@
             <!-- Slide2 -->
             <div class="wrap-slick2">
                 <div class="slick2">
-                    @foreach ($product->relatedProduct($product->category_id) as $related)
+                    @forelse ($product->relatedProduct($product->category_id, $product->id) as $related)
                         <div class="item-slick2 p-l-15 p-r-15 p-t-15 p-b-15">
                             <!-- Block2 -->
                             <div class="block2">
@@ -205,11 +174,14 @@
                                 </div>
                             </div>
                         </div>
-                    @endforeach
+                    @empty
+                        <div class="p-b-35 isotope-item">
+                            No Items
+                        </div>
+                    @endforelse
 
                 </div>
             </div>
         </div>
     </section>
-
 @endsection

@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Post;
 use App\Models\Slider;
 use App\Models\Product;
+use App\Models\Profile;
 use App\Models\ProductCategory;
 use App\Models\ProductSubCategory;
 
@@ -13,10 +15,13 @@ class HomeController extends Controller
     {
         $sliders = Slider::get();
         $products = Product::take(4)->get();
+        $posts = Post::take(3)->get();
+        $profile = Profile::first();
 
         return view('home', compact(
             'sliders',
-            'products'
+            'products',
+            'posts'
         ));
     }
 

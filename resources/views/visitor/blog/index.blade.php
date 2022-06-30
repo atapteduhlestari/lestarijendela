@@ -46,7 +46,7 @@
                                     <div class="flex-w flex-sb-m p-t-10">
                                         <span class="flex-w flex-m stext-111 cl2 p-r-30 m-tb-10">
                                             <span>
-                                                <span class="cl4">By</span> Admin
+                                                <span class="cl4">By</span> {{ auth()->user()->name ?? 'Roofie' }}
                                                 {{-- <span class="cl12 m-l-4 m-r-6">|</span> --}}
                                             </span>
                                         </span>

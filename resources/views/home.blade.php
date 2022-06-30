@@ -39,11 +39,11 @@
             </div>
             <div class="row isotope-grid">
                 @foreach ($products as $product)
-                    <div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item">
+                    <div class="col-sm-6 col-md-4 col-lg-4 p-b-35 isotope-item">
                         <!-- Block2 -->
                         <div class="block2">
                             <div class="block2-pic hov-img0">
-                                <img src="{{ $product->firstImage }}" class="img-responsive h-200" alt="IMG-PRODUCT">
+                                <img src="{{ $product->firstImage }}" class="img-responsive h-250" alt="IMG-PRODUCT">
 
                                 <a href="/home/product/{{ $product->slug }}"
                                     class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04">
@@ -64,155 +64,74 @@
                         </div>
                     </div>
                 @endforeach
-
+            </div>
+            <!-- Load more -->
+            <div class="flex-c-m flex-w w-full p-t-10">
+                <a href="#" class="flex-c-m stext-101 cl5 size-103 bg2 bor1 hov-btn1 p-lr-15 trans-04">
+                    Load More
+                </a>
             </div>
         </div>
     </section>
 
     <!-- Blog -->
-    <section class="sec-blog bg0 p-t-10 p-b-90">
+    <section class="sec-blog bg0 p-t-100 p-b-90">
         <div class="container">
             <div class="p-b-66">
                 <h3 class="ltext-105 cl5 txt-center respon1">
-                    Our Blogs
+                    Blogs
                 </h3>
             </div>
 
             <div class="row">
-                <div class="col-sm-6 col-md-4 p-b-40">
-                    <div class="blog-item">
-                        <div class="hov-img0">
-                            <a href="blog-detail.html">
-                                <img loading="lazy" src="/assets/visitor/images/blog-01.jpg" alt="IMG-BLOG">
-                            </a>
-                        </div>
-
-                        <div class="p-t-15">
-                            <div class="stext-107 flex-w p-b-14">
-                                <span class="m-r-3">
-                                    <span class="cl4">
-                                        By
-                                    </span>
-
-                                    <span class="cl5">
-                                        Nancy Ward
-                                    </span>
-                                </span>
-
-                                <span>
-                                    <span class="cl4">
-                                        on
-                                    </span>
-
-                                    <span class="cl5">
-                                        July 22, 2017
-                                    </span>
-                                </span>
+                @forelse ($posts as $post)
+                    <div class="col-sm-6 col-md-4 p-b-40">
+                        <div class="blog-item">
+                            <div class="hov-img0">
+                                <a href="/home/blog/{{ $post->slug }}">
+                                    <img loading="lazy" src="{{ $post->firstImage }}" class="img-responsive h-250"
+                                        alt="IMG-BLOG">
+                                </a>
                             </div>
 
-                            <h4 class="p-b-12">
-                                <a href="blog-detail.html" class="mtext-101 cl2 hov-cl1 trans-04">
-                                    8 Inspiring Ways to Wear Dresses in the Winter
-                                </a>
-                            </h4>
+                            <div class="p-t-15">
+                                <div class="stext-107 flex-w p-b-14">
+                                    <span class="m-r-3">
+                                        <span class="cl4">
+                                            By
+                                        </span>
 
-                            <p class="stext-108 cl6">
-                                Duis ut velit gravida nibh bibendum commodo. Suspendisse pellentesque mattis augue id
-                                euismod. Interdum et male-suada fames
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-sm-6 col-md-4 p-b-40">
-                    <div class="blog-item">
-                        <div class="hov-img0">
-                            <a href="blog-detail.html">
-                                <img loading="lazy" src="/assets/visitor/images/blog-02.jpg" alt="IMG-BLOG">
-                            </a>
-                        </div>
-
-                        <div class="p-t-15">
-                            <div class="stext-107 flex-w p-b-14">
-                                <span class="m-r-3">
-                                    <span class="cl4">
-                                        By
+                                        <span class="cl5">
+                                            {{ auth()->user()->name ?? 'Roofie' }}
+                                        </span>
                                     </span>
 
-                                    <span class="cl5">
-                                        Nancy Ward
-                                    </span>
-                                </span>
+                                    <span>
+                                        <span class="cl4">
+                                            on
+                                        </span>
 
-                                <span>
-                                    <span class="cl4">
-                                        on
+                                        <span class="cl5">
+                                            {{ $post->created_at->format('F d, Y') }}
+                                        </span>
                                     </span>
+                                </div>
 
-                                    <span class="cl5">
-                                        July 18, 2017
-                                    </span>
-                                </span>
+                                <h4 class="p-b-12">
+                                    <a href="/home/blog/{{ $post->slug }}" class="mtext-101 cl2 hov-cl1 trans-04">
+                                        {{ $post->title }}
+                                    </a>
+                                </h4>
+
+                                <p class="stext-108 cl6">
+                                    {{ limitString(strip_tags($post->deskripsi), 125, '...') }}
+                                </p>
                             </div>
-
-                            <h4 class="p-b-12">
-                                <a href="blog-detail.html" class="mtext-101 cl2 hov-cl1 trans-04">
-                                    The Great Big List of Men’s Gifts for the Holidays
-                                </a>
-                            </h4>
-
-                            <p class="stext-108 cl6">
-                                Nullam scelerisque, lacus sed consequat laoreet, dui enim iaculis leo, eu viverra ex nulla
-                                in tellus. Nullam nec ornare tellus, ac fringilla lacus. Ut sit ame
-                            </p>
                         </div>
                     </div>
-                </div>
+                @empty
+                @endforelse
 
-                <div class="col-sm-6 col-md-4 p-b-40">
-                    <div class="blog-item">
-                        <div class="hov-img0">
-                            <a href="blog-detail.html">
-                                <img loading="lazy" src="/assets/visitor/images/blog-03.jpg" alt="IMG-BLOG">
-                            </a>
-                        </div>
-
-                        <div class="p-t-15">
-                            <div class="stext-107 flex-w p-b-14">
-                                <span class="m-r-3">
-                                    <span class="cl4">
-                                        By
-                                    </span>
-
-                                    <span class="cl5">
-                                        Nancy Ward
-                                    </span>
-                                </span>
-
-                                <span>
-                                    <span class="cl4">
-                                        on
-                                    </span>
-
-                                    <span class="cl5">
-                                        July 2, 2017
-                                    </span>
-                                </span>
-                            </div>
-
-                            <h4 class="p-b-12">
-                                <a href="blog-detail.html" class="mtext-101 cl2 hov-cl1 trans-04">
-                                    5 Winter-to-Spring Fashion Trends to Try Now
-                                </a>
-                            </h4>
-
-                            <p class="stext-108 cl6">
-                                Proin nec vehicula lorem, a efficitur ex. Nam vehicula nulla vel erat tincidunt, sed
-                                hendrerit ligula porttitor. Fusce sit amet maximus nunc
-                            </p>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
     </section>
