@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Feedback;
+
+use App\Notifications\NewFeedbackNotification;
+
 class FeedbackVisitorController extends Controller
 {
     /**
@@ -41,8 +44,16 @@ class FeedbackVisitorController extends Controller
             ],
     );
 
+        $feedback = new Feedback();
+        $feedback->name = $request->name;
+        $feedback->description = $request->description;
         $data = $request->all();
         Feedback::create($data);
+
+        $notification = Feedback::first();
+
+        $notification->notify(new NewFeedbackNotification($feedback));
+        dd('pesan berhasil dikirim', 'sudah sampai ke admin');
         return redirect()->back()->with('success', 'Message send. Thank you');
     }
 
