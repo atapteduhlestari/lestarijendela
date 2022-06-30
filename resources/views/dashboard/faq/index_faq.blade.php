@@ -8,7 +8,7 @@
     <div class="container-fluid">
 
         <!-- Page Heading -->
-        <h1 class="h3 mb-2 text-gray-800">FAQ</h1>
+        <h1 class="h3 mb-2 text-gray-800">FAQs</h1>
         <div class="my-4">
             <div class="d-flex">
                 <div class="flex-grow-1">
@@ -103,7 +103,7 @@
                                 </div>
                                 <div class="col-md-6 mb-3">
                                     <label for="category_id">ANSWER</label>
-                                    <textarea type="email" class="form-control" name="answer"> </textarea>
+                                    <textarea type="email" class="form-control @error('answer') is-invalid @enderror" name="answer"> </textarea>
                                 </div>
 
                             </div>

@@ -41,6 +41,10 @@ class ProfileController extends Controller
     {
         $request->validate([
             'name' => 'required',
+            'email' => 'required|email:rfc',
+            'description' => 'required',
+            'no_tlp' => 'required|numeric',
+            'address' => 'required'
         ]);
 
         $data = $request->all();
@@ -81,7 +85,11 @@ class ProfileController extends Controller
     public function update(Request $request, Profile $profile)
     {
         $request->validate([
-            'name' => 'required'
+            'name' => 'required',
+            'email' => 'required|email:rfc',
+            'description' => 'required',
+            'no_tlp' => 'required|numeric',
+            'address' => 'required'
         ]);
 
         $data = $request->all();
