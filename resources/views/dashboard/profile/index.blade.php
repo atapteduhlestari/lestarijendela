@@ -17,7 +17,7 @@
                         Add <i class="fas fa-plus-circle"></i>
                     </button>
                 </div>
-               
+
             </div>
         </div>
 
@@ -39,8 +39,8 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach($profiles as $profile)
-                                   <tr>
+                            @foreach ($profiles as $profile)
+                                <tr>
                                     <td>{{ $loop->iteration }}</td>
                                     <td>{{ $profile->name }}</td>
                                     <td>{{ $profile->email }}</td>
@@ -48,16 +48,16 @@
                                     <td>
                                         <div class="d-flex justify-content-around">
                                             <div>
-                                                <a title="Edit Data" href="/profile/{{$profile->id}}/edit"
+                                                <a title="Edit Data" href="/profile/{{ $profile->id }}/edit"
                                                     class="btn btn-outline-dark text-xs">Edit</a>
                                             </div>
                                             <div>
-                                                <form action="/profile/{{$profile->id}}" method="post" id="deleteForm">
+                                                <form action="/profile/{{ $profile->id }}" method="post" id="deleteForm">
                                                     @csrf
                                                     @method('delete')
                                                     <button title="Delete Data" class="btn btn-outline-danger text-xs"
                                                         onclick="return false" id="deleteButton"
-                                                        data-id="{{$profile->id}}">
+                                                        data-id="{{ $profile->id }}">
                                                         <i class="fas fa-trash-alt"></i>
                                                     </button>
                                                 </form>
@@ -65,7 +65,7 @@
                                         </div>
                                     </td>
                                 </tr>
-                          @endforeach
+                            @endforeach
                         </tbody>
                     </table>
                 </div>
@@ -92,28 +92,31 @@
                         <div class="row">
                             <div class="col-md-6 mb-3">
                                 <label for="">Profile Name</label>
-                               <input type="text" class="form-control  @error('name') is-invalid @enderror" 
-                               name="name" >
+                                <input type="text" class="form-control  @error('name') is-invalid @enderror"
+                                    name="name">
                             </div>
                             <div class="col-md-6 mb-3">
                                 <label for="category_id">Email</label>
-                               <input type="email" class="form-control" name="email">
+                                <input type="email" class="form-control @error('email') is-invalid @enderror"
+                                    name="email">
                             </div>
                             <div class="col-md-6">
-                                    <label for="title">Telfon</label>
-                                    <input type="text" name="no_tlp" id="title" class="form-control" >
+                                <label for="title">Telfon</label>
+                                <input type="text" name="no_tlp" id="title"
+                                    class="form-control @error('no_tlp') is-invalid @enderror">
                             </div>
 
                             <div class="col-md-6">
                                 <label for="title">Address</label>
-                                <input type="text" name="address" id="title" class="form-control" >
+                                <input type="text" name="address" id="title"
+                                    class="form-control @error('address') is-invalid @enderror">
+                            </div>
                         </div>
-                        </div>
-                        <div class="row">
+                        <div class="row mt-3">
                             <div class="col-md-6 mb-3">
                                 <label for="deskripsi">deskripsiription</label>
-                                <textarea class="form-control" id="deskripsi" name="description" cols="10"
-                                    rows="5"></textarea>
+                                <textarea class="form-control @error('description') is-invalid @enderror" id="deskripsi" name="description "
+                                    cols="10" rows="5"></textarea>
                             </div>
                         </div>
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>

@@ -59,7 +59,7 @@
     <li class="nav-item {{ request()->is('faq*') ? 'active' : '' }}">
         <a class="nav-link" href="/faq">
             <i class="fas fa-chevron-right"></i>
-            <span>FAQ</span></a>
+            <span>FAQs</span></a>
     </li>
 
 

@@ -43,9 +43,14 @@ Route::middleware(['auth'])->group(function () {
     Route::resource('/product', ProductController::class);
     Route::resource('/product-category', ProductCategoryController::class);
     Route::resource('/product-sub-category', ProductSubCategoryController::class);
-    Route::get('/product-image/create/{product}', [ProductController::class, 'createImage']);
+    Route::get('/product-files/create/{product}', [ProductController::class, 'createFile']);
+
     Route::post('/product-image', [ProductController::class, 'saveImage']);
     Route::delete('/product-image/{id}', [ProductController::class, 'deleteImage']);
+
+    Route::post('/product-document', [ProductController::class, 'saveDocument']);
+    Route::delete('/product-document/{id}', [ProductController::class, 'deleteDocument']);
+    Route::get('/product-document/download/{id}', [ProductController::class, 'downloadDocument']);
 
     Route::resource('/post', PostController::class);
     Route::resource('/post-category', PostCategoryController::class);

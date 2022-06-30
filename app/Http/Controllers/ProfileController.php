@@ -18,7 +18,6 @@ class ProfileController extends Controller
 
     public function index()
     {
-
         $profiles = Profile::get();
         return view('dashboard.profile.index', compact('profiles'));
     }
@@ -44,6 +43,9 @@ class ProfileController extends Controller
         $request->validate([
             'name' => 'required',
             'email' => 'required|email:rfc',
+            'no_tlp' => 'required|numeric',
+            'address' => 'required',
+            'description' => 'required',
         ]);
 
         $data = $request->all();
@@ -87,7 +89,11 @@ class ProfileController extends Controller
     public function update(Request $request, Profile $profile)
     {
         $request->validate([
-            'name' => 'required'
+            'name' => 'required',
+            'email' => 'required|email:rfc',
+            'no_tlp' => 'required|numeric',
+            'address' => 'required',
+            'description' => 'required',
         ]);
 
         $data = $request->all();

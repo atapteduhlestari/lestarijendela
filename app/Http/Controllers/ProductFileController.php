@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\ProductFile;
 use Illuminate\Http\Request;
-use App\Models\Faq;
 
-class FaqController extends Controller
+class ProductFileController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,11 +14,7 @@ class FaqController extends Controller
      */
     public function index()
     {
-        $faqs = Faq::get();
-
-        
-
-        return view('dashboard.faq.index_faq', compact('faqs'));
+        //
     }
 
     /**
@@ -39,25 +35,16 @@ class FaqController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
-            'question' => 'required',
-            'answer' => 'required'
-        ]);
-
-        $data = $request->all();
-
-        Faq::create($data);
-
-        return redirect()->back()->with('success', 'Berhasil!');
+        //
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Models\ProductFile  $productFile
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(ProductFile $productFile)
     {
         //
     }
@@ -65,45 +52,34 @@ class FaqController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Models\ProductFile  $productFile
      * @return \Illuminate\Http\Response
      */
-    public function edit(Faq $faq)
+    public function edit(ProductFile $productFile)
     {
-        
-
-        return view('dashboard.faq.edit_faq', compact('faq'));
+        //
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \App\Models\ProductFile  $productFile
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Faq $faq)
+    public function update(Request $request, ProductFile $productFile)
     {
-        $request->validate([
-            'question' => 'required'
-        ]);
-
-        $data = $request->all();
-
-        $faq->update($data);
-        return redirect('faq')->with('success', 'Berhasil diedit');
+        //
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  \App\Models\ProductFile  $productFile
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Faq $faq)
+    public function destroy(ProductFile $productFile)
     {
-        $faq->delete();
-
-        return redirect()->back()->with('success', 'Data berhasil dihapus');
+        //
     }
 }

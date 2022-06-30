@@ -19,14 +19,14 @@ class PageController extends Controller
      */
     public function contactIndex()
     {
-        $contacts = Profile::get();
-        return view('visitor.contact.index', compact('contacts'));
+        $contact = Profile::first();
+        return view('visitor.contact.index', compact('contact'));
     }
 
     public function aboutIndex()
     {
-        $abouts = Profile::get();
-        return view('visitor.about.index', compact('abouts'));
+        $about = Profile::first();
+        return view('visitor.about.index', compact('about'));
     }
 
     public function blogIndex()
@@ -34,7 +34,6 @@ class PageController extends Controller
         $posts = Post::with('category')->paginate(6);
         $categories = PostCategory::get();
         return view('visitor.blog.index', compact('posts', 'categories'));
-
     }
 
     public function blogCategory(PostCategory $postCategory)
@@ -42,7 +41,6 @@ class PageController extends Controller
         $categories = PostCategory::get();
         $posts = $postCategory->posts()->paginate(6);
         return view('visitor.blog.index', compact('categories', 'posts'));
-      
     }
 
     public function faqIndex()
@@ -64,12 +62,10 @@ class PageController extends Controller
 
     public function create()
     {
-
     }
 
     public function store(Request $request)
     {
-        
     }
 
     public function show($id)

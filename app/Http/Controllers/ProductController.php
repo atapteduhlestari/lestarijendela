@@ -3,10 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Models\Product;
+use App\Models\ProductFile;
 use Illuminate\Support\Str;
+use App\Models\ProductImage;
 use Illuminate\Http\Request;
 use App\Models\ProductCategory;
-use App\Models\ProductImage;
 use App\Models\ProductSubCategory;
 use Illuminate\Support\Facades\Storage;
 
@@ -82,21 +83,23 @@ class ProductController extends Controller
         return redirect()->back()->with('success', 'Success!');
     }
 
-    public function createImage(Product $product)
+    public function createFile(Product $product)
     {
-        return view('dashboard.product.image.create', compact('product'));
+        return view('dashboard.product.files.createFile', compact('product'));
     }
+
 
     public function saveImage(Request $request)
     {
         $request->validate([
+            'product_id' => 'required',
             'url' => 'required|file|max:10240'
         ]);
 
         $data = $request->all();
 
-        $file = $request->file('url');
-        $imageUrl = $file->storeAs('assets/dashboard/img/product', $file->hashName());
+        $image = $request->file('url');
+        $imageUrl = $image->storeAs('assets/dashboard/product/images', $image->hashName());
         $data['url'] = $imageUrl;
 
         ProductImage::create($data);
@@ -108,6 +111,40 @@ class ProductController extends Controller
         $image = ProductImage::find($imageId);
         Storage::delete($image->url);
         $image->delete();
+
+        return redirect()->back()->with('success', 'Success!');
+    }
+
+    public function saveDocument(Request $request)
+    {
+        $request->validate([
+            'product_id' => 'required',
+            'url' => 'required|file|max:10240'
+        ]);
+
+        $data = $request->all();
+
+        $document = $request->file('url');
+        $name = $document->getClientOriginalName();
+        $ext = $document->extension();
+        $documentUrl = $document->storeAs('assets/dashboard/product/documents', $name);
+        $data['url'] = $documentUrl;
+
+        ProductFile::create($data);
+        return redirect()->back()->with('success', 'Success!');
+    }
+
+    public function downloadDocument($documentId)
+    {
+        $document = Productfile::find($documentId);
+        return Storage::download($document->url);
+    }
+
+    public function deleteDocument($documentId)
+    {
+        $document = Productfile::find($documentId);
+        Storage::delete($document->url);
+        $document->delete();
 
         return redirect()->back()->with('success', 'Success!');
     }
