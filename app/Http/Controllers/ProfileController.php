@@ -9,11 +9,13 @@ use Illuminate\Http\Request;
 
 class ProfileController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    protected $profile;
+
+    public function __construct()
+    {
+        $this->profile = Profile::first();
+    }
+
     public function index()
     {
 
@@ -41,11 +43,15 @@ class ProfileController extends Controller
     {
         $request->validate([
             'name' => 'required',
+            'email' => 'required|email:rfc',
         ]);
 
         $data = $request->all();
-        Profile::create($data);
 
+        if ($this->profile)
+            return redirect()->back()->with('warning', 'Profile Exists!');
+
+        Profile::create($data);
         return redirect()->back()->with('success', 'Success!');
     }
 
@@ -67,8 +73,8 @@ class ProfileController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function edit(Profile $profile)
-    {    
-        return view('dashboard.profile.edit',compact('profile'));
+    {
+        return view('dashboard.profile.edit', compact('profile'));
     }
 
     /**
@@ -103,7 +109,4 @@ class ProfileController extends Controller
 
         return redirect()->back()->with('success', 'Success!');
     }
-
-  
-
 }

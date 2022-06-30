@@ -54,11 +54,14 @@
                                     <td>
                                         <div class="d-flex justify-content-around">
                                             <a class="btn btn-outline-dark btn-sm"
-                                                href="/product-image/create/{{ $product->id }}">Add
-                                                Image</a>
+                                                href="/product-image/create/{{ $product->id }}">
+                                                <i class="fas fa-images"></i> Image
+                                            </a>
                                             <div>
                                                 <a title="Edit Data" href="/product/{{ $product->id }}/edit"
-                                                    class="btn btn-outline-dark btn-sm">Edit</a>
+                                                    class="btn btn-outline-dark btn-sm">
+                                                    Edit
+                                                </a>
                                             </div>
                                             <div>
                                                 <form action="/product/{{ $product->id }}" method="post" id="deleteForm">
