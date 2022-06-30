@@ -9,6 +9,8 @@ class FeedbackController extends Controller
     public function index()
     {
         $feedbacks = Feedback::get();
+     
+      
        
         return view('dashboard.feedback.index', compact('feedbacks'));
     }
@@ -26,5 +28,15 @@ class FeedbackController extends Controller
        
         $feedback->delete();
         return redirect()->back()->with('success', 'Success!');
+    }
+
+    public function saveStatus(Request $request, $id)
+    {
+        $feedback = Feedback::find($id);
+        $feedback->update(['status' => 1]);
+
+        return redirect()->back();
+
+        
     }
 }

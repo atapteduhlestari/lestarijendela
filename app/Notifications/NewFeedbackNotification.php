@@ -57,7 +57,7 @@ class NewFeedbackNotification extends Notification
     public function toArray($notifiable)
     {
         return [
-            'name' => $this->feedback->name,
+            'email' => $this->feedback->email,
             'description' => $this->feedback->description
         ];
     }
