@@ -1,7 +1,7 @@
 @extends('layouts.visitor.master')
 @section('title', 'Contact | Lestari Jendela')
 @section('content')
-<section class="bg-img1 txt-center p-lr-15 p-tb-92" style="background-image: url('assets/visitor/images/contact.png');">
+<section class="bg-img1 txt-center p-lr-15 p-tb-92" style="background-image: url('/assets/visitor/images/contact.png');">
     <h2 class="ltext-105 cl0 txt-center">
         Contact
     </h2>
@@ -18,7 +18,7 @@
 						</div>
 					@endif
 	
-					<form action="/feedback" method="POST" id="formAdd">
+					<form action="/home/feedback" method="POST" id="formAdd">
 						@csrf
 						<h4 class="mtext-105 cl2 txt-center p-b-30">
 							Send Us A Message
@@ -27,7 +27,7 @@
 						<div class="bor8 m-b-20 how-pos4-parent">
 							
 							<input class=" form-control @error('description') is-invalid @enderror stext-111 cl2 plh3 size-116 p-l-62 p-r-30" type="text" name="email" placeholder="Your Email Address">
-							<img class="how-pos4 pointer-none" src="assets/visitor/images/icons/icon-email.png" alt="ICON">
+							<img class="how-pos4 pointer-none" src="/assets/visitor/images/icons/icon-email.png" alt="ICON">
 						</div>
 							
 					

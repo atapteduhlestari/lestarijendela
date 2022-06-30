@@ -17,12 +17,14 @@
                         <!-- item blog -->
                         @foreach ($posts as $data)
                             <div class="p-b-63">
-                                <a href="/home/blog/{{ $data->slug }}" class="hov-img0 how-pos5-parent">
+                                <a href="blog-detail.html" class="hov-img0 how-pos5-parent">
                                     <img src="{{ $data->firstImage }}" alt="IMG-BLOG" class="img-responsive h-300">
+
                                     <div class="flex-col-c-m size-123 bg9 how-pos5">
                                         <span class="ltext-107 cl2 txt-center">
                                             {{ $data->created_at->format('d') }}
                                         </span>
+
                                         <span class="stext-109 cl3 txt-center">
                                             {{ $data->created_at->format('M Y') }}
                                         </span>
@@ -43,12 +45,13 @@
                                         {!! limitString($data->deskripsi, 300, '...') !!}
                                     </p>
 
-                                    <div class="flex-w flex-sb-m p-t-10">
+                                    <div class="flex-w flex-sb-m p-t-18">
                                         <span class="flex-w flex-m stext-111 cl2 p-r-30 m-tb-10">
                                             <span>
-                                                <span class="cl4">By</span> {{ auth()->user()->name ?? 'Roofie' }}
-                                                {{-- <span class="cl12 m-l-4 m-r-6">|</span> --}}
+                                                <span class="cl4">By</span> Admin
+                                                <span class="cl12 m-l-4 m-r-6">|</span>
                                             </span>
+
                                         </span>
 
                                         <a href="/home/blog/{{ $data->slug }}"
@@ -61,6 +64,10 @@
                                 </div>
                             </div>
                         @endforeach
+
+                        <!-- item blog -->
+
+
                         <!-- Pagination -->
                         <div class="d-flex justify-content-center">
                             {{ $posts->withQueryString()->links('pagination::custom') }}
@@ -86,13 +93,14 @@
 
                             <ul>
 
-
-                                <li class="bor18">
-                                    <a href="/blog//detail" class="dis-block stext-115 cl6 hov-cl1 trans-04 p-tb-8 p-lr-4">
-
-                                    </a>
-                                </li>
-
+                                @foreach ($categories as $category)
+                                    <li class="bor18">
+                                        <a href="/home/blog-category/{{ $category->slug }}"
+                                            class="dis-block stext-115 cl6 hov-cl1 trans-04 p-tb-8 p-lr-4">
+                                            {{ $category->title }}
+                                        </a>
+                                    </li>
+                                @endforeach
 
                             </ul>
                         </div>
@@ -203,38 +211,7 @@
                             </ul>
                         </div>
 
-                        <div class="p-t-50">
-                            <h4 class="mtext-112 cl2 p-b-27">
-                                Tags
-                            </h4>
 
-                            <div class="flex-w m-r--5">
-                                <a href="#"
-                                    class="flex-c-m stext-107 cl6 size-301 bor7 p-lr-15 hov-tag1 trans-04 m-r-5 m-b-5">
-                                    Fashion
-                                </a>
-
-                                <a href="#"
-                                    class="flex-c-m stext-107 cl6 size-301 bor7 p-lr-15 hov-tag1 trans-04 m-r-5 m-b-5">
-                                    Lifestyle
-                                </a>
-
-                                <a href="#"
-                                    class="flex-c-m stext-107 cl6 size-301 bor7 p-lr-15 hov-tag1 trans-04 m-r-5 m-b-5">
-                                    Denim
-                                </a>
-
-                                <a href="#"
-                                    class="flex-c-m stext-107 cl6 size-301 bor7 p-lr-15 hov-tag1 trans-04 m-r-5 m-b-5">
-                                    Streetstyle
-                                </a>
-
-                                <a href="#"
-                                    class="flex-c-m stext-107 cl6 size-301 bor7 p-lr-15 hov-tag1 trans-04 m-r-5 m-b-5">
-                                    Crafts
-                                </a>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>

@@ -75,6 +75,7 @@ class PostController extends Controller
 
     public function createImage(Post $post)
     {
+        
         return view('dashboard.post.image.create', compact('post'));
     }
 

@@ -33,6 +33,7 @@ Route::get('/home/about', [PageController::class, 'aboutIndex']);
 
 Route::get('/home/blog/', [PageController::class, 'blogIndex']);
 Route::get('/home/blog/{post:slug}', [PageController::class, 'blogDetail']);
+Route::get('/home/blog-category/{postCategory:slug}', [PageController::class, 'blogCategory']);
 
 Route::get('/home/FAQs', [PageController::class, 'faqIndex']);
 
