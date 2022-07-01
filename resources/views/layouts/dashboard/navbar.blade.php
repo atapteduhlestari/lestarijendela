@@ -10,6 +10,7 @@
     <!-- Topbar Search -->
     <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
         <div class="input-group">
+        
             <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..."
                 aria-label="Search" aria-describedby="basic-addon2">
             <div class="input-group-append">
@@ -52,7 +53,9 @@
                 <i class="fas fa-envelope fa-fw"></i>
                 <!-- Counter - Messages -->
                 
-                <span class="badge badge-danger badge-counter"> {{ $feedbacks->first()->status == null ? count($feedbacks) : count($feedbacks)}} </span>
+                <span class="badge badge-danger badge-counter"> 
+                    {{ count($feedbacks)}}
+                </span>
             </a>
             <!-- Dropdown - Messages -->
             
@@ -74,7 +77,7 @@
                     </div>
                     <div>
                         <div class="text-truncate"> {{$feedback->email}} </div>
-                        <div class="small text-gray-500"> {{$feedback->description}} </div>
+                        <div class="small text-gray-500"> {{ Str::limit($feedback->description, 50) }} </div>
                     </div>
                 </a>
                 @endif

@@ -9,8 +9,6 @@ class FeedbackController extends Controller
     public function index()
     {
         $feedbacks = Feedback::get();
-     
-      
        
         return view('dashboard.feedback.index', compact('feedbacks'));
     }
@@ -18,7 +16,6 @@ class FeedbackController extends Controller
     public function detailFeedback($id)
     {
         $feedback = Feedback::find($id);
-       
         return view('dashboard.feedback.detail', compact('feedback'));
     }
 
@@ -35,7 +32,7 @@ class FeedbackController extends Controller
         $feedback = Feedback::find($id);
         $feedback->update(['status' => 1]);
 
-        return redirect()->back();
+        return redirect()->action([FeedbackController::class, 'detailFeedback'], $id);
 
         
     }
