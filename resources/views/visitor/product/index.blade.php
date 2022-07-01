@@ -4,6 +4,11 @@
 @endpush
 @section('title', 'Product')
 @section('content')
+    <section class="bg-breadcrumb txt-center d-flex align-items-center justify-content-center">
+        <h2 class="ltext-105 cl0">
+            Products
+        </h2>
+    </section>
 
     <!-- Product -->
     <div class="bg0 m-t-23 p-b-140">
@@ -11,12 +16,9 @@
             <div class="flex-w flex-sb-m p-b-10 align-items-center">
                 <div class="flex-w flex-l-m filter-tope-group m-tb-10">
                     <div class="p-b-10 p-t-10">
-                        <h3 class="mtext-105 cl6">
-                            All Products
-                        </h3>
                         @if (request('title') || request('category') || request('subCategory'))
                             <div class="p-t-15">
-                                <table class="stext-105 table table-borderless">
+                                <table class="stext-105 table-sm table-borderless">
                                     @if (request('title'))
                                         <tr>
                                             <td>Title</td>
@@ -140,9 +142,6 @@
                         </div>
                     </div>
                 @empty
-                    <div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item">
-                        No Items
-                    </div>
                 @endforelse
             </div>
             <div class="d-flex justify-content-center">

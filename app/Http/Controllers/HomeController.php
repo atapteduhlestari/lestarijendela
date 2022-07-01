@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Banner;
 use App\Models\Post;
 use App\Models\Slider;
 use App\Models\Product;
@@ -14,11 +15,13 @@ class HomeController extends Controller
     public function index()
     {
         $sliders = Slider::get();
+        $banners = Banner::get();
         $products = Product::take(4)->get();
         $posts = Post::take(3)->get();
 
         return view('home', compact(
             'sliders',
+            'banners',
             'products',
             'posts',
         ));

@@ -22,6 +22,9 @@
 </head>
 
 <body class="">
+    <div class="preloader bg0 row justify-content-center align-items-center">
+        <div class="bars"></div>
+    </div>
     @include('layouts.visitor.topbar')
     @yield('content')
     @include('layouts.visitor.footer')

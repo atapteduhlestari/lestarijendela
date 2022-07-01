@@ -17,9 +17,9 @@ class UserSeeder extends Seeder
     {
         $data =  [
             [
-                'name'  => 'Admin',
+                'name'  => 'Roofie',
                 'email' => 'admin@example.com',
-                'username' => 'Roofie',
+                'username' => 'admin',
                 'password' => Hash::make('password'),
                 'created_at' => now(),
             ],
