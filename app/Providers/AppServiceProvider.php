@@ -23,7 +23,7 @@ class AppServiceProvider extends ServiceProvider
         date_default_timezone_set('Asia/Jakarta');
 
         $this->profile = Profile::first();
-        $this->feedbacks = Feedback::where('status', null)->get();
+        $this->feedbacks = Feedback::where('status', null)->orderBy('id','desc')->get();
         
         view()->composer('layouts.dashboard.master', function ($view) {
             $view->with(
