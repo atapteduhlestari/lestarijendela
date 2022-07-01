@@ -18,7 +18,7 @@
                 </button>
             </div>
             <a href="/highlight" class="btn btn-info btn-sm mr-1">
-                slider
+                Slider
             </a>
             {{-- <a href="/product-sub-category" class="btn btn-success btn-sm">
                 Sub Category
@@ -29,7 +29,7 @@
     <div class="card">
 
         <div class="card-header">
-            <h3 class="text-center">List</h3>
+            <h6 class=" m-0 font-weight-bold text-center">List Banner</h6>
         </div>
 
         <div class="card-body">
@@ -41,7 +41,7 @@
                                 <th>#</th>
                                 <th>Heading</th>
                                 <th>Description</th>
-                                <th>Images</th>
+                                <th class="col-md-2">Images</th>
                                 <th>Actions</th>
                             </tr>
                         </thead>
@@ -51,14 +51,14 @@
                                     <td></td>
                                     <td>{{$banner->heading}}</td>
                                     <td>{{$banner->description}}</td>
-                                    <td><img class="col-md-2" src="{{ '/storage/' . $banner->url }}" alt=""> </td>
+                                    <td class="col-md-2">
+                                        <div class="">
+                                            <img class="col-md-12" src="{{ '/storage/' . $banner->url }}" alt=""> 
+                                        </div>
+                                    </td>
                                     <td>
                                         <div class="d-flex justify-content-around">
     
-                                            <div>
-                                                <a title="Detail Data" href="/highlight//detail"
-                                                    class="btn btn-outline-primary text-xs"> Detail </a>
-                                            </div>
     
                                             <div>
                                                 <a title="Edit Data" href="/hightlight-banner/{{$banner->id}}/edit"
