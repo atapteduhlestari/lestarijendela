@@ -18,7 +18,7 @@
     <div class="card">
 
         <div class="card-header">
-            <h3 class="text-gray-800 text-center">Edit Slider</h3>
+            <h6 class="m-0 font-weight-bold text-center ">Update Slider</h6>
         </div>
 
         <div class="card-body">
@@ -48,7 +48,7 @@
                 </div>
                 
                 
-                <button type="submit" id="btnSubmit" class="btn btn-primary">Submit</button>
+                <button type="submit" id="btnSubmit" class="btn btn-primary"> <i class="fas fa-edit"></i> Update</button>
             </form>
 
         </div>

@@ -14,7 +14,7 @@
 <div class="container">
     <div class="card">
         <div class="card-header">
-            <h5 class="text-center">Edit FAQ</h5>
+            <h6 class="m-0 font-weight-bold text-center">Update FAQS</h6>
         </div>
 
         <div class="card-body">
@@ -38,7 +38,7 @@
                     </div>
                 </div>
                 <br>
-                <button type="submit" id="btnSubmit" class="btn btn-primary"> <i class="fas fa-edit"></i> Edit</button>
+                <button type="submit" id="btnSubmit" class="btn btn-primary"> <i class="fas fa-edit"></i> Update</button>
             </form>
 
         </div>

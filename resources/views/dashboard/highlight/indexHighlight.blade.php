@@ -30,7 +30,7 @@
     <!-- DataTales Example -->
     <div class="card shadow mb-4">
         <div class="card-header py-3">
-            <h6 class="m-0 font-weight-bold text-primary">List Product</h6>
+            <h6 class="m-0 font-weight-bold text-center">List Slider</h6>
         </div>
         <div class="card-body">
             <div class="table-responsive">
@@ -40,7 +40,7 @@
                             <th>#</th>
                             <th>Heading</th>
                             <th>Description</th>
-                            <th>Images</th>
+                            <th class="col-md-2">Images</th>
                             <th>Actions</th>
                         </tr>
                     </thead>
@@ -52,14 +52,15 @@
                                 <td>{{ $loop->iteration }}</td>
                                 <td>{{$slider->heading}}</td>
                                 <td>{{$slider->description}}</td>
-                                <td><img class="col-md-2" src="{{ '/storage/' . $slider->url }}" alt=""> </td>
+                                <td class="col-md-2">
+                                    <div class="">
+
+                                        <img class="col-md-12" src="{{ '/storage/' . $slider->url }}" alt=""> 
+                                    </div>
+                                </td>
                                 <td>
                                     <div class="d-flex justify-content-around">
 
-                                        <div>
-                                            <a title="Detail Data" href="/highlight/{{$slider->id}}/detail"
-                                                class="btn btn-outline-primary text-xs"> Detail </a>
-                                        </div>
 
                                         <div>
                                             <a title="Edit Data" href="/hightlight-slider/{{$slider->id}}/edit"

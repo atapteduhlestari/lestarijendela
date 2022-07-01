@@ -8,7 +8,7 @@
 <div class="container-fluid">
     <div class="card">
         <div class="card-header">
-            <h3 class="text-center">List Feedback</h3>
+            <h6 class="m-0 font-weight-bold text-center">List Feedbacks</h6>
         </div>
 
         <div class="card-body">
