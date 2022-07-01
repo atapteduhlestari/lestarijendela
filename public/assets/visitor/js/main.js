@@ -25,6 +25,10 @@
     //     }
     // });
 
+    $(window).on('load', function () {
+        $('.preloader').fadeOut(1000)
+    });
+
     /*[ Back to top ]
     ===========================================================*/
     var windowH = $(window).height() / 2;

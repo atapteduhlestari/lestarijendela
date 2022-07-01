@@ -11,4 +11,9 @@ class Slider extends Model
 
     protected $table = 'slider';
     protected $guarded = ['id'];
+
+    public function getTakeImageAttribute()
+    {
+        return "/storage/" . $this->url;
+    }
 }

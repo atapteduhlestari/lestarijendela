@@ -3,8 +3,8 @@
         <div class="wrap-slick1 rs2-slick1">
             <div class="slick1">
                 @foreach ($sliders as $slider)
-                    <div class="item-slick1 bg-overlay1" style="background-image:url({{ '/storage/' . $slider->url }});"
-                        data-thumb="{{ '/storage/' . $slider->url }}" data-caption="uPVC">
+                    <div class="item-slick1 bg-overlay1" style="background-image:url({{ $slider->takeImage }});"
+                        data-thumb="{{ $slider->takeImage }}" data-caption="uPVC">
                         <div class="container h-full">
                             <div class="flex-col-c-m h-full p-t-100 p-b-60 respon5">
                                 {{-- <div class="layer-slick1 animated visible-false" data-appear="fadeInDown" data-delay="0">

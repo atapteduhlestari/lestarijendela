@@ -1,8 +1,8 @@
 @extends('layouts.visitor.master')
 @section('title', 'Contact | Lestari Jendela')
 @section('content')
-    <section class="bg-img1 txt-center p-lr-15 p-tb-92" style="background-image: url('/assets/visitor/images/contact.png');">
-        <h2 class="ltext-105 cl0 txt-center">
+    <section class="bg-breadcrumb txt-center d-flex align-items-center justify-content-center">
+        <h2 class="ltext-105 cl0">
             Contact
         </h2>
     </section>
