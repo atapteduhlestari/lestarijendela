@@ -1,5 +1,5 @@
 <div class="bg-b-w p-b-50 p-t-50">
-    <div class="row justify-content-center align-items-center">
+    <div class="justify-content-center align-items-center">
         <div class="col-12 txt-center m-b-25">
             <em>
                 <h3 class="ltext-106 cl0">

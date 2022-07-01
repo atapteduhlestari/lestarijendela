@@ -168,72 +168,9 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
     margin: -28px auto 0 auto;
 } */
 
-/* Optional - (you can remove it) */
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-
-
-/* Optional - (you can remove it) */
-body {
-    background: url('https://images.unsplash.com/photo-1472898965229-f9b06b9c9bbe?ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80') #1c1c1c center center / cover no-repeat fixed;
-    height: 200vh;
-}
-
 
 /* Load Settings */
-.no-scroll-y {
-    overflow-y: hidden;
-}
-
-#preloader-section {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-
-
-/* Preloader */
-.ctn-preloader {
-    -webkit-box-align: center;
-    align-items: center;
-
-    /* Show or Hide cursor when hover of Preloader*/
-    cursor: none;
-
-    display: -webkit-box;
-    display: flex;
-    height: 100%;
-    -webkit-box-pack: center;
-    justify-content: center;
-    position: fixed;
-    left: 0;
-    top: 0;
-    width: 100%;
-    z-index: 9999;
-}
-
-.ctn-preloader .animation-preloader {
-    position: absolute;
-    z-index: 100;
-}
-
-/* Spinner loading */
-.ctn-preloader .animation-preloader .spinner {
-    -webkit-animation: spinner 1s infinite linear;
-    animation: spinner 1s infinite linear;
-    border-radius: 50%;
-    border: 3px solid rgba(0, 0, 0, 0.2);
-    border-top-color: #000000;
-    /* It is not identified in alphabetical order so that it does not overwrite it */
-    height: 9em;
-    margin: 0 auto 3.5em auto;
-    width: 9em;
-}
-
-.no-scroll-y {
+/* .no-scroll-y {
     overflow-y: hidden;
 }
 
@@ -245,7 +182,6 @@ body {
     right: 0;
 }
 
-/* Curtain effect */
 .preloader-section-left {
     -webkit-transform: translateX(-101%);
     transform: translateX(-101%);
@@ -258,7 +194,7 @@ body {
     transform: translateX(101%);
     -webkit-transition: 3.5s 0.1s all cubic-bezier(0.1, 0.1, 0.1, 2.000);
     transition: 3.5s 0.1s all cubic-bezier(0.1, 0.1, 0.1, 2.000);
-}
+} */
 
 /* Copy-right by ARiyou2000 in May2020*/
 
@@ -266,10 +202,11 @@ body {
     height: 100vh;
     width: 100vw;
     position: fixed;
+    overflow: hidden;
     z-index: 999;
 }
 
-.preloader>.bars {
+.preloader .bars {
     width: 64.8px;
     height: 86.4px;
     --c: linear-gradient(#000 0 0);
@@ -434,7 +371,7 @@ body {
 
 .wrap-menu-desktop {
     position: fixed;
-    z-index: 1;
+    z-index: 99;
     background-color: transparent;
     width: 100%;
     height: 84px;
