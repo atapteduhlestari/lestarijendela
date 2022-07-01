@@ -35,6 +35,7 @@
             <div id="content">
                 <!-- Topbar -->
                 @include('layouts.dashboard.navbar')
+                
                 @yield('content')
             </div> <!-- End of Main Content -->
 

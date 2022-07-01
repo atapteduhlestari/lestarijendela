@@ -16,7 +16,6 @@ class FeedbackController extends Controller
     public function detailFeedback($id)
     {
         $feedback = Feedback::find($id);
-       
         return view('dashboard.feedback.detail', compact('feedback'));
     }
 
@@ -26,5 +25,15 @@ class FeedbackController extends Controller
        
         $feedback->delete();
         return redirect()->back()->with('success', 'Success!');
+    }
+
+    public function saveStatus(Request $request, $id)
+    {
+        $feedback = Feedback::find($id);
+        $feedback->update(['status' => 1]);
+
+        return redirect()->action([FeedbackController::class, 'detailFeedback'], $id);
+
+        
     }
 }

@@ -33,8 +33,13 @@
                                     <div class="d-flex justify-content-around">
 
                                         <div>
-                                            <a title="Detail Data" href="/feedback/{{$feedback->id}}/detail"
-                                                class="btn btn-outline-primary text-xs"> Detail </a>
+                                            <form action="feedback-status/{{$feedback->id}}">
+                                                {{-- <a title="Detail Data" href="/feedback/{{$feedback->id}}/detail"
+                                                    class="btn btn-outline-primary text-xs"> Detail </a> --}}
+
+                                                    <button title="Detail Data" type="submit"
+                                                        class="btn btn-outline-primary text-xs"> Detail </button>
+                                            </form>
                                         </div>
                                         <div>
 

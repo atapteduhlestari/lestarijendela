@@ -80,6 +80,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/feedback', [Feedbackcontroller::class, 'index']);
     Route::delete('/feedback-delete/{id}', [FeedbackController::class, 'deleteFeedback']);
     Route::get('/feedback/{id}/detail', [FeedbackController::class, 'detailFeedback']);
+    Route::get('/feedback-status/{id}', [FeedbackController::class, 'saveStatus']);
 });
 
 
