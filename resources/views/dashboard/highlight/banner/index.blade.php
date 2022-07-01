@@ -7,7 +7,7 @@
 
 <div class="container-fluid">
 
-    <h1>Highlight Banners</h1>
+    <h1 class="h3 mb-2 text-gray-800">Highlight Banners</h1>
 
     <div class="my-4">
         <div class="d-flex">
