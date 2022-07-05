@@ -2,7 +2,6 @@
 <script src="/assets/visitor/vendor/animsition/js/animsition.min.js"></script>
 <script src="/assets/visitor/vendor/bootstrap/js/popper.js"></script>
 <script src="/assets/visitor/vendor/bootstrap/js/bootstrap.min.js"></script>
-@stack('scripts')
 <script src="/assets/visitor/vendor/slick/slick.min.js"></script>
 <script src="/assets/visitor/js/slick-custom.js"></script>
 <script src="/assets/visitor/vendor/MagnificPopup/jquery.magnific-popup.min.js"></script>
@@ -25,3 +24,4 @@
     });
 </script>
 <script src="/assets/visitor/js/main.js"></script>
+@stack('scripts')

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use App\Models\ProductCategory;
+use Illuminate\Support\Facades\Storage;
 
 class ProductCategoryController extends Controller
 {
@@ -23,10 +24,15 @@ class ProductCategoryController extends Controller
     {
         $request->validate([
             'title' => 'required',
+            'url' => 'max:10240'
         ]);
 
         $data = $request->all();
         $data['slug'] = Str::slug($request->title);
+
+        $image = $request->file('url');
+        $imageUrl = $image->storeAs('assets/dashboard/product/category/images', $image->hashName());
+        $data['url'] = $imageUrl;
 
         ProductCategory::create($data);
         return redirect()->back()->with('success', 'Success!');
@@ -46,10 +52,21 @@ class ProductCategoryController extends Controller
     {
         $request->validate([
             'title' => 'required',
+            'url' => 'max:10240'
         ]);
 
         $data = $request->all();
         $data['slug'] = Str::slug($request->title);
+
+        if ($request->file('url')) {
+
+            Storage::delete($productCategory->url);
+            $image = $request->file('url');
+            $imageUrl = $image->storeAs('assets/dashboard/product/category/images', $image->hashName());
+            $data['url'] = $imageUrl;
+        } else {
+            $data['url'] = $productCategory->url;
+        }
 
         $productCategory->update($data);
         return redirect()->back()->with('success', 'Success!');
@@ -65,6 +82,7 @@ class ProductCategoryController extends Controller
             ->where('category_id', $productCategory->id)
             ->update(['category_id' => null]);
 
+        Storage::delete($productCategory->url);
         $productCategory->delete();
         return redirect()->back()->with('success', 'Success!');
     }

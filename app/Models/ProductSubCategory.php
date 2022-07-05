@@ -21,4 +21,9 @@ class ProductSubCategory extends Model
     {
         return $this->belongsTo(ProductCategory::class, 'category_id');
     }
+
+    public function getTakeImageAttribute()
+    {
+        return '/storage/' . $this->url;
+    }
 }

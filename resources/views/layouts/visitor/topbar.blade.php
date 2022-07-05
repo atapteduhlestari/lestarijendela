@@ -86,7 +86,7 @@
     <div class="wrap-header-mobile">
         <!-- Logo moblie -->
         <div class="logo-mobile">
-            <a href="/"><img src="/assets/visitor/images/icons/logo-01.png" alt="IMG-LOGO"></a>
+            <a href="/"><img src="/assets/img/logo.png" alt="IMG-LOGO"></a>
         </div>
 
         <!-- Icon header -->

@@ -4,7 +4,11 @@
 
     {{-- Components --}}
     @include('layouts.visitor.components.slider', $sliders)
-    @include('layouts.visitor.components.banner', $banners)
+    @include('layouts.visitor.components.banner', [
+        'banners' => $banners,
+        'productCategories' => $productCategories,
+        'productSubCategories' => $productSubCategories,
+    ])
 
     <!-- Product -->
     <section class="bg3 p-t-150 p-b-150">
@@ -110,3 +114,6 @@
         </div>
     </section>
 @endsection
+@push('scripts')
+    <script src="/assets/visitor/js/home.js"></script>
+@endpush

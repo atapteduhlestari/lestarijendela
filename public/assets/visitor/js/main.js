@@ -26,7 +26,11 @@
     // });
 
     $(window).on('load', function () {
-        $('.preloader').fadeOut(500)
+        $('.loaderLeft').addClass('loaderLeftHide');
+        $('.loaderRight').addClass('loaderRightHide');
+        setTimeout(function () {
+            $('.preloader').fadeOut(400);
+        }, 100);
     });
 
     /*[ Back to top ]

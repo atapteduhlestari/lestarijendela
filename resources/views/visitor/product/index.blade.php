@@ -64,7 +64,7 @@
 
                 <!-- Filter -->
                 <div class="dis-none panel-filter w-full p-t-10 stext-106 cl6">
-                    <form action="">
+                    <form action="/home/product">
                         <div class="wrap-filter flex-w bg6 w-full p-lr-40 p-t-27 p-lr-15-sm">
                             <div class="col-md-6 p-r-15 p-b-5">
                                 <div class="form-group">
@@ -116,7 +116,7 @@
 
             <div class="row isotope-grid">
                 @forelse ($products as $product)
-                    <div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item">
+                    <div class="col-sm-6 col-md-4 col-lg-3 p-t-35 p-b-35 isotope-item">
                         <!-- Block2 -->
                         <div class="block2">
                             <div class="block2-pic hov-img0">

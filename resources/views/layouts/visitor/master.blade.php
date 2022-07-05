@@ -22,8 +22,14 @@
 </head>
 
 <body class="">
-    <div class="preloader bg0 row justify-content-center align-items-center">
-        <div class="bars"></div>
+    <div class="preloader row bg-gradient justify-content-center align-items-center no-gutters">
+
+        <div class="d-flex">
+            <div class="loaderLeft"></div>
+            <div class="loaderRight"></div>
+        </div>
+        <div class="bars">
+        </div>
     </div>
     @include('layouts.visitor.topbar')
     @yield('content')

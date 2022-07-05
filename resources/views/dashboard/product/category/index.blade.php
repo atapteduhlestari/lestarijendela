@@ -38,6 +38,7 @@
                             <tr>
                                 <th>#</th>
                                 <th>Title</th>
+                                <th>Image</th>
                                 <th class="text-center">Actions</th>
                             </tr>
                         </thead>
@@ -46,6 +47,9 @@
                                 <tr>
                                     <td>{{ $loop->iteration }}</td>
                                     <td>{{ $category->title }}</td>
+                                    <td>
+                                        <img height="75" src="{{ $category->takeImage ?? '' }}" alt="">
+                                    </td>
                                     <td>
                                         <div class="d-flex justify-content-around">
                                             <div>
@@ -89,13 +93,25 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <form action="/product-category" method="POST" id="formAdd">
+                    <form action="/product-category" method="POST" id="formAdd" enctype="multipart/form-data">
                         @csrf
+                        @if ($errors->any())
+                            {{ $errors }}
+                        @endif
                         <div class="form-group mb-3">
                             <label for="title">Title</label>
                             <input type="text" name="title" id="title"
                                 class="form-control  @error('title') is-invalid @enderror" value="{{ old('title') }}"
                                 autofocus autocomplete="off">
+                        </div>
+
+                        <div class="form-group mb-3">
+                            <label for="url">Add Image</label>
+                            <div class="custom-file mb-3">
+                                <input type="file" class="custom-file-input @error('url') is-invalid @enderror"
+                                    name="url" id="url" accept="image/*">
+                                <label class="custom-file-label" for="url">Choose file...</label>
+                            </div>
                         </div>
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                         <button type="submit" id="btnSubmit" class="btn btn-primary">Submit</button>
@@ -133,6 +149,11 @@
                     formDelete.submit();
                 }
             })
+        });
+
+        $('#url').on('change', function(e) {
+            var fileName = $(this).val();
+            $(this).next('.custom-file-label').html(e.target.files[0].name);
         });
     </script>
 

@@ -55,6 +55,16 @@
                                 </select>
                             </div>
                         </div>
+                        <div class="col-md-6 mb-3">
+                            <div class="form-group ">
+                                <label for="url">Add Image</label>
+                                <div class="custom-file mb-3">
+                                    <input type="file" class="custom-file-input @error('url') is-invalid @enderror"
+                                        name="url" id="url" accept="image/*">
+                                    <label class="custom-file-label" for="url">Choose file...</label>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <button type="submit" id="btnSubmit" class="btn btn-primary">Submit</button>
                 </form>
@@ -62,3 +72,11 @@
         </div>
     </div>
 @endsection
+@push('scripts')
+    <script>
+        $('#url').on('change', function(e) {
+            var fileName = $(this).val();
+            $(this).next('.custom-file-label').html(e.target.files[0].name);
+        });
+    </script>
+@endpush

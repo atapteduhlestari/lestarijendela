@@ -17,25 +17,32 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\FeedbackVisitorController;
 
+
 Route::get('/', [HomeController::class, 'index']);
 Route::get('/home', [HomeController::class, 'index']);
 
-Route::get('/home/product', [HomeController::class, 'productIndex']);
-Route::get('/home/product/{product:slug}', [HomeController::class, 'productShow']);
+Route::prefix('home')->group(function () {
 
-Route::get('/home/gallery', [HomeController::class, 'galleryIndex']);
+    Route::get('/product', [HomeController::class, 'productIndex']);
+    Route::get('/product/{product:slug}', [HomeController::class, 'productShow']);
+    Route::get('/product/category/{productCategory:slug}', [HomeController::class, 'productCategory']);
+    Route::get('/product/sub-category/{productSubCategory:slug}', [HomeController::class, 'productSubCategory']);
+    Route::get('/product/download/{id}', [HomeController::class, 'productDownload']);
 
+    Route::get('/gallery', [HomeController::class, 'galleryIndex']);
 
-//ary
-Route::get('/home/contact', [PageController::class, 'contactIndex']);
-Route::resource('/home/feedback', FeedbackVisitorController::class);
-Route::get('/home/about', [PageController::class, 'aboutIndex']);
+    //ary
+    Route::get('/contact', [PageController::class, 'contactIndex']);
+    Route::resource('/feedback', FeedbackVisitorController::class);
+    Route::get('/about', [PageController::class, 'aboutIndex']);
 
-Route::get('/home/blog/', [PageController::class, 'blogIndex']);
-Route::get('/home/blog/{post:slug}', [PageController::class, 'blogDetail']);
-Route::get('/home/blog-category/{postCategory:slug}', [PageController::class, 'blogCategory']);
+    Route::get('/blog', [PageController::class, 'blogIndex']);
+    Route::get('/blog/{post:slug}', [PageController::class, 'blogDetail']);
+    Route::get('/blog-category/{postCategory:slug}', [PageController::class, 'blogCategory']);
 
-Route::get('/home/FAQs', [PageController::class, 'faqIndex']);
+    Route::get('/FAQs', [PageController::class, 'faqIndex']);
+});
+
 
 Route::middleware(['auth'])->group(function () {
     Route::get('/dashboard', [DashboardController::class, 'index']);

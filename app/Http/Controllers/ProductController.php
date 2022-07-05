@@ -93,7 +93,7 @@ class ProductController extends Controller
     {
         $request->validate([
             'product_id' => 'required',
-            'url' => 'required|file|max:10240'
+            'url' => 'required|max:10240'
         ]);
 
         $data = $request->all();
@@ -119,7 +119,7 @@ class ProductController extends Controller
     {
         $request->validate([
             'product_id' => 'required',
-            'url' => 'required|file|max:10240'
+            'url' => 'required|max:10240'
         ]);
 
         $data = $request->all();

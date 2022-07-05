@@ -27,11 +27,9 @@ class Post extends Model
 
     public function getFirstImageAttribute()
     {
-        $default = '/assets/img/no-image.png';
-
         if ($this->images()->exists())
             return '/storage/' . $this->images->first()->url;
         else
-            return $default;
+            return emptyImage();
     }
 }

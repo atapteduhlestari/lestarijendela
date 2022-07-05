@@ -6,6 +6,7 @@ use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use App\Models\ProductCategory;
 use App\Models\ProductSubCategory;
+use Illuminate\Support\Facades\Storage;
 
 class ProductSubCategoryController extends Controller
 {
@@ -25,10 +26,15 @@ class ProductSubCategoryController extends Controller
     {
         $request->validate([
             'title' => 'required',
+            'url' => 'max:10240'
         ]);
 
         $data = $request->all();
         $data['slug'] = Str::slug($request->title);
+
+        $image = $request->file('url');
+        $imageUrl = $image->storeAs('assets/dashboard/product/category/images', $image->hashName());
+        $data['url'] = $imageUrl;
 
         ProductSubCategory::create($data);
         return redirect()->back()->with('success', 'Success!');
@@ -49,13 +55,22 @@ class ProductSubCategoryController extends Controller
     {
         $request->validate([
             'title' => 'required',
+            'url' => 'max:10240'
         ]);
 
         $data = $request->all();
         $data['slug'] = Str::slug($request->title);
+        $data['url'] = $request->file('url') ? $this->updateImage($request->file('url'), $productSubCategory->url) : $productSubCategory->url;
 
         $productSubCategory->update($data);
         return redirect()->back()->with('success', 'Success!');
+    }
+
+    public function updateImage($newImage, $oldImage = null)
+    {
+        Storage::delete($oldImage);
+        $imageUrl = $newImage->storeAs('assets/dashboard/product/category/images', $newImage->hashName());
+        return $imageUrl;
     }
 
     public function destroy(ProductSubCategory $productSubCategory)
@@ -64,6 +79,7 @@ class ProductSubCategoryController extends Controller
             ->where('sub_category_id', $productSubCategory->id)
             ->update(['sub_category_id' => null]);
 
+        Storage::delete($productSubCategory->url);
         $productSubCategory->delete();
         return redirect()->back()->with('success', 'Success!');
     }

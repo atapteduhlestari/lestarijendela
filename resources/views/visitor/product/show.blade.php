@@ -59,14 +59,18 @@
                 <div class="col-md-6 col-lg-5 p-b-10">
                     <div class="p-r-50 p-t-5 p-lr-0-lg">
                         <div class="d-flex">
-                            <span class="stext-104 cl4 flex-grow-1">
-                                <strong>{{ $product->category->title }}</strong>
-                            </span>
-                            {{-- <span class="stext-107 cl6">
-                                {{ $product->subCategory->title }}
-                            </span> --}}
-                        </div>
 
+                            <span class="flex-grow-1">
+                                <a class="hov-cl1 trans-04 stext-104 cl4 "
+                                    href="/home/product/category/{{ $product->category->slug }}">
+                                    <strong>{{ $product->category->title }}</strong>
+                                </a>
+                            </span>
+
+                            <span class="stext-107 cl7">
+                                {{ $product->subCategory->title }}
+                            </span>
+                        </div>
                         <h4 class="mtext-105 cl2 js-name-detail p-b-5">
                             {{ $product->title }}
                         </h4>
@@ -122,8 +126,23 @@
                         <!-- - -->
                         <div class="tab-pane fade" id="downloads" role="tabpanel">
                             <div class="row">
-                                <div class="col-sm-10 col-md-8 col-lg-6 m-lr-auto">
+                                <div class="col-sm-10 col-md-8 col-lg-6 mx-auto">
                                     <div class="p-b-30 m-lr-15-sm">
+                                        <table class="table-borderless table-sm">
+
+                                            @forelse ($product->documents as $document)
+                                                <tr>
+                                                    <th>Downloads {{ $loop->iteration }}</th>
+                                                    <td>
+                                                        <a href="/home/product/download/{{ $document->id }}">
+                                                            <i class="zmdi zmdi-download"></i>
+                                                        </a>
+                                                    </td>
+                                                </tr>
+                                            @empty
+                                                No Files
+                                            @endforelse
+                                        </table>
                                     </div>
                                 </div>
                             </div>
@@ -185,3 +204,18 @@
         </div>
     </section>
 @endsection
+
+@push('scripts')
+    <script>
+        $('.gallery-lb').each(function() { // the containers for all your galleries
+            $(this).magnificPopup({
+                delegate: 'a', // the selector for gallery item
+                type: 'image',
+                gallery: {
+                    enabled: true
+                },
+                mainClass: 'mfp-fade'
+            });
+        });
+    </script>
+@endpush

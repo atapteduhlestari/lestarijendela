@@ -207,6 +207,7 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
 }
 
 .preloader .bars {
+    position: absolute;
     width: 64.8px;
     height: 86.4px;
     --c: linear-gradient(#000 0 0);
@@ -2853,6 +2854,11 @@ input.num-product::-webkit-inner-spin-button {
     background-color: transparent;
 }
 
+.bg-gradient {
+    background: rgb(135, 196, 64);
+    background: linear-gradient(127deg, rgba(135, 196, 64, 1) 0%, rgba(34, 34, 34, 1) 50%);
+}
+
 .bg0 {
     background-color: #fff;
 }
@@ -3876,4 +3882,50 @@ input.num-product::-webkit-inner-spin-button {
         padding: 20px;
     }
 
+}
+
+.bannerTop {
+    opacity: 0;
+    transform: translate(0, -25px);
+    transition: all .25s ease-in;
+}
+
+.bannerTopShow {
+    opacity: 1;
+    transform: translate(0, 0);
+}
+
+.bannerBottom {
+    opacity: 0;
+    transform: translate(0, -25px);
+    transition: all .25s ease-in;
+}
+
+.bannerBottomShow {
+    opacity: 1;
+    transform: translate(0, 0);
+}
+
+.loaderLeft {
+    height: 100vh;
+    width: 100vw;
+    background: #222;
+    transform: translate(0, 0);
+}
+
+.loaderRight {
+    height: 100vh;
+    width: 100vw;
+    background-color: #fff;
+    transform: translate(0, 0);
+}
+
+.loaderLeftHide {
+    transform: translate(-100%);
+    transition: all .5s ease-in-out;
+}
+
+.loaderRightHide {
+    transform: translate(100%);
+    transition: all .5s ease-in-out;
 }
