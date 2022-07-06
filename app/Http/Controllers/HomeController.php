@@ -6,9 +6,11 @@ use App\Models\Post;
 use App\Models\Banner;
 use App\Models\Slider;
 use App\Models\Product;
+use App\Models\Project;
 use App\Models\ProductFile;
 use App\Models\ProductCategory;
 use App\Models\ProductSubCategory;
+use App\Models\ProjectCategory;
 use Illuminate\Support\Facades\Storage;
 
 class HomeController extends Controller
@@ -88,6 +90,14 @@ class HomeController extends Controller
 
     public function galleryIndex()
     {
-        return 'under construction';
+        $projects = Project::get();
+        $categories = ProjectCategory::get();
+
+        return view('visitor.project.index', compact('projects', 'categories'));
+    }
+
+    public function galleryShow(Project $project)
+    {
+        return view('visitor.project.show', compact('product'));
     }
 }

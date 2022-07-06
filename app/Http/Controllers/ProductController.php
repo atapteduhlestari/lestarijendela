@@ -79,6 +79,15 @@ class ProductController extends Controller
     {
         $this->deleteBodyImage($product->deskripsi);
         $this->deleteBodyImage($product->spesifikasi);
+
+        foreach ($product->images as $image) {
+            Storage::delete($image->url);
+        }
+
+        foreach ($product->documents as $doc) {
+            Storage::delete($doc->url);
+        }
+
         $product->delete();
         return redirect()->back()->with('success', 'Success!');
     }

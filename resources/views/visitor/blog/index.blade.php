@@ -112,7 +112,8 @@
 
                             <ul>
                                 <li class="p-b-7">
-                                    <a href="#" class="flex-w flex-sb-m stext-115 cl6 hov-cl1 trans-04 p-tb-2">
+                                    <a href="/home/blog-archive/2022/07"
+                                        class="flex-w flex-sb-m stext-115 cl6 hov-cl1 trans-04 p-tb-2">
                                         <span>
                                             July 2018
                                         </span>

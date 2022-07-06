@@ -44,6 +44,13 @@
             <i class="fas fa-chevron-right"></i>
             <span>Product</span></a>
     </li>
+
+    <li class="nav-item {{ request()->is('project*') ? 'active' : '' }}">
+        <a class="nav-link" href="/project">
+            <i class="fas fa-chevron-right"></i>
+            <span>Project</span></a>
+    </li>
+
     <li class="nav-item {{ request()->is('post*') ? 'active' : '' }}">
         <a class="nav-link" href="/post">
             <i class="fas fa-chevron-right"></i>

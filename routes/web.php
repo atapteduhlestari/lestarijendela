@@ -1,6 +1,5 @@
 <?php
 
-
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
@@ -16,7 +15,8 @@ use App\Http\Controllers\HighlightController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\FeedbackVisitorController;
-
+use App\Http\Controllers\ProjectCategoryController;
+use App\Http\Controllers\ProjectController;
 
 Route::get('/', [HomeController::class, 'index']);
 Route::get('/home', [HomeController::class, 'index']);
@@ -30,10 +30,12 @@ Route::prefix('home')->group(function () {
     Route::get('/product/download/{id}', [HomeController::class, 'productDownload']);
 
     Route::get('/gallery', [HomeController::class, 'galleryIndex']);
+    Route::get('/gallery/{project:slug}', [HomeController::class, 'galleryShow']);
+
 
     //ary
-    Route::get('/contact', [PageController::class, 'contactIndex']);
     Route::resource('/feedback', FeedbackVisitorController::class);
+    Route::get('/contact', [PageController::class, 'contactIndex']);
     Route::get('/about', [PageController::class, 'aboutIndex']);
 
     Route::get('/blog', [PageController::class, 'blogIndex']);
@@ -58,6 +60,13 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/product-document', [ProductController::class, 'saveDocument']);
     Route::delete('/product-document/{id}', [ProductController::class, 'deleteDocument']);
     Route::get('/product-document/download/{id}', [ProductController::class, 'downloadDocument']);
+
+    Route::resource('/project', ProjectController::class);
+    Route::resource('/project-category', ProjectCategoryController::class);
+
+    Route::get('/project-image/create/{project}', [ProjectController::class, 'createImage']);
+    Route::post('/project-image', [ProjectController::class, 'saveImage']);
+    Route::delete('/project-image/{id}', [ProjectController::class, 'deleteImage']);
 
     Route::resource('/post', PostController::class);
     Route::resource('/post-category', PostCategoryController::class);

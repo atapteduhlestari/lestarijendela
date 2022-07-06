@@ -69,13 +69,18 @@ class PostController extends Controller
     public function destroy(Post $post)
     {
         $this->deleteBodyImage($post->deskripsi);
+
+        foreach ($post->images as $image) {
+            Storage::delete($image->url);
+        }
+
         $post->delete();
         return redirect()->back()->with('success', 'Success!');
     }
 
     public function createImage(Post $post)
     {
-        
+
         return view('dashboard.post.image.create', compact('post'));
     }
 
@@ -88,7 +93,7 @@ class PostController extends Controller
         $data = $request->all();
 
         $file = $request->file('url');
-        $imageUrl = $file->storeAs('assets/dashboard/img/post', $file->hashName());
+        $imageUrl = $file->storeAs('assets/dashboard/post', $file->hashName());
         $data['url'] = $imageUrl;
 
         PostImage::create($data);
