@@ -31,6 +31,11 @@ class Product extends Model
         return $this->hasMany(ProductFile::class, 'product_id');
     }
 
+    public function projects()
+    {
+        return $this->hasMany(Project::class, 'product_id');
+    }
+
     public function getTakeImageAttribute()
     {
         return "/storage/" . $this->url;

@@ -14,11 +14,6 @@ use App\Models\Sbu;
 
 class PageController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function contactIndex()
     {
         $contact = Profile::first();
