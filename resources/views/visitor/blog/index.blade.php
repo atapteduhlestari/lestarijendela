@@ -111,101 +111,47 @@
                             </h4>
 
                             <ul>
-                                <li class="p-b-7">
-                                    <a href="#" class="flex-w flex-sb-m stext-115 cl6 hov-cl1 trans-04 p-tb-2">
-                                        <span>
-                                            July 2018
-                                        </span>
+                                {{-- <li class="p-b-7">
+                                   @php
+                                         $usermcount = [];
+                                        $userArr = [];
+                                    foreach ($month as $key => $value) {
+                                                $usermcount[(int)$key] = count($value);
+                                            }
 
-                                        <span>
-                                            (9)
-                                        </span>
-                                    </a>
+                                        for($i = 1; $i <= 12; $i++){
+                                        if(!empty($usermcount[$i])){
+                                           echo $userArr[$i] = $usermcount[$i]."<br>";    
+                                        }else{
+                                            echo $userArr[$i] = 0 ."<br>";    
+                                        }
+                                    }  
+
+                                    
+                                   @endphp
+                                </li> --}}
+                                
+                                <li class="p-b-7">
+                                    
+                                    @php
+                                       $usermcount = [];
+                                        $userArr = [];
+                                        @endphp
+
+                                        @foreach ($archives as $key => $value)
+                                            <a href="/home/blog-archive/{{$value->first()->created_at->format('m')}}/{{$value->first()->created_at->format('Y')}}" class="flex-w flex-sb-m stext-115 cl6 hov-cl1 trans-04 p-tb-2">
+
+                                                <span>
+                                                   {{$value->first()->created_at->format('F Y')}}
+                                                </span>
+
+                                                <span>
+                                                   ({{$usermcount[(int)$key] = count($value)}})
+                                                </span>
+                                            <a/>
+                                        @endforeach
                                 </li>
 
-                                <li class="p-b-7">
-                                    <a href="#" class="flex-w flex-sb-m stext-115 cl6 hov-cl1 trans-04 p-tb-2">
-                                        <span>
-                                            June 2018
-                                        </span>
-
-                                        <span>
-                                            (39)
-                                        </span>
-                                    </a>
-                                </li>
-
-                                <li class="p-b-7">
-                                    <a href="#" class="flex-w flex-sb-m stext-115 cl6 hov-cl1 trans-04 p-tb-2">
-                                        <span>
-                                            May 2018
-                                        </span>
-
-                                        <span>
-                                            (29)
-                                        </span>
-                                    </a>
-                                </li>
-
-                                <li class="p-b-7">
-                                    <a href="#" class="flex-w flex-sb-m stext-115 cl6 hov-cl1 trans-04 p-tb-2">
-                                        <span>
-                                            April 2018
-                                        </span>
-
-                                        <span>
-                                            (35)
-                                        </span>
-                                    </a>
-                                </li>
-
-                                <li class="p-b-7">
-                                    <a href="#" class="flex-w flex-sb-m stext-115 cl6 hov-cl1 trans-04 p-tb-2">
-                                        <span>
-                                            March 2018
-                                        </span>
-
-                                        <span>
-                                            (22)
-                                        </span>
-                                    </a>
-                                </li>
-
-                                <li class="p-b-7">
-                                    <a href="#" class="flex-w flex-sb-m stext-115 cl6 hov-cl1 trans-04 p-tb-2">
-                                        <span>
-                                            February 2018
-                                        </span>
-
-                                        <span>
-                                            (32)
-                                        </span>
-                                    </a>
-                                </li>
-
-                                <li class="p-b-7">
-                                    <a href="#" class="flex-w flex-sb-m stext-115 cl6 hov-cl1 trans-04 p-tb-2">
-                                        <span>
-                                            January 2018
-                                        </span>
-
-                                        <span>
-                                            (21)
-                                        </span>
-                                    </a>
-                                </li>
-
-                                <li class="p-b-7">
-                                    <a href="#" class="flex-w flex-sb-m stext-115 cl6 hov-cl1 trans-04 p-tb-2">
-                                        <span>
-                                            December 2017
-                                        </span>
-
-                                        <span>
-                                            (26)
-                                        </span>
-                                    </a>
-                                </li>
                             </ul>
                         </div>
 
