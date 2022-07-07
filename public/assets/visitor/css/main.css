@@ -3815,3 +3815,8 @@ input.num-product::-webkit-inner-spin-button {
     transform: translate(100%);
     transition: all .5s ease-in-out;
 }
+
+.btn-hijau {
+    color: #fff;
+    background-color: #87C440;
+  }

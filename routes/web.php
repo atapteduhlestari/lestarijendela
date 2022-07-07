@@ -41,6 +41,7 @@ Route::prefix('home')->group(function () {
     Route::get('/blog', [PageController::class, 'blogIndex']);
     Route::get('/blog/{post:slug}', [PageController::class, 'blogDetail']);
     Route::get('/blog-category/{postCategory:slug}', [PageController::class, 'blogCategory']);
+    Route::get('/blog-archive/{month}/{year}', [PageController::class, 'blogArchieve']);
 
     Route::get('/FAQs', [PageController::class, 'faqIndex']);
 });

@@ -15,6 +15,7 @@ class PostController extends Controller
     {
         $posts = Post::get();
         $categories = PostCategory::get();
+
         return view('dashboard.post.index', compact('posts', 'categories'));
     }
 

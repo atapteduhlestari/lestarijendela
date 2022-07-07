@@ -8,45 +8,80 @@
     </section>
 
     <!-- Content page -->
+
     <section class="bg0 p-t-104 p-b-116">
+
         <div class="container">
             <div class="flex-w flex-tr">
-                <div class="size-210 bor10 p-lr-70 p-t-55 p-b-70 p-lr-15-lg w-full-md">
-                    @if (session('success'))
-                        <div class="alert alert-success">
-                            {{ session('success') }}
-                        </div>
-                    @endif
-
-                    <form action="/home/feedback" method="POST" id="formAdd">
-                        @csrf
-                        <h4 class="mtext-105 cl2 txt-center p-b-30">
-                            Send Us A Message
-                        </h4>
-
-                        <div class="bor8 m-b-20 how-pos4-parent">
-
-                            <input
-                                class=" form-control @error('description') is-invalid @enderror stext-111 cl2 plh3 size-116 p-l-62 p-r-30"
-                                type="text" name="email" placeholder="Your Email Address">
-                            <img class="how-pos4 pointer-none" src="/assets/visitor/images/icons/icon-email.png"
-                                alt="ICON">
-                        </div>
-
-
-                        <div class="bor8 m-b-30">
-                            <textarea class="stext-111 cl2 plh3 size-120 p-lr-28 p-tb-25 form-control @error('description') is-invalid @enderror"
-                                name="description" placeholder="How Can We Help?"></textarea>
-                        </div>
-
-                        <button class="flex-c-m stext-101 cl0 size-121 bg3 bor1 hov-btn3 p-lr-15 trans-04 pointer ">
-                            Submit
-                        </button>
-                    </form>
+                <div class="size-210 bor10 flex-w flex-col-m p-lr-93 p-tb-30 p-lr-15-lg w-full-md" style="width: 100%">
+                  <div class="row">
+                    <div class="col">
+                        <span class="fs-18 cl5 txt-center size-211">
+                            <span class="lnr lnr-map-marker"></span>
+                        </span>
+        
+                        <span class="mtext-110 cl2">
+                            Address
+                        </span>
+        
+                        <p class="stext-115 cl6 size-213 p-t-18">
+                            {{ $contact->address }}
+                        </p>
+                    </div>
+        
+                    <div class="col">
+                        <span class="fs-18 cl5 txt-center size-211">
+                            <span class="lnr lnr-phone-handset"></span>
+                        </span>
+        
+                        <span class="mtext-110 cl2">
+                            Lets Talk
+                        </span>
+        
+                        <p class="stext-115 cl1 size-213 p-t-18">
+                            {{ $contact->no_tlp }}
+                        </p>
+                    </div>
+        
+                    <div class="col">
+                        <span class="fs-18 cl5 txt-center size-211">
+                            <span class="lnr lnr-envelope"></span>
+                        </span>
+        
+                        <span class="mtext-110 cl2">
+                            Email
+                        </span>
+        
+                        <p class="stext-115 cl1 size-213 p-t-18">
+                            {{ $contact->email }}
+                        </p>
+                    </div>
+                  </div>
                 </div>
+            </div>
+        </div>
+        <br>
+            <h4 class="text-center">Our Branch</h4>
+            <center>
 
+                <div class="card-body">
+                    @foreach ($sbu as $branch)
+                    <button class="btn btn-hijau col-md-5 my-3" type="button" data-toggle="collapse" data-target="#collapseExample{{$branch->id}}" aria-expanded="false" aria-controls="collapseExample">
+                        {{$branch->nama_sbu}}
+                      </button>
 
-                <div class="size-210 bor10 flex-w flex-col-m p-lr-93 p-tb-30 p-lr-15-lg w-full-md">
+                      <div class="collapse" id="collapseExample{{$branch->id}}">
+                        <div class="card card-body col-md-4">
+                         {{$branch->alamat}}
+                        </div>
+                      </div>
+                      @endforeach
+                </div>
+            </center>
+
+        {{-- <div class="container">
+            <div class="flex-w flex-tr">
+                <div class="size-210 bor10 flex-w flex-col-m p-lr-93 p-tb-30 p-lr-15-lg w-full-md" style="width: 100%">
                     <div class="flex-w w-full p-b-42">
                         <span class="fs-18 cl5 txt-center size-211">
                             <span class="lnr lnr-map-marker"></span>
@@ -98,11 +133,20 @@
                         </div>
                     </div>
                 </div>
-
             </div>
-        </div>
+        </div> --}}
+
+
     </section>
 
+    
+	<!-- Map -->
+
+    <div class="card">
+        <div class="card-body">
+
+            <iframe src="https://www.google.com/maps/d/u/0/embed?mid=18WU3lzNbD547KXK8oLzTSGaqKu19hGY&ehbc=2E312F" style="width: 100%; height:350px"></iframe>       </div>
+    </div>
 @endsection
 @push('scripts')
     <!-- Page level plugins -->
@@ -110,6 +154,7 @@
     <script src="/assets/dashboard/vendor/datatables/dataTables.bootstrap4.min.js"></script>
 
     <!-- Page level custom scripts -->
+    <script src="http://maps.googleapis.com/maps/api/js"></script>
     <script src="/assets/dashboard/js/demo/datatables-demo.js"></script>
 
     @if ($errors->any())
