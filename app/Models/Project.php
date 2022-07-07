@@ -32,4 +32,26 @@ class Project extends Model
         else
             return emptyImage();
     }
+
+    public function scopeFilter($query, $filters)
+    {
+        $query->when(
+            $filters['title'] ?? false,
+            fn ($query, $title) => $query->where('title', 'like', "%$title%")
+        );
+
+        $query->when($filters['category'] ?? false, function ($query, $category) {
+            return $query->whereHas(
+                'category',
+                fn ($q) => ($q->where('slug', $category))
+            );
+        });
+
+        $query->when($filters['product'] ?? false, function ($query, $product) {
+            return $query->whereHas(
+                'product',
+                fn ($q) => ($q->where('slug', $product))
+            );
+        });
+    }
 }

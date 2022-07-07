@@ -41,8 +41,8 @@ class HomeController extends Controller
         $products = Product::filter($data)
             ->orderBy('title', 'ASC')->paginate(12);
 
-        $categories = ProductCategory::get();
-        $subCategories = ProductSubCategory::get();
+        $categories = ProductCategory::orderBy('title', 'asc')->get();
+        $subCategories = ProductSubCategory::orderBy('title', 'asc')->get();
 
         return view('visitor.product.index', compact(
             'products',
@@ -90,14 +90,29 @@ class HomeController extends Controller
 
     public function galleryIndex()
     {
-        $projects = Project::get();
-        $categories = ProjectCategory::get();
+        $data = request()->all();
+        $categories = ProjectCategory::orderBy('title', 'asc')->get();
+        $products = Product::orderBy('title', 'asc')->get();
+        $projects = Project::filter($data)->orderBy('title', 'asc')->paginate(6);
 
-        return view('visitor.project.index', compact('projects', 'categories'));
+        return view('visitor.project.index', compact('projects', 'categories', 'products'));
     }
 
     public function galleryShow(Project $project)
     {
-        return view('visitor.project.show', compact('product'));
+        return view('visitor.project.show', compact('project'));
+    }
+
+    public function galleryCategory(ProjectCategory $projectCategory)
+    {
+        $categories = ProjectCategory::orderBy('title', 'asc')->get();
+        $products = Product::orderBy('title', 'asc')->get();
+        $projects = $projectCategory->projects()->paginate(12);
+
+        return view('visitor.project.index', compact(
+            'projects',
+            'categories',
+            'products'
+        ));
     }
 }

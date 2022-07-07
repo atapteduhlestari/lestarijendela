@@ -59,7 +59,6 @@
                 <div class="col-md-6 col-lg-5 p-b-10">
                     <div class="p-r-50 p-t-5 p-lr-0-lg">
                         <div class="d-flex">
-
                             <span class="flex-grow-1">
                                 <a class="hov-cl1 trans-04 stext-104 cl4 "
                                     href="/home/product/category/{{ $product->category->slug }}">

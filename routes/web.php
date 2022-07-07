@@ -31,7 +31,7 @@ Route::prefix('home')->group(function () {
 
     Route::get('/gallery', [HomeController::class, 'galleryIndex']);
     Route::get('/gallery/{project:slug}', [HomeController::class, 'galleryShow']);
-
+    Route::get('/gallery/category/{projectCategory:slug}', [HomeController::class, 'galleryCategory']);
 
     //ary
     Route::resource('/feedback', FeedbackVisitorController::class);
