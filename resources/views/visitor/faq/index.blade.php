@@ -1,5 +1,5 @@
 @extends('layouts.visitor.master')
-@section('title', 'FAQ | Lestari Jendela')
+@section('title', 'FAQs | Lestari Jendela')
 @section('content')
     <section class="bg-breadcrumb txt-center d-flex align-items-center justify-content-center">
         <h2 class="ltext-105 cl0">
@@ -9,7 +9,7 @@
 
     <section class="bg0 p-t-104 p-b-116">
         <div class="container">
-            <h3 class="mb-3">FAQ</h3>
+            <h3 class="mb-3">FAQs</h3>
             <div class="card">
                 <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
                     <?php $row_count = 1; for ($x = 0; $x < count($faqs); $x++) {  ?>
@@ -36,14 +36,12 @@
                             <div class="panel-body">
                                 <div class="card">
                                     <div class="card-body">
-
                                         {{ $faqs[$x]['answer'] }}
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-
                     <?php $row_count++; } ?>
                 </div>
             </div>

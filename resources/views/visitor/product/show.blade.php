@@ -1,5 +1,5 @@
 @extends('layouts.visitor.master')
-@section('title', 'Product | ' . $product->title)
+@section('title', 'Product | Lestari Jendela | ' . $product->title)
 @section('content')
 
     <!-- breadcrumb -->

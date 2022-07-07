@@ -2,7 +2,7 @@
 @push('styles')
     <link href="/assets/visitor/vendor/selectize/selectize.css" rel="stylesheet">
 @endpush
-@section('title', 'Product')
+@section('title', 'Product | Lestari Jendela')
 @section('content')
     <section class="bg-breadcrumb txt-center d-flex align-items-center justify-content-center">
         <h2 class="ltext-105 cl0">
