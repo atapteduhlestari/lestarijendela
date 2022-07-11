@@ -110,7 +110,9 @@
                         <!-- Block2 -->
                         <div class="block2">
                             <div class="block2-pic hov-img0">
-                                <img src="{{ $project->firstImage }}" class="img-responsive h-200" alt="IMG-project">
+                                <img loading="lazy" data-src="{{ $project->firstImage }}"
+                                    src="{{ $project->firstImage }}" class="img-responsive h-200 lazy"
+                                    alt="{{ $project->slug }}">
 
                                 <a href="/home/gallery/{{ $project->slug }}"
                                     class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04">

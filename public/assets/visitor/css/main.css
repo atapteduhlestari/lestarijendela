@@ -606,7 +606,7 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
 /*---------------------------------------------*/
 .main-menu>li:hover>a {
     text-decoration: none;
-    color: #87C440;
+    color: #87C440 !important;
 }
 
 .main-menu>li:hover>.sub-menu {
@@ -3269,6 +3269,10 @@ input.num-product::-webkit-inner-spin-button {
 
 .hov-cl1:hover {
     color: #87C440;
+}
+
+.hov-cl2:hover {
+    color: #222;
 }
 
 .hov-bg1:hover {

@@ -34,7 +34,7 @@ class SbuSeeder extends Seeder
                             10260. 
                             2, Jl. Palmerah Barat IV No.50 - 52 G, RT.2/RW.10, Palmerah, Kec. Palmerah, 
                             Kota Jakarta Barat, Daerah Khusus Ibukota Jakarta 10260'
-            ],  
+            ],
 
             [
                 'nama_sbu' => 'Fatmawati',
@@ -79,13 +79,12 @@ class SbuSeeder extends Seeder
             ],
 
             [
-                'nama_sbu' => 'sarah',
+                'nama_sbu' => 'Sarah',
                 'alamat' => 'Jl. Mayjen D.I Panjaitan No.112/25, Babura, 
                             Kec. Medan Baru, Kota Medan, Sumatera Utara 20154'
             ],
         ];
 
         Sbu::insert($data);
-
     }
 }

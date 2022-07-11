@@ -35,15 +35,16 @@
                             @endif
                             <div class="slick3 gallery-lb">
                                 @if ($product->images->isEmpty())
-                                    <img src="/assets/img/no-image.png" class="img-responsive h-350 rounded"
-                                        alt="IMG-PRODUCT">
+                                    <img loading="lazy" data-src="/assets/img/no-image.png" src="/assets/img/no-image.png"
+                                        class="img-responsive h-350 rounded lazy" alt="IMG-PRODUCT">
                                 @endif
 
                                 @foreach ($product->images as $image)
                                     <div class="item-slick3" data-thumb="{{ '/storage/' . $image->url }}">
                                         <div class="wrap-pic-w pos-relative">
-                                            <img src="{{ '/storage/' . $image->url }}"
-                                                class="img-responsive h-350 rounded" alt="IMG-PRODUCT">
+                                            <img loading="lazy" data-src="{{ '/storage/' . $image->url }}"
+                                                src="{{ '/storage/' . $image->url }}"
+                                                class="img-responsive h-350 rounded lazy" alt="{{ $product->slug }}">
 
                                             <a class="flex-c-m size-108 how-pos1 bor0 fs-16 cl10 bg0 hov-btn3 trans-04"
                                                 href="{{ '/storage/' . $image->url }}">
@@ -171,7 +172,9 @@
                             <!-- Block2 -->
                             <div class="block2">
                                 <div class="block2-pic hov-img0">
-                                    <img src="{{ $related->firstImage }}" class="img-responsive h-200" alt="IMG-PRODUCT">
+                                    <img loading="lazy" data-src="{{ $related->firstImage }}"
+                                        src="{{ $related->firstImage }}" class="img-responsive h-200 lazy"
+                                        alt="IMG-PRODUCT">
 
                                     <a href="/home/product/{{ $related->slug }}"
                                         class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04">

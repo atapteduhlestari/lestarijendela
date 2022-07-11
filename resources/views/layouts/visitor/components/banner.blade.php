@@ -11,8 +11,9 @@
                     <div class="col-md-6 p-b-30 m-lr-auto bannerTop">
                         <!-- Block1 -->
                         <div class="block1 wrap-pic-w">
-                            <img loading="lazy" class="img-responsive h-350"
-                                src="{{ $pc->url ? $pc->takeImage : emptyImage() }}" alt="IMG-BANNER">
+                            <img data-src="{{ $pc->url ? $pc->takeImage : emptyImage() }}" loading="lazy"
+                                class="img-responsive h-350 lazy" src="{{ $pc->url ? $pc->takeImage : emptyImage() }}"
+                                alt="{{ $pc->slug }}">
 
                             <a href="/home/product/category/{{ $pc->slug }}"
                                 class="block1-txt ab-t-l s-full flex-col-l-sb p-lr-38 p-tb-34 trans-03 respon3">
@@ -45,8 +46,9 @@
                     <div class="col-md-6 col-lg-4 p-b-30 bannerBottom">
                         <!-- Block1 -->
                         <div class="block1 wrap-pic-w">
-                            <img loading="lazy" class="img-responsive h-250"
-                                src="{{ $psc->url ? $psc->takeImage : emptyImage() }}" alt="IMG-BANNER">
+                            <img data-src="{{ $psc->url ? $psc->takeImage : emptyImage() }}" loading="lazy"
+                                class="img-responsive h-250 lazy"
+                                src="{{ $psc->url ? $psc->takeImage : emptyImage() }}" alt="{{ $psc->slug }}">
 
                             <a href="/home/product/sub-category/{{ $psc->slug }}"
                                 class="block1-txt ab-t-l s-full flex-col-l-sb p-lr-38 p-tb-34 trans-03 respon3">

@@ -16,7 +16,8 @@
                         @foreach ($posts as $data)
                             <div class="p-b-63">
                                 <a href="/home/blog/{{ $data->slug }}" class="hov-img0 how-pos5-parent">
-                                    <img src="{{ $data->firstImage }}" alt="IMG-BLOG" class="img-responsive h-300">
+                                    <img loading="lazy" data-src="{{ $data->firstImage }}" src="{{ $data->firstImage }}"
+                                        alt="{{ $data->slug }}" class="img-responsive h-300 lazy">
 
                                     <div class="flex-col-c-m size-123 bg9 how-pos5">
                                         <span class="ltext-107 cl2 txt-center">
@@ -46,10 +47,13 @@
                                     <div class="flex-w flex-sb-m p-t-18">
                                         <span class="flex-w flex-m stext-111 cl2 p-r-30 m-tb-10">
                                             <span>
-                                                <span class="cl4">By</span> Admin
+                                                {{ $data->created_at->format('d M Y') }}
                                                 <span class="cl12 m-l-4 m-r-6">|</span>
                                             </span>
 
+                                            <span>
+                                                {{ $data->category->title }}
+                                            </span>
                                         </span>
 
                                         <a href="/home/blog/{{ $data->slug }}"

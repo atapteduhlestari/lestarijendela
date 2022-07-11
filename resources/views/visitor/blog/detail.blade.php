@@ -10,7 +10,8 @@
                         <!--  -->
                         <div class="wrap-pic-w how-pos5-parent">
                             <a href="blog-detail.html" class="hov-img0 how-pos5-parent">
-                                <img src="{{ $post->firstImage }}" alt="IMG-BLOG" class="img-responsive h-300">
+                                <img loading="lazy" data-src="{{ $post->firstImage }}" src="{{ $post->firstImage }}"
+                                    alt="{{ $post->slug }}" class="img-responsive h-300 lazy">
 
                                 <div class="flex-col-c-m size-123 bg9 how-pos5">
                                     <span class="ltext-107 cl2 txt-center">
@@ -27,18 +28,12 @@
                         <div class="p-t-32">
                             <span class="flex-w flex-m stext-111 cl2 p-b-19">
                                 <span>
-                                    <span class="cl4">By</span> Admin
-                                    <span class="cl12 m-l-4 m-r-6">|</span>
-                                </span>
-
-                                <span>
                                     {{ $post->created_at->format('d M Y') }}
                                     <span class="cl12 m-l-4 m-r-6">|</span>
                                 </span>
 
                                 <span>
                                     {{ $post->category->title }}
-                                    <span class="cl12 m-l-4 m-r-6">|</span>
                                 </span>
                             </span>
 

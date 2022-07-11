@@ -140,7 +140,7 @@
 </div>
 
 <div class="wa">
-    <a title="Chat Via WhatsApp" href="https://api.whatsapp.com/send?phone=082112622144" target="_blank"
+    <a title="Chat Via WhatsApp" href="https://api.whatsapp.com/send?phone=6281388505188" target="_blank"
         class="text-decoration-none">
         <i class="zmdi zmdi-whatsapp zmdi-hc-5x"></i>
     </a>

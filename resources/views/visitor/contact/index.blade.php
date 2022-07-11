@@ -14,71 +14,71 @@
         <div class="container">
             <div class="flex-w flex-tr">
                 <div class="size-210 bor10 flex-w flex-col-m p-lr-93 p-tb-30 p-lr-15-lg w-full-md" style="width: 100%">
-                  <div class="row">
-                    <div class="col">
-                        <span class="fs-18 cl5 txt-center size-211">
-                            <span class="lnr lnr-map-marker"></span>
-                        </span>
-        
-                        <span class="mtext-110 cl2">
-                            Address
-                        </span>
-        
-                        <p class="stext-115 cl6 size-213 p-t-18">
-                            {{ $contact->address }}
-                        </p>
+                    <div class="row">
+                        <div class="col">
+                            <span class="fs-18 cl5 txt-center size-211">
+                                <span class="lnr lnr-map-marker"></span>
+                            </span>
+
+                            <span class="mtext-110 cl2">
+                                Address
+                            </span>
+
+                            <p class="stext-115 cl6 size-213 p-t-18">
+                                {{ $contact->address }}
+                            </p>
+                        </div>
+
+                        <div class="col">
+                            <span class="fs-18 cl5 txt-center size-211">
+                                <span class="lnr lnr-phone-handset"></span>
+                            </span>
+
+                            <span class="mtext-110 cl2">
+                                Lets Talk
+                            </span>
+
+                            <p class="stext-115 cl1 size-213 p-t-18">
+                                {{ $contact->no_tlp }}
+                            </p>
+                        </div>
+
+                        <div class="col">
+                            <span class="fs-18 cl5 txt-center size-211">
+                                <span class="lnr lnr-envelope"></span>
+                            </span>
+
+                            <span class="mtext-110 cl2">
+                                Email
+                            </span>
+
+                            <p class="stext-115 cl1 size-213 p-t-18">
+                                {{ $contact->email }}
+                            </p>
+                        </div>
                     </div>
-        
-                    <div class="col">
-                        <span class="fs-18 cl5 txt-center size-211">
-                            <span class="lnr lnr-phone-handset"></span>
-                        </span>
-        
-                        <span class="mtext-110 cl2">
-                            Lets Talk
-                        </span>
-        
-                        <p class="stext-115 cl1 size-213 p-t-18">
-                            {{ $contact->no_tlp }}
-                        </p>
-                    </div>
-        
-                    <div class="col">
-                        <span class="fs-18 cl5 txt-center size-211">
-                            <span class="lnr lnr-envelope"></span>
-                        </span>
-        
-                        <span class="mtext-110 cl2">
-                            Email
-                        </span>
-        
-                        <p class="stext-115 cl1 size-213 p-t-18">
-                            {{ $contact->email }}
-                        </p>
-                    </div>
-                  </div>
                 </div>
             </div>
-        </div>
-        <br>
-            <h4 class="text-center">Our Branch</h4>
-            <center>
-
-                <div class="card-body">
-                    @foreach ($sbu as $branch)
-                    <button class="btn btn-hijau col-md-5 my-3" type="button" data-toggle="collapse" data-target="#collapseExample{{$branch->id}}" aria-expanded="false" aria-controls="collapseExample">
-                        {{$branch->nama_sbu}}
-                      </button>
-
-                      <div class="collapse" id="collapseExample{{$branch->id}}">
-                        <div class="card card-body col-md-4">
-                         {{$branch->alamat}}
+            <h4 class="text-center p-t-25 p-b-25">Our Branch</h4>
+            <div class="row">
+                @foreach ($sbu as $branch)
+                    <div class="col-md-6">
+                        <button class="btn btn-hijau btn-block mb-3 hov-cl2" type="button" data-toggle="collapse"
+                            data-target="#collapseExample{{ $branch->id }}" aria-expanded="false"
+                            aria-controls="collapseExample">
+                            {{ $branch->nama_sbu }}
+                        </button>
+                        <div class="collapse" id="collapseExample{{ $branch->id }}">
+                            <div class="card border-0">
+                                <div class="card-body">
+                                    {{ $branch->alamat }}
+                                </div>
+                            </div>
                         </div>
-                      </div>
-                      @endforeach
-                </div>
-            </center>
-
+                    </div>
+                @endforeach
+            </div>
+        </div>
         {{-- <div class="container">
             <div class="flex-w flex-tr">
                 <div class="size-210 bor10 flex-w flex-col-m p-lr-93 p-tb-30 p-lr-15-lg w-full-md" style="width: 100%">
@@ -135,17 +135,17 @@
                 </div>
             </div>
         </div> --}}
-
-
     </section>
 
-    
-	<!-- Map -->
+
+    <!-- Map -->
 
     <div class="card">
         <div class="card-body">
 
-            <iframe src="https://www.google.com/maps/d/u/0/embed?mid=18WU3lzNbD547KXK8oLzTSGaqKu19hGY&ehbc=2E312F" style="width: 100%; height:350px"></iframe>       </div>
+            <iframe src="https://www.google.com/maps/d/u/0/embed?mid=18WU3lzNbD547KXK8oLzTSGaqKu19hGY&ehbc=2E312F"
+                style="width: 100%; height:350px"></iframe>
+        </div>
     </div>
 @endsection
 @push('scripts')

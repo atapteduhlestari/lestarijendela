@@ -24,7 +24,8 @@
                         <!-- Block2 -->
                         <div class="block2">
                             <div class="block2-pic hov-img0">
-                                <img src="{{ $product->firstImage }}" class="img-responsive h-250" alt="IMG-PRODUCT">
+                                <img loading="lazy" data-src="{{ $product->firstImage }}" src="{{ $product->firstImage }}"
+                                    class="img-responsive h-250 lazy" alt="{{ $product->slug }}">
 
                                 <a href="/home/product/{{ $product->slug }}"
                                     class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04">
@@ -71,8 +72,8 @@
                         <div class="blog-item">
                             <div class="hov-img0">
                                 <a href="/home/blog/{{ $post->slug }}">
-                                    <img loading="lazy" src="{{ $post->firstImage }}" class="img-responsive h-250"
-                                        alt="IMG-BLOG">
+                                    <img loading="lazy" data-src="{{ $post->firstImage }}" src="{{ $post->firstImage }}"
+                                        class="img-responsive h-250 lazy" alt="{{ $post->slug }}">
                                 </a>
                             </div>
 
