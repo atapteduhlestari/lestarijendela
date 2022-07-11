@@ -11,7 +11,7 @@
     ])
 
     <!-- Product -->
-    <section class="bg3 p-t-150 p-b-150">
+    <section class="sec-product bg3 p-t-150 p-b-150">
         <div class="container">
             <div class="p-b-66">
                 <h3 class="ltext-105 cl0 txt-center respon1">
@@ -20,7 +20,7 @@
             </div>
             <div class="row isotope-grid">
                 @foreach ($products as $product)
-                    <div class="col-sm-6 col-md-4 col-lg-4 p-b-35 isotope-item">
+                    <div class="col-sm-6 col-md-4 col-lg-4 p-b-35 isotope-item productHome">
                         <!-- Block2 -->
                         <div class="block2">
                             <div class="block2-pic hov-img0">
@@ -67,7 +67,7 @@
 
             <div class="row">
                 @forelse ($posts as $post)
-                    <div class="col-sm-6 col-md-4 p-b-40">
+                    <div class="col-sm-6 col-md-4 p-b-40 blogHome">
                         <div class="blog-item">
                             <div class="hov-img0">
                                 <a href="/home/blog/{{ $post->slug }}">

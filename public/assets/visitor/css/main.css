@@ -817,6 +817,10 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
     color: #87C440;
 }
 
+li .active,
+.active {
+    color: #87C440;
+}
 
 
 
@@ -3819,4 +3823,26 @@ input.num-product::-webkit-inner-spin-button {
 .btn-hijau {
     color: #fff;
     background-color: #87C440;
-  }
+}
+
+.blogHome {
+    opacity: 0;
+    transform: scale(2, 2);
+    transition: all .25s ease-in;
+}
+
+.blogHomeShow {
+    opacity: 1;
+    transform: scale(1, 1);
+}
+
+.productHome {
+    opacity: 0;
+    transform: scale(2, 2);
+    transition: all .25s ease-in;
+}
+
+.productHomeShow {
+    opacity: 1;
+    transform: scale(1, 1);
+}

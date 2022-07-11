@@ -21,6 +21,18 @@ $(function () {
         } else {
             $(".bannerTop").removeClass("bannerTopShow");
         }
+
+        if (scrollTop > $('.sec-product').offset().top - 300) {
+            $(".productHome").addClass("productHomeShow");
+        } else {
+            $(".productHome").removeClass("productHomeShow");
+        }
+
+        if (scrollTop > $('.sec-blog').offset().top - 300) {
+            $(".blogHome").addClass("blogHomeShow");
+        } else {
+            $(".blogHome").removeClass("blogHomeShow");
+        }
     });
 
 })

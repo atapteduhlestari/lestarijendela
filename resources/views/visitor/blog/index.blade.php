@@ -15,7 +15,7 @@
                         <!-- item blog -->
                         @foreach ($posts as $data)
                             <div class="p-b-63">
-                                <a href="blog-detail.html" class="hov-img0 how-pos5-parent">
+                                <a href="/home/blog/{{ $data->slug }}" class="hov-img0 how-pos5-parent">
                                     <img src="{{ $data->firstImage }}" alt="IMG-BLOG" class="img-responsive h-300">
 
                                     <div class="flex-col-c-m size-123 bg9 how-pos5">
@@ -90,11 +90,10 @@
                             </h4>
 
                             <ul>
-
                                 @foreach ($categories as $category)
                                     <li class="bor18">
                                         <a href="/home/blog-category/{{ $category->slug }}"
-                                            class="dis-block stext-115 cl6 hov-cl1 trans-04 p-tb-8 p-lr-4">
+                                            class="{{ $category->slug == request()->segment(3) ? 'active ' : '' }}dis-block stext-115 cl6 hov-cl1 trans-04 p-tb-8 p-lr-4">
                                             {{ $category->title }}
                                         </a>
                                     </li>
@@ -132,26 +131,27 @@
                                     
                                    @endphp
                                 </li> --}}
-                                
+
                                 <li class="p-b-7">
-                                    
+
                                     @php
-                                       $usermcount = [];
+                                        $usermcount = [];
                                         $userArr = [];
-                                        @endphp
+                                    @endphp
 
-                                        @foreach ($archives as $key => $value)
-                                            <a href="/home/blog-archive/{{$value->first()->created_at->format('m')}}/{{$value->first()->created_at->format('Y')}}" class="flex-w flex-sb-m stext-115 cl6 hov-cl1 trans-04 p-tb-2">
+                                    @foreach ($archives as $key => $value)
+                                        <a href="/home/blog-archive/{{ $value->first()->created_at->format('m') }}/{{ $value->first()->created_at->format('Y') }}"
+                                            class="flex-w flex-sb-m stext-115 cl6 hov-cl1 trans-04 p-tb-2">
 
-                                                <span>
-                                                   {{$value->first()->created_at->format('F Y')}}
-                                                </span>
+                                            <span>
+                                                {{ $value->first()->created_at->format('F Y') }}
+                                            </span>
 
-                                                <span>
-                                                   ({{$usermcount[(int)$key] = count($value)}})
-                                                </span>
-                                            <a/>
-                                        @endforeach
+                                            <span>
+                                                ({{ $usermcount[(int) $key] = count($value) }})
+                                            </span>
+                                            <a />
+                                    @endforeach
                                 </li>
 
                             </ul>

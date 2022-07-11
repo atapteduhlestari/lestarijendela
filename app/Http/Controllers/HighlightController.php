@@ -88,7 +88,7 @@ class HighlightController extends Controller
         $data = $request->all();
 
         $file = $request->file('url');
-        $imageUrl = $file->storeAs('assets/dashboard/slider', $file->hashName());
+        $imageUrl = $file->storeAs('assets/dashboard/banner', $file->hashName());
         $data['url'] = $imageUrl;
 
         Banner::create($data);
@@ -118,7 +118,7 @@ class HighlightController extends Controller
         if ($request->file('url')) {
             Storage::delete($banner->url);
             $file = $request->file('url');
-            $imageUrl = $file->storeAs('assets/dashboard/slider', $file->hashName());
+            $imageUrl = $file->storeAs('assets/dashboard/banner', $file->hashName());
             $data['url'] = $imageUrl;
         } else {
             $data['url'] = $banner->url;
