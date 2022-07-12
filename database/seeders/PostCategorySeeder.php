@@ -15,6 +15,10 @@ class PostCategorySeeder extends Seeder
                 'slug' => 'acara'
             ],
             [
+                'title' => 'Berita',
+                'slug' => 'berita'
+            ],
+            [
                 'title' => 'Edukasi',
                 'slug' => 'edukasi'
             ],

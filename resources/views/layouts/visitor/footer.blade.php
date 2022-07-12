@@ -3,10 +3,9 @@
     <div class="container">
         <div class="row">
             <div class="col-sm-6 col-lg-3 p-b-50">
-                <h4 class="stext-301 cl0">
-                    GET IN TOUCH
-                </h4>
-                <img class="img-responsive" height="75" src="/assets/img/logo.png" alt="">
+                <div class="p-b-15">
+                    <img class="img-responsive" height="100" src="/assets/img/logo.png" alt="">
+                </div>
                 <p class="stext-107 cl7">
                     Any questions? Let us know in <br>
                     {{ $profile->address }}
@@ -138,5 +137,12 @@
     <span class="symbol-btn-back-to-top">
         <i class="zmdi zmdi-chevron-up"></i>
     </span>
+</div>
+
+<div class="wa">
+    <a title="Chat Via WhatsApp" href="https://api.whatsapp.com/send?phone=6281388505188" target="_blank"
+        class="text-decoration-none">
+        <i class="zmdi zmdi-whatsapp zmdi-hc-5x"></i>
+    </a>
 </div>
 @include('layouts.visitor.components.script')

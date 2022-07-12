@@ -2,7 +2,7 @@
 @push('styles')
     <link href="/assets/visitor/vendor/selectize/selectize.css" rel="stylesheet">
 @endpush
-@section('title', 'Product')
+@section('title', 'Product | Lestari Jendela')
 @section('content')
     <section class="bg-breadcrumb txt-center d-flex align-items-center justify-content-center">
         <h2 class="ltext-105 cl0">
@@ -120,7 +120,9 @@
                         <!-- Block2 -->
                         <div class="block2">
                             <div class="block2-pic hov-img0">
-                                <img src="{{ $product->firstImage }}" class="img-responsive h-200" alt="IMG-PRODUCT">
+                                <img loading="lazy" data-src="{{ $product->firstImage }}"
+                                    src="{{ $product->firstImage }}" class="img-responsive h-200 lazy"
+                                    alt="{{ $product->slug }}">
 
                                 <a href="/home/product/{{ $product->slug }}"
                                     class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04">

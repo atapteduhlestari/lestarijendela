@@ -1,5 +1,5 @@
 @extends('layouts.visitor.master')
-@section('title', 'FAQ | Lestari Jendela')
+@section('title', 'FAQs | Lestari Jendela')
 @section('content')
     <section class="bg-breadcrumb txt-center d-flex align-items-center justify-content-center">
         <h2 class="ltext-105 cl0">
@@ -28,9 +28,7 @@
                          {{$faq->answer}}
                         </div>
                       </div>
-
                       @endforeach
-                      
         </div>
     </section>
 

@@ -70,7 +70,7 @@
                         <div class="col-md-6 mb-3">
                             <div class="form-group">
                                 <label for="year">Year</label>
-                                <input type="text" name="year" id="year"
+                                <input type="text" name="year" id="year" maxlength="4"
                                     class="form-control  @error('year') is-invalid @enderror"
                                     value="{{ old('year', $project->year) }}" autocomplete="off">
                             </div>

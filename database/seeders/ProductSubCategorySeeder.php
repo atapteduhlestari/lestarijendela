@@ -12,18 +12,18 @@ class ProductSubCategorySeeder extends Seeder
         $data = [
             [
                 'category_id' => '1',
-                'title' => 'Jendela',
-                'slug' => 'jendela'
+                'title' => 'Casement',
+                'slug' => 'casement'
             ],
             [
                 'category_id' => '1',
-                'title' => 'Pintu',
-                'slug' => 'pintu'
+                'title' => 'Sliding',
+                'slug' => 'sliding'
             ],
             [
                 'category_id' => '1',
-                'title' => 'Kusen',
-                'slug' => 'kusen'
+                'title' => 'Tilt n Turn',
+                'slug' => 'tilt-n-turn'
             ],
         ];
 

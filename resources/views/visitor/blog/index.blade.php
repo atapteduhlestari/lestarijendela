@@ -15,8 +15,9 @@
                         <!-- item blog -->
                         @foreach ($posts as $data)
                             <div class="p-b-63">
-                                <a href="blog-detail.html" class="hov-img0 how-pos5-parent">
-                                    <img src="{{ $data->firstImage }}" alt="IMG-BLOG" class="img-responsive h-300">
+                                <a href="/home/blog/{{ $data->slug }}" class="hov-img0 how-pos5-parent">
+                                    <img loading="lazy" data-src="{{ $data->firstImage }}" src="{{ $data->firstImage }}"
+                                        alt="{{ $data->slug }}" class="img-responsive h-300 lazy">
 
                                     <div class="flex-col-c-m size-123 bg9 how-pos5">
                                         <span class="ltext-107 cl2 txt-center">
@@ -46,10 +47,13 @@
                                     <div class="flex-w flex-sb-m p-t-18">
                                         <span class="flex-w flex-m stext-111 cl2 p-r-30 m-tb-10">
                                             <span>
-                                                <span class="cl4">By</span> Admin
+                                                {{ $data->created_at->format('d M Y') }}
                                                 <span class="cl12 m-l-4 m-r-6">|</span>
                                             </span>
 
+                                            <span>
+                                                {{ $data->category->title }}
+                                            </span>
                                         </span>
 
                                         <a href="/home/blog/{{ $data->slug }}"
@@ -90,11 +94,10 @@
                             </h4>
 
                             <ul>
-
                                 @foreach ($categories as $category)
                                     <li class="bor18">
                                         <a href="/home/blog-category/{{ $category->slug }}"
-                                            class="dis-block stext-115 cl6 hov-cl1 trans-04 p-tb-8 p-lr-4">
+                                            class="{{ $category->slug == request()->segment(3) ? 'active ' : '' }}dis-block stext-115 cl6 hov-cl1 trans-04 p-tb-8 p-lr-4">
                                             {{ $category->title }}
                                         </a>
                                     </li>
@@ -132,26 +135,27 @@
                                     
                                    @endphp
                                 </li> --}}
-                                
+
                                 <li class="p-b-7">
-                                    
+
                                     @php
-                                       $usermcount = [];
+                                        $usermcount = [];
                                         $userArr = [];
-                                        @endphp
+                                    @endphp
 
-                                        @foreach ($archives as $key => $value)
-                                            <a href="/home/blog-archive/{{$value->first()->created_at->format('m')}}/{{$value->first()->created_at->format('Y')}}" class="flex-w flex-sb-m stext-115 cl6 hov-cl1 trans-04 p-tb-2">
+                                    @foreach ($archives as $key => $value)
+                                        <a href="/home/blog-archive/{{ $value->first()->created_at->format('m') }}/{{ $value->first()->created_at->format('Y') }}"
+                                            class="flex-w flex-sb-m stext-115 cl6 hov-cl1 trans-04 p-tb-2">
 
-                                                <span>
-                                                   {{$value->first()->created_at->format('F Y')}}
-                                                </span>
+                                            <span>
+                                                {{ $value->first()->created_at->format('F Y') }}
+                                            </span>
 
-                                                <span>
-                                                   ({{$usermcount[(int)$key] = count($value)}})
-                                                </span>
-                                            <a/>
-                                        @endforeach
+                                            <span>
+                                                ({{ $usermcount[(int) $key] = count($value) }})
+                                            </span>
+                                            <a />
+                                    @endforeach
                                 </li>
 
                             </ul>
