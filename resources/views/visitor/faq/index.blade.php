@@ -9,44 +9,28 @@
 
     <section class="bg0 p-t-104 p-b-116">
         <div class="container">
-            <h3 class="mb-3">FAQ</h3>
+            <h3 class="mb-3">FAQs</h3>
             <div class="card">
-                <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-                    <?php $row_count = 1; for ($x = 0; $x < count($faqs); $x++) {  ?>
 
-                    <div class="panel panel-default">
-                        <div class="panel-heading" role="tab" id="heading<?php echo $faqs; ?>">
-                            <h4 class="panel-title">
-                                <div class="card">
-                                    <div class="card-body">
+                @foreach ($faqs as $faq)
+                <div class="accordion" id="accordionExample">
+                   
+                      <div class="card-header btn-hijau" id="headingOne">
+                        <h2 class="mb-0">
+                          <button class="btn btn-block text-left text-white" type="button" data-toggle="collapse" data-target="#collapseOne{{$faq->id}}" aria-expanded="true" aria-controls="collapseOne">
+                          {{$faq->question}}
+                          </button>
+                        </h2>
+                      </div>
 
-                                        <a role="button" class="btn btn-link text-dark" data-toggle="collapse"
-                                            data-parent="#accordion" href="#collapse<?php echo $row_count; ?>"
-                                            aria-expanded="false">
-                                            {{ $row_count }} . {{ $faqs[$x]['question'] }}
-                                        </a>
-
-                                    </div>
-                                </div>
-                            </h4>
+                      <div id="collapseOne{{$faq->id}}" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+                        <div class="card-body">
+                         {{$faq->answer}}
                         </div>
+                      </div>
 
-                        <div id="collapse<?php echo $row_count; ?>" class="panel-collapse collapse " role="tabpanel"
-                            aria-labelledby="heading<?php echo $row_count; ?>">
-                            <div class="panel-body">
-                                <div class="card">
-                                    <div class="card-body">
-
-                                        {{ $faqs[$x]['answer'] }}
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <?php $row_count++; } ?>
-                </div>
-            </div>
+                      @endforeach
+                      
         </div>
     </section>
 
