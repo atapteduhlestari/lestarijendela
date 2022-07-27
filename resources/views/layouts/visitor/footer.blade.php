@@ -38,28 +38,28 @@
 
                 <ul>
                     <li class="p-b-10">
-                        <a href="#" class="stext-112 cl7 hov-cl1 trans-04">
+                        <a href="/home/product" class="stext-112 cl7 hov-cl1 trans-04">
                             <i class="zmdi zmdi-circle"></i>
                             PRODUCT
                         </a>
                     </li>
 
                     <li class="p-b-10">
-                        <a href="#" class="stext-112 cl7 hov-cl1 trans-04">
+                        <a href="/home/product/category/upvc" class="stext-112 cl7 hov-cl1 trans-04">
                             <i class="zmdi zmdi-circle"></i>
                             UPVC
                         </a>
                     </li>
 
                     <li class="p-b-10">
-                        <a href="#" class="stext-112 cl7 hov-cl1 trans-04">
+                        <a href="/home/product/category/aluminium" class="stext-112 cl7 hov-cl1 trans-04">
                             <i class="zmdi zmdi-circle"></i>
                             ALUMINIUM
                         </a>
                     </li>
 
                     <li class="p-b-10">
-                        <a href="#" class="stext-112 cl7 hov-cl1 trans-04">
+                        <a href="/home/gallery" class="stext-112 cl7 hov-cl1 trans-04">
                             <i class="zmdi zmdi-circle"></i>
                             GALLERY
                         </a>
@@ -73,14 +73,21 @@
                 </h4>
 
                 <li class="p-b-10">
-                    <a href="#" class="stext-112 cl7 hov-cl1 trans-04">
+                    <a href="/home/blog" class="stext-112 cl7 hov-cl1 trans-04">
+                        <i class="zmdi zmdi-circle"></i>
+                        BLOG
+                    </a>
+                </li>
+
+                <li class="p-b-10">
+                    <a href="/home/about" class="stext-112 cl7 hov-cl1 trans-04">
                         <i class="zmdi zmdi-circle"></i>
                         ABOUT
                     </a>
                 </li>
 
                 <li class="p-b-10">
-                    <a href="#" class="stext-112 cl7 hov-cl1 trans-04">
+                    <a href="/home/FAQs" class="stext-112 cl7 hov-cl1 trans-04">
                         <i class="zmdi zmdi-circle"></i>
                         FAQs
                     </a>
