@@ -97,6 +97,20 @@ class PageController extends Controller
         return view('visitor.blog.detail', compact('post', 'categories', 'archives'));
     }
 
+    public function searchBlog(Request $request)
+    {
+        $keyword = $request->keyword;
+        $posts = Post::where('title', 'like', "%" . $keyword . "%")->paginate(6);
+        $categories = PostCategory::get();
+        $archives = Post::select('id', 'created_at')
+        ->get()
+        ->groupBy(function($date) {
+            //return Carbon::parse($date->created_at)->format('Y'); // grouping by years
+            return Carbon::parse($date->created_at)->format('m'); // grouping by months
+        });
+        return view('visitor.blog.index', compact('posts', 'categories', 'archives'));
+    }
+
     public function create()
     {
     }

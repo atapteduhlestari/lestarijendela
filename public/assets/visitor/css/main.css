@@ -3827,6 +3827,7 @@ input.num-product::-webkit-inner-spin-button {
 .btn-hijau {
     color: #fff;
     background-color: #87C440;
+
 }
 
 .blogHome {
@@ -3850,3 +3851,4 @@ input.num-product::-webkit-inner-spin-button {
     opacity: 1;
     transform: scale(1, 1);
 }
+

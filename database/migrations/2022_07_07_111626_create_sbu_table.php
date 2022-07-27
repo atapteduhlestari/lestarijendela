@@ -17,6 +17,7 @@ class CreateSbuTable extends Migration
             $table->id();
             $table->string('nama_sbu', 100);
             $table->text('alamat');
+            $table->timestamps();
         });
     }
 

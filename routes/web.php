@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BranchController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
@@ -44,6 +45,8 @@ Route::prefix('home')->group(function () {
     Route::get('/blog-archive/{month}/{year}', [PageController::class, 'blogArchieve']);
 
     Route::get('/FAQs', [PageController::class, 'faqIndex']);
+
+    Route::get('/search', [PageController::class, 'searchBlog']);
 });
 
 
@@ -98,6 +101,8 @@ Route::middleware(['auth'])->group(function () {
     Route::delete('/feedback-delete/{id}', [FeedbackController::class, 'deleteFeedback']);
     Route::get('/feedback/{id}/detail', [FeedbackController::class, 'detailFeedback']);
     Route::get('/feedback-status/{id}', [FeedbackController::class, 'saveStatus']);
+
+    Route::resource('/branch', BranchController::class);
 });
 
 
