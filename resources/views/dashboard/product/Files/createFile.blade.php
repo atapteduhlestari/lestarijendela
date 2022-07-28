@@ -34,7 +34,7 @@
                         <div class="row">
                             @foreach ($product->images as $image)
                                 <div class="col-md-6 mb-3">
-                                    <img height="100" class="mb-3" src="{{ '/storage/' . $image->url }}"
+                                    <img height="100" class="mb-3" src="{{ '/uploads/' . $image->url }}"
                                         alt="">
                                     <br>
                                     <form action="/product-file/{{ $image->id }}" method="post" id="deleteFormImage">
@@ -115,7 +115,7 @@
                     <div class="row">
                         @foreach ($product->documents as $file)
                             <div class="col-md-6 mb-3">
-                                <img height="100" class="mb-3" src="{{ '/storage/' . $file->url }}" alt="">
+                                <img height="100" class="mb-3" src="{{ '/uploads/' . $file->url }}" alt="">
                                 <br>
                                 <form action="/product-file/{{ $file->id }}" method="post" id="deleteFormDocument">
                                     @csrf

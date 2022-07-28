@@ -38,13 +38,13 @@ class Product extends Model
 
     public function getTakeImageAttribute()
     {
-        return "storage/" . $this->url;
+        return "/uploads/" . $this->url;
     }
 
     public function getFirstImageAttribute()
     {
         if ($this->images()->exists())
-            return "storage/" .  $this->images->first()->url;
+            return "/uploads/" .  $this->images->first()->url;
         else
             return emptyImage();
     }
