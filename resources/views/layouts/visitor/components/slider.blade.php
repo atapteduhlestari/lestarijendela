@@ -19,7 +19,7 @@
                                 </div>
 
                                 <div class="layer-slick1 animated visible-false" data-appear="zoomIn" data-delay="800">
-                                    <a href="/home/product/"
+                                    <a href="/home/product"
                                         class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn2 p-lr-15 trans-04">
                                         Learn More
                                     </a>
