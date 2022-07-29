@@ -32,11 +32,11 @@ class PageController extends Controller
         $posts = Post::with('category')->paginate(6);
         $categories = PostCategory::get();
         $archives = Post::select('id', 'created_at')
-        ->get()
-        ->groupBy(function($date) {
-            //return Carbon::parse($date->created_at)->format('Y'); // grouping by years
-            return Carbon::parse($date->created_at)->format('m'); // grouping by months
-        });
+            ->get()
+            ->groupBy(function ($date) {
+                //return Carbon::parse($date->created_at)->format('Y'); // grouping by years
+                return Carbon::parse($date->created_at)->format('m'); // grouping by months
+            });
 
         return view('visitor.blog.index', compact('posts', 'categories', 'archives'));
     }
@@ -46,11 +46,11 @@ class PageController extends Controller
         $categories = PostCategory::get();
         $posts = $postCategory->posts()->paginate(6);
         $archives = Post::select('id', 'created_at')
-        ->get()
-        ->groupBy(function($date) {
-            //return Carbon::parse($date->created_at)->format('Y'); // grouping by years
-            return Carbon::parse($date->created_at)->format('m'); // grouping by months
-        });
+            ->get()
+            ->groupBy(function ($date) {
+                //return Carbon::parse($date->created_at)->format('Y'); // grouping by years
+                return Carbon::parse($date->created_at)->format('m'); // grouping by months
+            });
         return view('visitor.blog.index', compact('categories', 'posts', 'archives'));
     }
 
@@ -58,20 +58,19 @@ class PageController extends Controller
     {
 
         $archives = Post::select('id', 'created_at')
-        ->get()
-        ->groupBy(function($date) {
-            //return Carbon::parse($date->created_at)->format('Y'); // grouping by years
-            return Carbon::parse($date->created_at)->format('m'); // grouping by months
-        });
-       $categories = PostCategory::get();
-       $posts = Post::whereYear('created_at', '=', $year)
-              ->whereMonth('created_at', '=', $month)
-              ->paginate(6);
+            ->get()
+            ->groupBy(function ($date) {
+                //return Carbon::parse($date->created_at)->format('Y'); // grouping by years
+                return Carbon::parse($date->created_at)->format('m'); // grouping by months
+            });
+        $categories = PostCategory::get();
+        $posts = Post::whereYear('created_at', '=', $year)
+            ->whereMonth('created_at', '=', $month)
+            ->paginate(6);
 
         return view('visitor.blog.index', compact('categories', 'posts', 'archives'));
-
     }
-    
+
 
     public function faqIndex()
     {
@@ -88,11 +87,11 @@ class PageController extends Controller
     public function blogDetail(POST $post)
     {
         $archives = Post::select('id', 'created_at')
-        ->get()
-        ->groupBy(function($date) {
-            //return Carbon::parse($date->created_at)->format('Y'); // grouping by years
-            return Carbon::parse($date->created_at)->format('m'); // grouping by months
-        });
+            ->get()
+            ->groupBy(function ($date) {
+                //return Carbon::parse($date->created_at)->format('Y'); // grouping by years
+                return Carbon::parse($date->created_at)->format('m'); // grouping by months
+            });
         $categories = PostCategory::get();
         return view('visitor.blog.detail', compact('post', 'categories', 'archives'));
     }
@@ -103,11 +102,11 @@ class PageController extends Controller
         $posts = Post::where('title', 'like', "%" . $keyword . "%")->paginate(6);
         $categories = PostCategory::get();
         $archives = Post::select('id', 'created_at')
-        ->get()
-        ->groupBy(function($date) {
-            //return Carbon::parse($date->created_at)->format('Y'); // grouping by years
-            return Carbon::parse($date->created_at)->format('m'); // grouping by months
-        });
+            ->get()
+            ->groupBy(function ($date) {
+                //return Carbon::parse($date->created_at)->format('Y'); // grouping by years
+                return Carbon::parse($date->created_at)->format('m'); // grouping by months
+            });
         return view('visitor.blog.index', compact('posts', 'categories', 'archives'));
     }
 
@@ -124,35 +123,16 @@ class PageController extends Controller
         //
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function edit($id)
     {
         //
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function update(Request $request, $id)
     {
         //
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function destroy($id)
     {
         //

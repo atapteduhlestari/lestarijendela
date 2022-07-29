@@ -5,134 +5,124 @@
 @endpush
 @section('content')
 
- <!-- Begin Page Content -->
- <div class="container-fluid">
+    <!-- Begin Page Content -->
+    <div class="container-fluid">
 
-    <!-- Page Heading -->
-    <h1 class="h3 mb-2 text-gray-800">Highlight Slider</h1>
-    <div class="my-4">
-        <div class="d-flex">
-            <div class="flex-grow-1">
-                <button class="btn btn-primary btn-sm flex-grow-1" type="button" data-toggle="modal"
-                    data-target="#addNewRecord">
-                    Add <i class="fas fa-plus-circle"></i>
-                </button>
-            </div>
-            <a href="/banner" class="btn btn-info btn-sm mr-1">
-                Banners
-            </a>
-            {{-- <a href="/product-sub-category" class="btn btn-success btn-sm">
+        <!-- Page Heading -->
+        <h1 class="h3 mb-2 text-gray-800">Highlight Slider</h1>
+        <div class="my-4">
+            <div class="d-flex">
+                <div class="flex-grow-1">
+                    <button class="btn btn-primary btn-sm flex-grow-1" type="button" data-toggle="modal"
+                        data-target="#addNewRecord">
+                        Add <i class="fas fa-plus-circle"></i>
+                    </button>
+                </div>
+                <a href="/banner" class="btn btn-info btn-sm mr-1">
+                    Banners
+                </a>
+                {{-- <a href="/product-sub-category" class="btn btn-success btn-sm">
                 Sub Category
             </a> --}}
+            </div>
         </div>
-    </div>
 
-    <!-- DataTales Example -->
-    <div class="card shadow mb-4">
-        <div class="card-header py-3">
-            <h6 class="m-0 font-weight-bold text-center">List Slider</h6>
-        </div>
-        <div class="card-body">
-            <div class="table-responsive">
-                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                    <thead>
-                        <tr>
-                            <th>#</th>
-                            <th>Heading</th>
-                            <th>Description</th>
-                            <th class="col-md-2">Images</th>
-                            <th>Actions</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                      @foreach ($sliders as $slider)
-                          
-                     
-                               <tr>
-                                <td>{{ $loop->iteration }}</td>
-                                <td>{{$slider->heading}}</td>
-                                <td>{{$slider->description}}</td>
-                                <td class="col-md-2">
-                                    <div class="">
-
-                                        <img class="col-md-12" src="{{ '/storage/' . $slider->url }}" alt=""> 
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="d-flex justify-content-around">
-
-
-                                        <div>
-                                            <a title="Edit Data" href="/hightlight-slider/{{$slider->id}}/edit"
-                                                class="btn btn-outline-dark text-xs">Edit</a>
-                                        </div>
-
-                                      
-                                        <div>
-                                            <form action="/hightlight-slider/{{$slider->id}}" method="post" id="deleteForm">
-                                                @csrf
-                                                @method('delete')
-                                                <button title="Delete Data" class="btn btn-outline-danger text-xs"
-                                                    onclick="return false" id="deleteButton"
-                                                    data-id="{{$slider->id}}">
-                                                    <i class="fas fa-trash-alt"></i>
-                                                </button>
-                                            </form>
-                                        </div>
-                                    </div>
-                                </td>
+        <!-- DataTales Example -->
+        <div class="card shadow mb-4">
+            <div class="card-header py-3">
+                <h6 class="m-0 font-weight-bold text-center">List Slider</h6>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Heading</th>
+                                <th>Description</th>
+                                <th class="col-md-2">Images</th>
+                                <th>Actions</th>
                             </tr>
-                     @endforeach
-                    </tbody>
-                </table>
+                        </thead>
+                        <tbody>
+                            @foreach ($sliders as $slider)
+                                <tr>
+                                    <td>{{ $loop->iteration }}</td>
+                                    <td>{{ $slider->heading }}</td>
+                                    <td>{{ $slider->description }}</td>
+                                    <td class="col-md-2">
+                                        <img class="col-md-12" src="{{ '/uploads/' . $slider->url }}" alt="">
+                                    </td>
+                                    <td>
+                                        <div class="d-flex justify-content-around">
+                                            <div>
+                                                <a title="Edit Data" href="/hightlight-slider/{{ $slider->id }}/edit"
+                                                    class="btn btn-outline-dark text-xs">Edit</a>
+                                            </div>
+
+                                            <div>
+                                                <form action="/hightlight-slider/{{ $slider->id }}" method="post"
+                                                    id="deleteForm">
+                                                    @csrf
+                                                    @method('delete')
+                                                    <button title="Delete Data" class="btn btn-outline-danger text-xs"
+                                                        onclick="return false" id="deleteButton"
+                                                        data-id="{{ $slider->id }}">
+                                                        <i class="fas fa-trash-alt"></i>
+                                                    </button>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                            @endforeach
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
     </div>
+    <!-- /.container-fluid -->
 
-</div>
-<!-- /.container-fluid -->
-
-<!-- Modal -->
-<div class="modal fade" id="addNewRecord" data-backdrop="static" data-keyboard="false" tabindex="-1"
-    aria-labelledby="addNewRecordLabel" aria-hidden="true">
-    <div class="modal-dialog modal-xl modal-dialog-scrollable">
-        <div class="modal-content">
-            <div class="modal-header bg-gradient-dark">
-                <h5 class="modal-title text-white" id="addNewRecordLabel">Form - Add New Slider</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span class="text-white" aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <form action="/hightlight-slider" method="POST" id="formAdd" enctype="multipart/form-data"> 
-                    @csrf
-                    <div class="row">
-                        <div class="col-md-6 mb-3">
-                            <label for="category_id">Heading</label>
-                            <input type="text" class="form-control @error('heading') is-invalid @enderror" name="heading" value="{{old('heading')}}">
-                        </div>
-                        <div class="col-md-6 mb-3">
-                            <label for="category_id">Images</label>
-                            <input type="file" class="form-control @error('url') is-invalid @enderror" name="url" value="{{old('url')}}">
-                        </div>
-                        <div class="col-md-6 mb-3">
-                            <div class="form-group">
-                                <label for="category_id">Description</label>
-                                <textarea name="description" id="" class="form-control @error('description') is-invalid @enderror">{{old('description')}}</textarea>
+    <!-- Modal -->
+    <div class="modal fade" id="addNewRecord" data-backdrop="static" data-keyboard="false" tabindex="-1"
+        aria-labelledby="addNewRecordLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header bg-gradient-dark">
+                    <h5 class="modal-title text-white" id="addNewRecordLabel">Form - Add New Slider</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span class="text-white" aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form action="/hightlight-slider" method="POST" id="formAdd" enctype="multipart/form-data">
+                        @csrf
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="category_id">Heading</label>
+                                <input type="text" class="form-control @error('heading') is-invalid @enderror"
+                                    name="heading" value="{{ old('heading') }}">
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="category_id">Images</label>
+                                <input type="file" class="form-control @error('url') is-invalid @enderror" name="url"
+                                    value="{{ old('url') }}">
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <div class="form-group">
+                                    <label for="category_id">Description</label>
+                                    <textarea name="description" id="" class="form-control @error('description') is-invalid @enderror">{{ old('description') }}</textarea>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="submit" id="btnSubmit" class="btn btn-primary">Submit</button>
-                </form>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="submit" id="btnSubmit" class="btn btn-primary">Submit</button>
+                    </form>
+                </div>
             </div>
         </div>
     </div>
-</div>
-
-
-
 @endsection
 @push('scripts')
     <!-- Page level plugins -->

@@ -5,64 +5,62 @@
 @endpush
 @section('content')
 
-<div class="container-fluid">
-    <div class="card">
-        <div class="card-header">
-            <h6 class="m-0 font-weight-bold text-center">List Feedbacks</h6>
-        </div>
+    <div class="container-fluid">
+        <div class="card">
+            <div class="card-header">
+                <h6 class="m-0 font-weight-bold text-center">List Feedbacks</h6>
+            </div>
 
-        <div class="card-body">
-            <div class="table-responsive">
-                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                    <thead>
-                        <tr>
-                            <th>#</th>
-                            <th>Email</th>
-                            <th>Description</th>
-                            
-                            <th>Actions</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @foreach($feedbacks as $feedback)
-                               <tr>
-                                <td>{{ $loop->iteration }}</td>
-                                <td>{{$feedback->email}}</td>
-                                <td>{{$feedback->description}}</td>
-                                <td>
-                                    <div class="d-flex justify-content-around">
-
-                                        <div>
-                                            <form action="feedback-status/{{$feedback->id}}">
-                                                {{-- <a title="Detail Data" href="/feedback/{{$feedback->id}}/detail"
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Email</th>
+                                <th>Description</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach ($feedbacks as $feedback)
+                                <tr>
+                                    <td>{{ $loop->iteration }}</td>
+                                    <td>{{ $feedback->email }}</td>
+                                    <td>{{ $feedback->description }}</td>
+                                    <td>
+                                        <div class="d-flex justify-content-around">
+                                            <div>
+                                                <form action="feedback-status/{{ $feedback->id }}">
+                                                    {{-- <a title="Detail Data" href="/feedback/{{$feedback->id}}/detail"
                                                     class="btn btn-outline-primary text-xs"> Detail </a> --}}
 
                                                     <button title="Detail Data" type="submit"
                                                         class="btn btn-outline-primary text-xs"> Detail </button>
-                                            </form>
+                                                </form>
+                                            </div>
+                                            <div>
+                                                <form action="/feedback-delete/{{ $feedback->id }}" method="post"
+                                                    id="deleteForm">
+                                                    @csrf
+                                                    @method('delete')
+                                                    <button title="Delete Data" class="btn btn-outline-danger text-xs"
+                                                        onclick="return false" id="deleteButton"
+                                                        data-id="{{ $feedback->id }}">
+                                                        <i class="fas fa-trash-alt"></i>
+                                                    </button>
+                                                </form>
+                                            </div>
                                         </div>
-                                        <div>
-
-                                            <form action="/feedback-delete/{{$feedback->id}}" method="post" id="deleteForm">
-                                                @csrf
-                                                @method('delete')
-                                                <button title="Delete Data" class="btn btn-outline-danger text-xs"
-                                                    onclick="return false" id="deleteButton"
-                                                    data-id="{{$feedback->id}}">
-                                                    <i class="fas fa-trash-alt"></i>
-                                                </button>
-                                            </form>
-                                        </div>
-                                    </div>
-                                </td>
-                            </tr>
-                     @endforeach
-                    </tbody>
-                </table>
+                                    </td>
+                                </tr>
+                            @endforeach
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
     </div>
-</div>
 
 @endsection
 @push('scripts')

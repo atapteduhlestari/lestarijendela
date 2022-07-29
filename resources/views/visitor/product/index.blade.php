@@ -146,6 +146,7 @@
                 @empty
                 @endforelse
             </div>
+
             <div class="d-flex justify-content-center">
                 {{ $products->withQueryString()->links('pagination::custom') }}
             </div>

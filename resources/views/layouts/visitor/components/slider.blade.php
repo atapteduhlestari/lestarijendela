@@ -12,7 +12,6 @@
                                 uPVC
                             </span>
                         </div> --}}
-
                                 <div class="layer-slick1 animated visible-false" data-appear="fadeInUp" data-delay="0">
                                     <h2 class="ltext-104 txt-center cl0 p-t-22 p-b-40 respon1">
                                         {{ $slider->heading }}
@@ -29,7 +28,6 @@
                         </div>
                     </div>
                 @endforeach
-
             </div>
             {{-- <div class="wrap-slick1-dots p-lr-10"></div> --}}
         </div>

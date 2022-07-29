@@ -67,9 +67,6 @@
                             </div>
                         @endforeach
 
-                        <!-- item blog -->
-
-
                         <!-- Pagination -->
                         <div class="d-flex justify-content-center">
                             {{ $posts->withQueryString()->links('pagination::custom') }}
@@ -80,21 +77,19 @@
                 <div class="col-md-4 col-lg-3 p-b-80">
                     <div class="side-menu">
                         <form action="/home/search">
-                        <div class="bor17 of-hidden pos-relative">
-                            <input class="stext-103 cl2 plh4 size-116 p-l-28 p-r-55" type="text" name="keyword"
-                                placeholder="Search">
+                            <div class="bor17 of-hidden pos-relative">
+                                <input class="stext-103 cl2 plh4 size-116 p-l-28 p-r-55" type="text" name="keyword"
+                                    placeholder="Search">
 
-                            <button type="submit" class="flex-c-m size-122 ab-t-r fs-18 cl4 hov-cl1 trans-04">
-                                <i class="zmdi zmdi-search"></i>
-                            </button>
-                        </div>
-                    </form>
-
+                                <button type="submit" class="flex-c-m size-122 ab-t-r fs-18 cl4 hov-cl1 trans-04">
+                                    <i class="zmdi zmdi-search"></i>
+                                </button>
+                            </div>
+                        </form>
                         <div class="p-t-55">
                             <h4 class="mtext-112 cl2 p-b-33">
                                 Categories
                             </h4>
-
                             <ul>
                                 @foreach ($categories as $category)
                                     <li class="bor18">
@@ -104,12 +99,8 @@
                                         </a>
                                     </li>
                                 @endforeach
-
                             </ul>
                         </div>
-
-
-
                         <div class="p-t-55">
                             <h4 class="mtext-112 cl2 p-b-20">
                                 Archive
@@ -124,8 +115,6 @@
                                     foreach ($month as $key => $value) {
                                                 $usermcount[(int)$key] = count($value);
                                             }
-
-
                                         for($i = 1; $i <= 12; $i++){
                                         if(!empty($usermcount[$i])){
                                            echo $userArr[$i] = $usermcount[$i]."<br>";    
@@ -133,22 +122,17 @@
                                             echo $userArr[$i] = 0 ."<br>";    
                                         }
                                     }  
-
-                                    
                                    @endphp
                                 </li> --}}
 
                                 <li class="p-b-7">
-
                                     @php
                                         $usermcount = [];
                                         $userArr = [];
                                     @endphp
-
                                     @foreach ($archives as $key => $value)
                                         <a href="/home/blog-archive/{{ $value->first()->created_at->format('m') }}/{{ $value->first()->created_at->format('Y') }}"
                                             class="flex-w flex-sb-m stext-115 cl6 hov-cl1 trans-04 p-tb-2">
-
                                             <span>
                                                 {{ $value->first()->created_at->format('F Y') }}
                                             </span>
@@ -156,18 +140,14 @@
                                             <span>
                                                 ({{ $usermcount[(int) $key] = count($value) }})
                                             </span>
-                                            <a />
+                                        </a>
                                     @endforeach
                                 </li>
-
                             </ul>
                         </div>
-
-
                     </div>
                 </div>
             </div>
         </div>
     </section>
-
 @endsection

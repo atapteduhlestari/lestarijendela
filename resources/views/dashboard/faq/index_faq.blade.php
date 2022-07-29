@@ -81,77 +81,78 @@
                 </div>
 
 
-        <!-- Modal -->
-        <div class="modal fade" id="addNewRecord" data-backdrop="static" data-keyboard="false" tabindex="-1"
-            aria-labelledby="addNewRecordLabel" aria-hidden="true">
-            <div class="modal-dialog modal-xl modal-dialog-scrollable">
-                <div class="modal-content">
-                    <div class="modal-header bg-gradient-dark">
-                        <h5 class="modal-title text-white" id="addNewRecordLabel">Form - Add FAQ</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span class="text-white" aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        <form action="/faq" method="POST" id="formAdd" enctype="multipart/form-data">
-                            @csrf
-                            <div class="row">
-                                <div class="col-md-6 mb-3">
-                                    <label for="">QUESTION</label>
-                                    <input type="text" class="form-control @error('question') is-invalid @enderror"
-                                        name="question" value="{{old('question')}}" >
-                                </div>
-                                <div class="col-md-6 mb-3">
-                                    <label for="category_id">ANSWER</label>
-                                    <textarea type="email" class="form-control @error('answer') is-invalid @enderror" name="answer"> {{old('answer')}} </textarea>
-                                </div>
-
+                <!-- Modal -->
+                <div class="modal fade" id="addNewRecord" data-backdrop="static" data-keyboard="false" tabindex="-1"
+                    aria-labelledby="addNewRecordLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-xl modal-dialog-scrollable">
+                        <div class="modal-content">
+                            <div class="modal-header bg-gradient-dark">
+                                <h5 class="modal-title text-white" id="addNewRecordLabel">Form - Add FAQ</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span class="text-white" aria-hidden="true">&times;</span>
+                                </button>
                             </div>
+                            <div class="modal-body">
+                                <form action="/faq" method="POST" id="formAdd" enctype="multipart/form-data">
+                                    @csrf
+                                    <div class="row">
+                                        <div class="col-md-6 mb-3">
+                                            <label for="">QUESTION</label>
+                                            <input type="text"
+                                                class="form-control @error('question') is-invalid @enderror" name="question"
+                                                value="{{ old('question') }}">
+                                        </div>
+                                        <div class="col-md-6 mb-3">
+                                            <label for="category_id">ANSWER</label>
+                                            <textarea type="email" class="form-control @error('answer') is-invalid @enderror" name="answer"> {{ old('answer') }} </textarea>
+                                        </div>
 
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                            <button type="submit" id="btnSubmit" class="btn btn-primary">Submit</button>
-                        </form>
+                                    </div>
+
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                    <button type="submit" id="btnSubmit" class="btn btn-primary">Submit</button>
+                                </form>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-        </div>
-@endsection
-@push('scripts')
-    <!-- Page level plugins -->
-    <script src="/assets/dashboard/vendor/datatables/jquery.dataTables.min.js"></script>
-    <script src="/assets/dashboard/vendor/datatables/dataTables.bootstrap4.min.js"></script>
+    @endsection
+    @push('scripts')
+        <!-- Page level plugins -->
+        <script src="/assets/dashboard/vendor/datatables/jquery.dataTables.min.js"></script>
+        <script src="/assets/dashboard/vendor/datatables/dataTables.bootstrap4.min.js"></script>
 
-    <!-- Page level custom scripts -->
-    <script src="/assets/dashboard/js/demo/datatables-demo.js"></script>
+        <!-- Page level custom scripts -->
+        <script src="/assets/dashboard/js/demo/datatables-demo.js"></script>
 
-    <script>
-        let formDelete = $('#deleteForm');
-
-        $(document).on('click', '#deleteButton', function(e) {
-            e.preventDefault();
-            let id = $(this).data('id');
-            formDelete.attr('action', `/faq/${id}`)
-            Swal.fire({
-                title: 'Apakah Anda Yakin?.',
-                text: "Anda Ingin menghapus data ini",
-                icon: 'warning',
-                showCancelButton: true,
-                confirmButtonColor: '#3085d6',
-                cancelButtonColor: '#d33',
-                confirmButtonText: 'Yes, delete it!'
-            }).then((result) => {
-                if (result.isConfirmed) {
-                    formDelete.submit();
-                }
-            })
-        });
-    </script>
-
-    @if ($errors->any())
         <script>
-            $('#addNewRecord').modal('show');
+            let formDelete = $('#deleteForm');
+
+            $(document).on('click', '#deleteButton', function(e) {
+                e.preventDefault();
+                let id = $(this).data('id');
+                formDelete.attr('action', `/faq/${id}`)
+                Swal.fire({
+                    title: 'Apakah Anda Yakin?.',
+                    text: "Anda Ingin menghapus data ini",
+                    icon: 'warning',
+                    showCancelButton: true,
+                    confirmButtonColor: '#3085d6',
+                    cancelButtonColor: '#d33',
+                    confirmButtonText: 'Yes, delete it!'
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        formDelete.submit();
+                    }
+                })
+            });
         </script>
-    @endif
-@endpush
+
+        @if ($errors->any())
+            <script>
+                $('#addNewRecord').modal('show');
+            </script>
+        @endif
+    @endpush

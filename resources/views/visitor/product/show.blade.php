@@ -38,16 +38,15 @@
                                     <img loading="lazy" data-src="/assets/img/no-image.png" src="/assets/img/no-image.png"
                                         class="img-responsive h-350 rounded lazy" alt="IMG-PRODUCT">
                                 @endif
-
                                 @foreach ($product->images as $image)
-                                    <div class="item-slick3" data-thumb="{{ '/storage/' . $image->url }}">
+                                    <div class="item-slick3" data-thumb="{{ '/uploads/' . $image->url }}">
                                         <div class="wrap-pic-w pos-relative">
-                                            <img loading="lazy" data-src="{{ '/storage/' . $image->url }}"
-                                                src="{{ '/storage/' . $image->url }}"
+                                            <img loading="lazy" data-src="{{ '/uploads/' . $image->url }}"
+                                                src="{{ '/uploads/' . $image->url }}"
                                                 class="img-responsive h-350 rounded lazy" alt="{{ $product->slug }}">
 
                                             <a class="flex-c-m size-108 how-pos1 bor0 fs-16 cl10 bg0 hov-btn3 trans-04"
-                                                href="{{ '/storage/' . $image->url }}">
+                                                href="{{ '/uploads/' . $image->url }}">
                                                 <i class="fa fa-expand"></i>
                                             </a>
                                         </div>

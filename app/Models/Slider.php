@@ -14,6 +14,6 @@ class Slider extends Model
 
     public function getTakeImageAttribute()
     {
-        return "/storage/" . $this->url;
+        return "/uploads/" . $this->url;
     }
 }

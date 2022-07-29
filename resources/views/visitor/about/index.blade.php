@@ -6,7 +6,6 @@
             About
         </h2>
     </section>
-
     <section class="bg0 p-t-75 p-b-120">
         <div class="container">
             <div class="row p-b-148">
@@ -22,7 +21,6 @@
 
                     </div>
                 </div>
-
                 <div class="col-11 col-md-5 col-lg-4 m-lr-auto">
                     <div class="how-bor1 ">
                         <div class="hov-img0">
@@ -31,10 +29,6 @@
                     </div>
                 </div>
             </div>
-
-
         </div>
     </section>
-
-
 @endsection

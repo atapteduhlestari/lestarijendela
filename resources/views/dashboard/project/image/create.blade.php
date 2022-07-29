@@ -13,7 +13,7 @@
                     <div class="row">
                         @foreach ($project->images as $image)
                             <div class="col-md-6 mb-3">
-                                <img height="100" class="mb-3" src="{{ '/storage/' . $image->url }}" alt="">
+                                <img height="100" class="mb-3" src="{{ '/uploads/' . $image->url }}" alt="">
                                 <br>
                                 <form action="/project-image/{{ $image->id }}" method="post" id="deleteForm">
                                     @csrf

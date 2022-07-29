@@ -45,7 +45,7 @@
                                     <td>{{ $branch->alamat }}</td>
                                     <td>
                                         <div class="d-flex justify-content-around">
-                                          
+
                                             <div>
                                                 <a title="Edit Data" href="/branch/{{ $branch->id }}/edit"
                                                     class="btn btn-outline-dark btn-sm">
@@ -125,7 +125,7 @@
     <script src="/assets/dashboard/js/demo/datatables-demo.js"></script>
 
     <script>
-    let formDelete = $('#deleteForm');
+        let formDelete = $('#deleteForm');
 
         $(document).on('click', '#deleteButton', function(e) {
             e.preventDefault();

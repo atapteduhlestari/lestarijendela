@@ -1,5 +1,4 @@
 <ul class="navbar-nav bg-page sidebar sidebar-dark accordion" id="accordionSidebar">
-
     <!-- Sidebar - Brand -->
     <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/dashboard">
         <div class="sidebar-brand-icon">
@@ -37,56 +36,48 @@
         </div>
     </li> --}}
 
-
     <!-- Nav Item - Tables -->
     <li class="nav-item {{ request()->is('product*') ? 'active' : '' }}">
         <a class="nav-link" href="/product">
             <i class="fas fa-chevron-right"></i>
             <span>Product</span></a>
     </li>
-
     <li class="nav-item {{ request()->is('project*') ? 'active' : '' }}">
         <a class="nav-link" href="/project">
             <i class="fas fa-chevron-right"></i>
             <span>Project</span></a>
     </li>
-
     <li class="nav-item {{ request()->is('post*') ? 'active' : '' }}">
         <a class="nav-link" href="/post">
             <i class="fas fa-chevron-right"></i>
             <span>Blog</span></a>
     </li>
-
     <li class="nav-item {{ request()->is('profile*') ? 'active' : '' }}">
         <a class="nav-link" href="/profile">
             <i class="fas fa-chevron-right"></i>
             <span>Profile</span></a>
     </li>
-
     <li class="nav-item {{ request()->is('faq*') ? 'active' : '' }}">
         <a class="nav-link" href="/faq">
             <i class="fas fa-chevron-right"></i>
             <span>FAQs</span></a>
     </li>
-
-
     <li class="nav-item {{ request()->is('highlight*') ? 'active' : '' }}">
         <a class="nav-link" href="/highlight">
             <i class="fas fa-chevron-right"></i>
             <span>Highlight</span></a>
     </li>
-
     <li class="nav-item {{ request()->is('feedback*') ? 'active' : '' }}">
         <a class="nav-link" href="/feedback">
             <i class="fas fa-chevron-right"></i>
             <span>Feedbacks</span></a>
     </li>
-
     <li class="nav-item {{ request()->is('branch*') ? 'active' : '' }}">
         <a class="nav-link" href="/branch">
             <i class="fas fa-chevron-right"></i>
             <span>Branch</span></a>
     </li>
+
     <!-- Divider -->
     <hr class="sidebar-divider d-none d-md-block">
 

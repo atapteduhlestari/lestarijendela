@@ -8,9 +8,7 @@
     </section>
 
     <!-- Content page -->
-
     <section class="bg0 p-t-104 p-b-116">
-
         <div class="container">
             <div class="flex-w flex-tr">
                 <div class="size-210 bor10 flex-w flex-col-m p-lr-93 p-tb-30 p-lr-15-lg w-full-md" style="width: 100%">
@@ -136,13 +134,9 @@
             </div>
         </div> --}}
     </section>
-
-
     <!-- Map -->
-
     <div class="card">
         <div class="card-body">
-
             <iframe src="https://www.google.com/maps/d/u/0/embed?mid=18WU3lzNbD547KXK8oLzTSGaqKu19hGY&ehbc=2E312F"
                 style="width: 100%; height:350px"></iframe>
         </div>

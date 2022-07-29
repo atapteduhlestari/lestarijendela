@@ -1,7 +1,6 @@
 @extends('layouts.visitor.master')
 @section('title', 'Blog | Lestari Jendela | ' . $post->title)
 @section('content')
-
     <section class="bg0 p-t-52 p-b-20">
         <div class="container">
             <div class="row">
@@ -9,7 +8,7 @@
                     <div class="p-r-45 p-r-0-lg">
                         <!--  -->
                         <div class="wrap-pic-w how-pos5-parent">
-                            <a href="blog-detail.html" class="hov-img0 how-pos5-parent">
+                            <a href="/home/blog/{{ $post->slug }}"" class="hov-img0 how-pos5-parent">
                                 <img loading="lazy" data-src="{{ $post->firstImage }}" src="{{ $post->firstImage }}"
                                     alt="{{ $post->slug }}" class="img-responsive h-300 lazy">
 
@@ -45,12 +44,8 @@
                                 {!! $post->deskripsi !!}
                             </p>
                         </div>
-
                         <div class="flex-w flex-t p-t-16">
-
                         </div>
-
-                        <!--  -->
                     </div>
                 </div>
 
@@ -80,23 +75,16 @@
                                 @endforeach
                             </ul>
                         </div>
-
-
-
                         <div class="p-t-55">
                             <h4 class="mtext-112 cl2 p-b-20">
                                 Archive
                             </h4>
-
                             <ul>
-
                                 <li class="p-b-7">
-
                                     @php
                                         $usermcount = [];
                                         $userArr = [];
                                     @endphp
-
                                     @foreach ($archives as $key => $value)
                                         <a href="/home/blog-archive/{{ $value->first()->created_at->format('m') }}/{{ $value->first()->created_at->format('Y') }}"
                                             class="flex-w flex-sb-m stext-115 cl6 hov-cl1 trans-04 p-tb-2">
@@ -111,21 +99,13 @@
                                             <a />
                                     @endforeach
                                 </li>
-
-
                             </ul>
                         </div>
-
                         <div class="p-t-50">
-
-
-
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-
-
 @endsection
