@@ -18,8 +18,6 @@ class HighlightController extends Controller
     public function saveSlider(Request $request)
     {
         $request->validate([
-            'heading' => 'required',
-            'description' => 'required',
             'url' => 'required|file|max:10240'
         ]);
 
@@ -44,8 +42,6 @@ class HighlightController extends Controller
         $slider = Slider::find($id);
 
         $request->validate([
-            'heading' => 'required',
-            'description' => 'required',
             'url' => 'file|max:10240'
         ]);
 
@@ -80,8 +76,6 @@ class HighlightController extends Controller
     public function saveBanner(Request $request)
     {
         $request->validate([
-            'heading' => 'required',
-            'description' => 'required',
             'url' => 'required|file|max:10240'
         ]);
 
@@ -108,8 +102,6 @@ class HighlightController extends Controller
         $banner = Banner::find($id);
 
         $request->validate([
-            'heading' => 'required',
-            'description' => 'required',
             'url' => 'file|max:10240'
         ]);
 
