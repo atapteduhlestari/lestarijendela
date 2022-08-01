@@ -2748,7 +2748,6 @@ input.num-product::-webkit-inner-spin-button {
 ==================================================================*/
 .bg-b-w {
     background: url(/assets/visitor/images/block/b-w.png) no-repeat center center/cover scroll;
-
 }
 
 .bg-none {
@@ -3832,7 +3831,7 @@ input.num-product::-webkit-inner-spin-button {
 
 .blogHome {
     opacity: 0;
-    transform: scale(2, 2);
+    transform: scale(1, 2);
     transition: all .25s ease-in;
 }
 
@@ -3843,7 +3842,7 @@ input.num-product::-webkit-inner-spin-button {
 
 .productHome {
     opacity: 0;
-    transform: scale(2, 2);
+    transform: scale(1, 2);
     transition: all .25s ease-in;
 }
 
@@ -3851,4 +3850,3 @@ input.num-product::-webkit-inner-spin-button {
     opacity: 1;
     transform: scale(1, 1);
 }
-

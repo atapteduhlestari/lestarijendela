@@ -110,7 +110,6 @@
                     </div>
                 @empty
                 @endforelse
-
             </div>
         </div>
     </section>
