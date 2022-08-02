@@ -17989,6 +17989,8 @@ iframe {
     object-fit: cover;
     -o-object-position: center;
     object-position: center;
+    width: 75%;
+    height: auto;
 }
 
 .h-200 {
