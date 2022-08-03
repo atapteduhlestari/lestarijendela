@@ -48,8 +48,7 @@
                             </a>
                         </li>
 
-                        <li class="label1 {{ request()->is('home/product*') ? 'active-menu' : '' }}"
-                            data-label1="hot">
+                        <li class="label1 {{ request()->is('home/product*') ? 'active-menu' : '' }}" data-label1="hot">
                             <a href="/home/product">Product</a>
                         </li>
 
@@ -151,7 +150,7 @@
             </li>
 
             <li class="{{ request()->is('home/gallery*') ? 'active-menu' : '' }}">
-                <a href="/gallery">Gallery</a>
+                <a href="/home/gallery">Gallery</a>
             </li>
 
             <li class="{{ request()->is('home/blog*') ? 'active-menu' : '' }}">
