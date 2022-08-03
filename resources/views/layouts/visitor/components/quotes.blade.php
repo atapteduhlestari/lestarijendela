@@ -8,7 +8,8 @@
             </em>
         </div>
         <div class="col-12 txt-center">
-            <img loading="lazy" class="img-responsive lazy" data-src="/assets/visitor/images/block/illustration-1.png"
+            <img loading="lazy" class="img-responsive lazy quote-img"
+                data-src="/assets/visitor/images/block/illustration-1.png"
                 src="/assets/visitor/images/block/illustration-1.png" alt="IMG-BANNER">
         </div>
     </div>
