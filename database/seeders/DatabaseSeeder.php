@@ -18,6 +18,7 @@ class DatabaseSeeder extends Seeder
         $this->call(ProductCategorySeeder::class);
         $this->call(ProductSubCategorySeeder::class);
         $this->call(UserSeeder::class);
+        $this->call(SbuSeeder::class);
         // \App\Models\User::factory(10)->create();
 
         //ary sitepu

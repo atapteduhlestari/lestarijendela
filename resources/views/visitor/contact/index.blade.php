@@ -135,7 +135,7 @@
         </div> --}}
     </section>
     <!-- Map -->
-    <div class="card">
+    <div class="card border-0">
         <div class="card-body">
             <iframe src="https://www.google.com/maps/d/u/0/embed?mid=18WU3lzNbD547KXK8oLzTSGaqKu19hGY&ehbc=2E312F"
                 style="width: 100%; height:350px"></iframe>
