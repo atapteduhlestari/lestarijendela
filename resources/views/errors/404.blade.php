@@ -4,5 +4,5 @@
 @section('code', '404')
 @section('message', __('Not Found'))
 @section('image')
-    <img src="/assets/dashboard/img/undraw_rocket.svg" alt="">
+    <img src="/assets/visitor/images/block/illustration-2.svg" alt="">
 @endsection

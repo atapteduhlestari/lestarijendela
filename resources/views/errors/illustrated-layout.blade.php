@@ -455,7 +455,6 @@
                 background-position: center;
             }
         }
-
     </style>
 </head>
 
