@@ -91,7 +91,7 @@
 
                                     <span>
                                         <span class="cl4">
-                                            {{ $post->created_at->format('F, Y') }}
+                                            {{ $post->created_at->diffForHumans() }}
                                         </span>
                                     </span>
                                 </div>

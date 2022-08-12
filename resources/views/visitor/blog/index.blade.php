@@ -45,7 +45,7 @@
                                     <div class="flex-w flex-sb-m p-t-18">
                                         <span class="flex-w flex-m stext-111 cl2 p-r-30 m-tb-10">
                                             <span>
-                                                {{ $data->created_at->format('d M Y') }}
+                                                {{ $data->created_at->diffForHumans() }}
                                                 <span class="cl12 m-l-4 m-r-6">|</span>
                                             </span>
 
