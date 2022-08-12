@@ -27,7 +27,7 @@
                         <div class="p-t-32">
                             <span class="flex-w flex-m stext-111 cl2 p-b-19">
                                 <span>
-                                    {{ $post->created_at->format('d M Y') }}
+                                    {{ $post->created_at->diffForHumans }}
                                     <span class="cl12 m-l-4 m-r-6">|</span>
                                 </span>
 
@@ -90,7 +90,7 @@
                                             class="flex-w flex-sb-m stext-115 cl6 hov-cl1 trans-04 p-tb-2">
 
                                             <span>
-                                                {{ $value->first()->created_at->diffForHumans() }}
+                                                {{ $value->first()->created_at->format('F Y') }}
                                             </span>
 
                                             <span>
