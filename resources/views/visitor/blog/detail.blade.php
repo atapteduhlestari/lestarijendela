@@ -1,4 +1,9 @@
 @extends('layouts.visitor.master')
+@push('styles')
+    <script type='text/javascript'
+        src='https://platform-api.sharethis.com/js/sharethis.js#property=62f5c4b7af6eee0019fb9742&product=inline-share-buttons'
+        async='async'></script>
+@endpush
 @section('title', 'Blog | Lestari Jendela | ' . $post->title)
 @section('content')
     <section class="bg0 p-t-52 p-b-20">
@@ -44,8 +49,10 @@
                                 {!! $post->deskripsi !!}
                             </p>
                         </div>
-                        <div class="flex-w flex-t p-t-16">
-                        </div>
+                    </div>
+                    <div class="p-t-50">
+                        <span class="mtext-102 cl1">Share <i class="zmdi zmdi-caret-down"></i></span>
+                        <div class="sharethis-inline-share-buttons"></div>
                     </div>
                 </div>
 
@@ -87,21 +94,17 @@
                                     @endphp
                                     @foreach ($archives as $key => $value)
                                         <a href="/home/blog-archive/{{ $value->first()->created_at->format('m') }}/{{ $value->first()->created_at->format('Y') }}"
-                                            class="flex-w flex-sb-m stext-115 cl6 hov-cl1 trans-04 p-tb-2">
-
+                                            class="{{ $post->category->slug == $data->slug ? 'active ' : '' }}dis-block stext-115 cl6 hov-cl1 trans-04 p-tb-8 p-lr-4">
                                             <span>
                                                 {{ $value->first()->created_at->format('F Y') }}
                                             </span>
-
                                             <span>
                                                 ({{ $usermcount[(int) $key] = count($value) }})
                                             </span>
-                                            <a />
+                                        </a>
                                     @endforeach
                                 </li>
                             </ul>
-                        </div>
-                        <div class="p-t-50">
                         </div>
                     </div>
                 </div>
