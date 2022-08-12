@@ -27,7 +27,7 @@
                         <div class="p-t-32">
                             <span class="flex-w flex-m stext-111 cl2 p-b-19">
                                 <span>
-                                    {{ $post->created_at->diffForHumans() }}
+                                    {{ $post->created_at->format('d M Y') }}
                                     <span class="cl12 m-l-4 m-r-6">|</span>
                                 </span>
 
