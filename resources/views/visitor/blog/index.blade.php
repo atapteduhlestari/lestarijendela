@@ -6,13 +6,11 @@
             Blog
         </h2>
     </section>
-
-    <section class="bg0 p-t-62 p-b-60">
+    <section class="bg0 p-t-52 p-b-20">
         <div class="container">
             <div class="row">
                 <div class="col-md-8 col-lg-9 p-b-80">
                     <div class="p-r-45 p-r-0-lg">
-                        <!-- item blog -->
                         @foreach ($posts as $data)
                             <div class="p-b-63">
                                 <a href="/home/blog/{{ $data->slug }}" class="hov-img0 how-pos5-parent">
@@ -41,7 +39,7 @@
                                     </a>
 
                                     <p class="stext-117 cl6">
-                                        {!! limitString($data->deskripsi, 300, '...') !!}
+                                        {!! limitString(strip_tags($data->deskripsi), 300, '...') !!}
                                     </p>
 
                                     <div class="flex-w flex-sb-m p-t-18">
@@ -66,7 +64,6 @@
                                 </div>
                             </div>
                         @endforeach
-
                         <!-- Pagination -->
                         <div class="d-flex justify-content-center">
                             {{ $posts->withQueryString()->links('pagination::custom') }}
