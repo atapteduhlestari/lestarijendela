@@ -24,7 +24,7 @@ class ProductCategoryController extends Controller
     {
         $request->validate([
             'title' => 'required',
-            'url' => 'max:10240'
+            'url' => 'max:2048'
         ]);
 
         $data = $request->all();
@@ -52,7 +52,7 @@ class ProductCategoryController extends Controller
     {
         $request->validate([
             'title' => 'required',
-            'url' => 'max:10240'
+            'url' => 'max:2048'
         ]);
 
         $data = $request->all();
