@@ -52,6 +52,8 @@ Route::prefix('home')->group(function () {
 
 Route::middleware(['auth'])->group(function () {
     Route::get('/dashboard', [DashboardController::class, 'index']);
+    Route::get('/dashboard/user/{username}', [DashboardController::class, 'profile']);
+    Route::put('/dashboard/user/{username}', [DashboardController::class, 'profileUpdate']);
 
     Route::resource('/product', ProductController::class);
     Route::resource('/product-category', ProductCategoryController::class);
