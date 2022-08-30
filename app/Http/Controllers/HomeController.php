@@ -20,7 +20,7 @@ class HomeController extends Controller
         $sliders = Slider::get();
         $banners = Banner::get();
         $products = Product::take(4)->get();
-        $posts = Post::take(3)->get();
+        $posts = Post::orderBy('created_at', 'DESC')->take(3)->get();
         $productCategories = ProductCategory::get();
         $productSubCategories = ProductSubCategory::get();
 
