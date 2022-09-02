@@ -1,5 +1,5 @@
 @extends('layouts.visitor.master')
-@section('title', 'Homepage | Lestari Jendela')
+@section('title', 'Lestari Jendela - Premium Windows and Doors')
 @section('content')
 
     {{-- Components --}}

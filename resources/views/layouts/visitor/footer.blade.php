@@ -110,8 +110,8 @@
 
             <div class="col-sm-6 col-lg-3 p-b-25">
                 <div class="fb-page" data-href="https://www.facebook.com/lestarijendela" data-tabs="timeline"
-                    data-width="" data-height="350" data-small-header="false" data-adapt-container-width="true"
-                    data-hide-cover="false" data-show-facepile="false">
+                    data-width="" data-height="" data-small-header="false" data-adapt-container-width="true"
+                    data-hide-cover="false" data-show-facepile="true">
                     <blockquote cite="https://www.facebook.com/lestarijendela" class="fb-xfbml-parse-ignore"><a
                             href="https://www.facebook.com/lestarijendela">Lestari Jendela</a></blockquote>
                 </div>
