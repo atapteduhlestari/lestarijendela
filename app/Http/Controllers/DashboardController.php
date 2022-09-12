@@ -14,6 +14,11 @@ class DashboardController extends Controller
 
     public function profile($username)
     {
+
+        if (!isSuperadmin() && auth()->user()->username != $username) {
+            return redirect()->back()->with('warning', 'Access Forbidden!');
+        }
+
         $user = User::firstWhere('username', $username);
         return view('auth.profile.index', compact('user'));
     }

@@ -2,9 +2,11 @@
 
 namespace App\Providers;
 
-use App\Models\Feedback;
 use Carbon\Carbon;
+use App\Models\User;
 use App\Models\Profile;
+use App\Models\Feedback;
+use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\ServiceProvider;
 
@@ -37,6 +39,14 @@ class AppServiceProvider extends ServiceProvider
                 ['profile' => $this->profile],
 
             );
+        });
+
+        Gate::define('superadmin', function (User $user) {
+            return $user->username == 'superadmin';
+        });
+
+        Gate::define('admin', function (User $user) {
+            return $user->username == 'admin';
         });
     }
 }
