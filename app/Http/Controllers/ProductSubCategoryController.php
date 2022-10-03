@@ -32,9 +32,11 @@ class ProductSubCategoryController extends Controller
         $data = $request->all();
         $data['slug'] = Str::slug($request->title);
 
-        $image = $request->file('url');
-        $imageUrl = $image->storeAs('assets/dashboard/product/category/images', $image->hashName());
-        $data['url'] = $imageUrl;
+        if ($request->file('url')) {
+            $image = $request->file('url');
+            $imageUrl = $image->storeAs('assets/dashboard/product/category/images', $image->hashName());
+            $data['url'] = $imageUrl;
+        }
 
         ProductSubCategory::create($data);
         return redirect()->back()->with('success', 'Success!');
