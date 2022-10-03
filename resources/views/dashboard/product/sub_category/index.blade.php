@@ -93,7 +93,7 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <form action="/product-category" method="POST" id="formAdd">
+                    <form action="/product-sub-category" method="POST" id="formAdd">
                         @csrf
                         <div class="form-group mb-3">
                             <label for="title">Title</label>
