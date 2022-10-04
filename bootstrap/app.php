@@ -41,6 +41,8 @@ $app->singleton(
     App\Exceptions\Handler::class
 );
 
+// $app->bind('path.public', function() { return '/home/u1731009/public_html'; });
+
 /*
 |--------------------------------------------------------------------------
 | Return The Application
