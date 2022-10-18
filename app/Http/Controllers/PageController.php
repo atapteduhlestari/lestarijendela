@@ -29,7 +29,7 @@ class PageController extends Controller
 
     public function blogIndex()
     {
-        $posts = Post::with('category')->paginate(6);
+        $posts = Post::orderBy('created_at', 'DESC')->with('category')->paginate(6);
         $categories = PostCategory::get();
         $archives = Post::select('id', 'created_at')
             ->get()
