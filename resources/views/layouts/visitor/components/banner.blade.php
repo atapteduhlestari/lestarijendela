@@ -47,8 +47,8 @@
                         <!-- Block1 -->
                         <div class="block1 wrap-pic-w">
                             <img data-src="{{ $psc->url ? $psc->takeImage : emptyImage() }}" loading="lazy"
-                                class="img-responsive h-250 lazy"
-                                src="{{ $psc->url ? $psc->takeImage : emptyImage() }}" alt="{{ $psc->slug }}">
+                                class="img-responsive h-250 lazy" src="{{ $psc->url ? $psc->takeImage : emptyImage() }}"
+                                alt="{{ $psc->slug }}">
 
                             <a href="/home/product/sub-category/{{ $psc->slug }}"
                                 class="block1-txt ab-t-l s-full flex-col-l-sb p-lr-38 p-tb-34 trans-03 respon3">
@@ -57,9 +57,9 @@
                                         {{ $psc->title }}
                                     </span>
 
-                                    <span class="block1-info stext-102 trans-04">
-                                        Windows & Doors
-                                    </span>
+                                    {{-- <span class="block1-info stext-102 trans-04">
+                                        Customizable
+                                    </span> --}}
                                 </div>
 
                                 <div class="block1-txt-child2 p-b-4 trans-05">
