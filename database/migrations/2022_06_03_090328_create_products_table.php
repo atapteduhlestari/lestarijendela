@@ -14,6 +14,7 @@ class CreateProductsTable extends Migration
             $table->foreignId('sub_category_id')->nullable();
             $table->string('title');
             $table->string('slug');
+            $table->boolean('type')->default(1);
             $table->longText('spesifikasi')->nullable();
             $table->longText('deskripsi')->nullable();
             $table->timestamps();

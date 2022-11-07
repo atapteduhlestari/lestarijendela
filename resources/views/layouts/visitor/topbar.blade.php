@@ -49,7 +49,7 @@
                         </li>
 
                         <li class="label1 {{ request()->is('home/product*') ? 'active-menu' : '' }}" data-label1="hot">
-                            <a href="/home/product">Product</a>
+                            <a href="/home/product">Windows & Doors</a>
                         </li>
 
                         <li class="{{ request()->is('home/gallery*') ? 'active-menu' : '' }}">

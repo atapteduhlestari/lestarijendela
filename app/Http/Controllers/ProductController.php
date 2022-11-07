@@ -30,6 +30,7 @@ class ProductController extends Controller
     {
         $request->validate([
             'title' => 'required',
+            'type' => 'required',
         ]);
 
         $data = $request->all();
@@ -63,6 +64,7 @@ class ProductController extends Controller
     {
         $request->validate([
             'title' => 'required',
+            'type' => 'required',
         ]);
 
         $data = $request->all();

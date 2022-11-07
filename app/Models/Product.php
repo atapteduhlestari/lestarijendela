@@ -56,6 +56,11 @@ class Product extends Model
             fn ($query, $title) => $query->where('title', 'like', "%$title%")
         );
 
+        $query->when(
+            $filters['type'] ?? false,
+            fn ($query, $type) => $query->where('type', $type)
+        );
+
         $query->when($filters['category'] ?? false, function ($query, $category) {
             return $query->whereHas(
                 'category',

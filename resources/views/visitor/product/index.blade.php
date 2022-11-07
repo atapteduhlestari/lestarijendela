@@ -6,7 +6,7 @@
 @section('content')
     <section class="bg-breadcrumb txt-center d-flex align-items-center justify-content-center">
         <h2 class="ltext-105 cl0">
-            Products
+            Windows & Doors
         </h2>
     </section>
 
@@ -37,7 +37,7 @@
 
                                     @if (request('subCategory'))
                                         <tr>
-                                            <td>Type</td>
+                                            <td>Sub Category</td>
                                             <td>:</td>
                                             <td>{{ request('subCategory') }}</td>
                                         </tr>
@@ -75,6 +75,16 @@
                             </div>
                             <div class="col-md-6 p-r-15 p-b-5">
                                 <div class="form-group">
+                                    <label for="">Type</label>
+                                    <select name="type" id="type" class="form-control">
+                                        <option value=""></option>
+                                        <option value="0">Windows</option>
+                                        <option value="1">Doors</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-6 p-r-15 p-b-5">
+                                <div class="form-group">
                                     <label for="">Category</label>
                                     <select name="category" id="category" class="form-control">
                                         <option value=""></option>
@@ -101,7 +111,6 @@
                                     </select>
                                 </div>
                             </div>
-
                         </div>
                         <div class="wrap-filter flex-w bg6 w-full p-lr-40 p-t-5 p-lr-15-sm  p-b-10">
                             <div class="col-md-6 p-r-15">

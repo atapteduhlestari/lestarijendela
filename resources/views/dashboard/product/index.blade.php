@@ -127,6 +127,15 @@
                                 </select>
                             </div>
                             <div class="col-md-6 mb-3">
+                                <label for="type">Type</label>
+                                <select class="form-control @error('type') is-invalid @enderror" name="type"
+                                    id="type">
+                                    <option value=""></option>
+                                    <option value="0">Windows</option>
+                                    <option value="1">Doors</option>
+                                </select>
+                            </div>
+                            <div class="col-md-6 mb-3">
                                 <div class="form-group">
                                     <label for="title">Title</label>
                                     <input type="text" name="title" id="title"
@@ -138,8 +147,8 @@
                         <div class="row">
                             <div class="col-md mb-3">
                                 <label for="deskripsi">Description</label>
-                                <textarea class="form-control @error('deskripsi') is-invalid @enderror" id="deskripsi" name="deskripsi" cols="10"
-                                    rows="5">{{ old('deskripsi') }}</textarea>
+                                <textarea class="form-control @error('deskripsi') is-invalid @enderror" id="deskripsi" name="deskripsi"
+                                    cols="10" rows="5">{{ old('deskripsi') }}</textarea>
                             </div>
                         </div>
                         <div class="row">

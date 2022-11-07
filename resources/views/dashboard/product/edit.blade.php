@@ -60,6 +60,14 @@
                             </select>
                         </div>
                         <div class="col-md-6 mb-3">
+                            <label for="type">Type</label>
+                            <select class="form-control @error('type') is-invalid @enderror" name="type" id="type">
+                                <option value=""></option>
+                                <option value="0" {{ !$product->type ? 'selected' : '' }}>Windows</option>
+                                <option value="1" {{ $product->type ? 'selected' : '' }}>Doors</option>
+                            </select>
+                        </div>
+                        <div class="col-md-6 mb-3">
                             <div class="form-group">
                                 <label for="title">Title</label>
                                 <input type="text" name="title" id="title"
