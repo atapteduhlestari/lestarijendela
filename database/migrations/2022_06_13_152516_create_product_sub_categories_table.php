@@ -19,6 +19,7 @@ class CreateProductSubCategoriesTable extends Migration
             $table->string('title');
             $table->string('slug');
             $table->text('url')->nullable();
+            $table->boolean('sub_show')->default(0);
             $table->timestamps();
         });
     }

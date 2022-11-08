@@ -22,7 +22,7 @@ class HomeController extends Controller
         $products = Product::take(4)->get();
         $posts = Post::orderBy('created_at', 'DESC')->take(3)->get();
         $productCategories = ProductCategory::get();
-        $productSubCategories = ProductSubCategory::get();
+        $productSubCategories = ProductSubCategory::where('sub_show', 1)->get();
 
         return view('home', compact(
             'sliders',

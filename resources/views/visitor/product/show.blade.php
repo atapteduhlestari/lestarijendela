@@ -128,7 +128,6 @@
                                 <div class="col-sm-10 col-md-8 col-lg-6 mx-auto">
                                     <div class="p-b-30 m-lr-15-sm">
                                         <table class="table-borderless table-sm">
-
                                             @forelse ($product->documents as $document)
                                                 <tr>
                                                     <th>Downloads {{ $loop->iteration }}</th>
@@ -139,7 +138,6 @@
                                                     </td>
                                                 </tr>
                                             @empty
-                                                No Files
                                             @endforelse
                                         </table>
                                     </div>
@@ -195,9 +193,6 @@
                             </div>
                         </div>
                     @empty
-                        <div class="p-b-35 isotope-item">
-                            No Items
-                        </div>
                     @endforelse
 
                 </div>
