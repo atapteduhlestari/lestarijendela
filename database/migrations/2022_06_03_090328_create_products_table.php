@@ -15,6 +15,7 @@ class CreateProductsTable extends Migration
             $table->string('title');
             $table->string('slug');
             $table->boolean('type')->default(1);
+            $table->boolean('home_show')->default(0);
             $table->longText('spesifikasi')->nullable();
             $table->longText('deskripsi')->nullable();
             $table->timestamps();
