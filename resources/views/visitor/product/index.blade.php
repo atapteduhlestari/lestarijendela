@@ -78,7 +78,7 @@
                                     <label for="">Type</label>
                                     <select name="type" id="type" class="form-control">
                                         <option value=""></option>
-                                        <option value="0">Windows</option>
+                                        <option value="false">Windows</option>
                                         <option value="1">Doors</option>
                                     </select>
                                 </div>
