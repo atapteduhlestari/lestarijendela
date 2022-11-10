@@ -75,8 +75,8 @@
                         </h4>
 
                         <p class="stext-102 cl3 p-t-23">
-                            uPVC stands for unplasticised polyvinyl chloride, it is a strong and low-maintenance but
-                            lightweight plastic building material.
+                            {!! $product->deskripsi ??
+                                'uPVC stands for unplasticised polyvinyl chloride, it is a strong and low-maintenance but lightweight plastic building material.' !!}
                         </p>
 
                     </div>
@@ -87,9 +87,6 @@
                 <div class="tab01">
                     <!-- Nav tabs -->
                     <ul class="nav nav-tabs" role="tablist">
-                        <li class="nav-item p-b-10">
-                            <a class="nav-link active" data-toggle="tab" href="#description" role="tab">Description</a>
-                        </li>
 
                         <li class="nav-item p-b-10">
                             <a class="nav-link" data-toggle="tab" href="#spesification" role="tab">
@@ -104,15 +101,6 @@
 
                     <!-- Tab panes -->
                     <div class="tab-content p-t-43">
-                        <!-- - -->
-                        <div class="tab-pane fade show active" id="description" role="tabpanel">
-                            <div class="how-pos2 p-lr-15-md">
-                                <p class="stext-102 cl6">
-                                    {!! $product->deskripsi !!}
-                                </p>
-                            </div>
-                        </div>
-
                         <!-- - -->
                         <div class="tab-pane fade" id="spesification" role="tabpanel">
                             <div class="how-pos2 p-lr-15-md">
