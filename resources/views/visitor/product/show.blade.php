@@ -102,7 +102,7 @@
                     <!-- Tab panes -->
                     <div class="tab-content p-t-43">
                         <!-- - -->
-                        <div class="tab-pane fade" id="spesification" role="tabpanel">
+                        <div class="tab-pane fade show active" id="spesification" role="tabpanel">
                             <div class="how-pos2 p-lr-15-md">
                                 <p class="stext-102 cl6">
                                     {!! $product->spesifikasi !!}
