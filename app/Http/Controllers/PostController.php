@@ -152,13 +152,16 @@ class PostController extends Controller
         libxml_use_internal_errors(true);
         $dom = new \DomDocument('1.0', 'UTF-8');
         $dom->loadHtml($body, LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD);
-        $imageFile = $dom->getElementsByTagName('img');
+        $imageFile = $dom->getElementsByTagName('img') ?? false;
 
-        foreach ($imageFile as $item => $img) {
-            $data = $img->getAttribute('src');
-            unlink(public_path() . $data);
+        if ($imageFile) {
+            foreach ($imageFile as $item => $img) {
+                $data = $img->getAttribute('src');
+                unlink(public_path() . $data);
+            }
         }
 
         $body = $dom->saveHTML();
+        return;
     }
 }
