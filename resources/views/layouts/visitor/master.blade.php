@@ -46,7 +46,7 @@
     <link rel="stylesheet" type="text/css" href="/assets/visitor/css/main.css">
 </head>
 
-<body class="">
+<body class="bg3">
     <div id="fb-root"></div>
     <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v14.0"
         nonce="NSaNI7l8"></script>

@@ -11,7 +11,7 @@
     </section>
 
     <!-- Product -->
-    <div class="bg0 m-t-23 p-b-140">
+    <div class="bg2 m-t-23 p-b-140">
         <div class="container">
             <div class="flex-w flex-sb-m p-b-10 align-items-center">
                 <div class="flex-w flex-l-m filter-tope-group m-tb-10">
@@ -138,7 +138,7 @@
                                     class="img-responsive h-200 lazy" alt="{{ $product->slug }}">
 
                                 <a href="/home/product/{{ $product->slug }}"
-                                    class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04">
+                                    class="block2-btn flex-c-m stext-103 cl2 size-102 bg2 bor2 hov-btn1 p-lr-15 trans-04">
                                     See Detail
                                 </a>
                             </div>
