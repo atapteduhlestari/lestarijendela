@@ -1,25 +1,24 @@
 @extends('layouts.dashboard.master')
 @section('title', 'Profile')
-@push('styles')
-    <link href="/assets/dashboard/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
-@endpush
 @section('content')
     <!-- Begin Page Content -->
     <div class="container-fluid">
 
         <!-- Page Heading -->
         <h1 class="h3 mb-2 text-gray-800">Profile</h1>
-        <div class="my-4">
-            <div class="d-flex">
-                <div class="flex-grow-1">
-                    <button class="btn btn-primary btn-sm flex-grow-1" type="button" data-toggle="modal"
-                        data-target="#addNewRecord">
-                        Add <i class="fas fa-plus-circle"></i>
-                    </button>
-                </div>
+        @if (!$profiles)
+            <div class="my-4">
+                <div class="d-flex">
+                    <div class="flex-grow-1">
+                        <button class="btn btn-primary btn-sm flex-grow-1" type="button" data-toggle="modal"
+                            data-target="#addNewRecord">
+                            Add <i class="fas fa-plus-circle"></i>
+                        </button>
+                    </div>
 
+                </div>
             </div>
-        </div>
+        @endif
 
         <!-- DataTales Example -->
         <div class="card shadow mb-4">
@@ -28,13 +27,13 @@
             </div>
             <div class="card-body">
                 <div class="table-responsive">
-                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                    <table class="table table-bordereless">
                         <thead>
                             <tr>
                                 <th>#</th>
                                 <th>Profile</th>
                                 <th>Email</th>
-                                <th>Nomor Telfon</th>
+                                <th>HP</th>
                                 <th>Actions</th>
                             </tr>
                         </thead>
@@ -103,8 +102,7 @@
                             <div class="col-md-6">
                                 <label for="title">Telfon</label>
                                 <input type="text" name="no_tlp" id="title"
-                                    class="form-control @error('no_tlp') is-invalid @enderror"
-                                    value="{{ old('no_tlp') }}">
+                                    class="form-control @error('no_tlp') is-invalid @enderror" value="{{ old('no_tlp') }}">
                             </div>
 
                             <div class="col-md-6">
@@ -130,35 +128,9 @@
     </div>
 @endsection
 @push('scripts')
-    <!-- Page level plugins -->
-    <script src="/assets/dashboard/vendor/datatables/jquery.dataTables.min.js"></script>
-    <script src="/assets/dashboard/vendor/datatables/dataTables.bootstrap4.min.js"></script>
 
     <!-- Page level custom scripts -->
     <script src="/assets/dashboard/js/demo/datatables-demo.js"></script>
-
-    <script>
-        let formDelete = $('#deleteForm');
-
-        $(document).on('click', '#deleteButton', function(e) {
-            e.preventDefault();
-            let id = $(this).data('id');
-            formDelete.attr('action', `/profile/${id}`)
-            Swal.fire({
-                title: 'Apakah Anda Yakin?.',
-                text: "Anda Ingin menghapus data ini",
-                icon: 'warning',
-                showCancelButton: true,
-                confirmButtonColor: '#3085d6',
-                cancelButtonColor: '#d33',
-                confirmButtonText: 'Yes, delete it!'
-            }).then((result) => {
-                if (result.isConfirmed) {
-                    formDelete.submit();
-                }
-            })
-        });
-    </script>
 
     @if ($errors->any())
         <script>

@@ -65,7 +65,6 @@
                     Recent Posts
                 </h3>
             </div>
-
             <div class="row">
                 @forelse ($posts as $post)
                     <div class="col-sm-6 col-md-4 p-b-40 blogHome">
