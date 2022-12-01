@@ -79,8 +79,8 @@
                 </div>
                 <div class="col-11 col-md-7 col-lg-7">
                     <div class="row">
-                        <img loading="lazy" class="col" src="/assets/img/cnc.jpg" alt="cnc cutting machine">
-                        <img loading="lazy" class="col" src="/assets/img/seamless.jpg" alt="seamless wielding machine">
+                        <img loading="lazy" class="col" src="/assets/img/cnc.JPG" alt="cnc cutting machine">
+                        <img loading="lazy" class="col" src="/assets/img/seamless.JPG" alt="seamless wielding machine">
                     </div>
                 </div>
             </div>
