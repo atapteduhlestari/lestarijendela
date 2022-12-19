@@ -2,6 +2,7 @@
 @section('title', 'Project')
 @push('styles')
     <link rel="stylesheet" href="/assets/dashboard/vendor/summernote/summernote-bs4.min.css">
+    <link rel="stylesheet" href="/assets/dashboard/vendor/selectize/selectize.css">
 @endpush
 @section('content')
     <!-- Begin Page Content -->
@@ -44,16 +45,15 @@
                                 @endforeach
                             </select>
                         </div>
-
                         <div class="col-md-6 mb-3">
                             <label for="product_id">Product</label>
-                            <select class="form-control @error('product_id') is-invalid @enderror" name="product_id"
-                                id="product_id">
-                                <option value=""></option>
+                            <select class="form-control @error('product_id') is-invalid @enderror" multiple="multiple"
+                                name="product_id[]" id="product_id">
                                 @foreach ($products as $product)
                                     <option value="{{ $product->id }}"
-                                        {{ old('product_id', $project->product_id) == $product->id ? 'selected' : '' }}>
-                                        {{ $product->title }}</option>
+                                        {{ $project->products->contains($product->id) ? 'selected' : '' }}>
+                                        {{ $product->title }}
+                                    </option>
                                 @endforeach
                             </select>
                         </div>
@@ -85,7 +85,17 @@
 
 @push('scripts')
     <script src="/assets/dashboard/vendor/summernote/summernote-bs4.min.js"></script>
+    <script src="/assets/dashboard/vendor/selectize/selectize.js"></script>
     <script>
+        let $selectProduct = $('#product_id').selectize({
+            plugins: ["remove_button", "restore_on_backspace"],
+            preload: true,
+            create: true,
+            persist: false,
+            allowEmptyOption: false,
+            maxItems: 5
+        });
+
         $('#deskripsi').summernote({
             tabsize: 2,
             height: 250,

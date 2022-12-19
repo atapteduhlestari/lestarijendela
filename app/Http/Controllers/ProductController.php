@@ -100,7 +100,6 @@ class ProductController extends Controller
         return view('dashboard.product.files.createFile', compact('product'));
     }
 
-
     public function saveImage(Request $request)
     {
         $request->validate([

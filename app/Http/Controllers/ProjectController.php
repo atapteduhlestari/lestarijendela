@@ -17,7 +17,11 @@ class ProjectController extends Controller
         $projects = Project::get();
         $products = Product::get();
         $categories = ProjectCategory::get();
-        return view('dashboard.project.index', compact('projects', 'products', 'categories'));
+        return view('dashboard.project.index', compact(
+            'projects',
+            'products',
+            'categories'
+        ));
     }
 
     public function create()
@@ -63,9 +67,10 @@ class ProjectController extends Controller
             'year' => 'max:4'
         ]);
 
-        $data = $request->all();
+        $data = $request->except('product_id');
         $data['slug'] = Str::slug($request->title);
 
+        $project->products()->sync($request->product_id);
         $project->update($data);
         return redirect()->back()->with('success', 'Success!');
     }
