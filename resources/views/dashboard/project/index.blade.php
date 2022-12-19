@@ -3,6 +3,7 @@
 @push('styles')
     <link rel="stylesheet" href="/assets/dashboard/vendor/datatables/dataTables.bootstrap4.min.css">
     <link rel="stylesheet" href="/assets/dashboard/vendor/summernote/summernote-bs4.min.css">
+    <link rel="stylesheet" href="/assets/dashboard/vendor/selectize/selectize.css">
 @endpush
 @section('content')
     <!-- Begin Page Content -->
@@ -115,12 +116,10 @@
 
                             <div class="col-md-6 mb-3">
                                 <label for="product_id">Product</label>
-                                <select class="form-control @error('product_id') is-invalid @enderror" name="product_id"
-                                    id="product_id">
-                                    <option value=""></option>
+                                <select class="form-control @error('product_id') is-invalid @enderror" multiple="multiple"
+                                    name="product_id[]" id="product_id">
                                     @foreach ($products as $product)
-                                        <option value="{{ $product->id }}"
-                                            {{ old('product_id') == $product->id ? 'selected' : '' }}>
+                                        <option data-description="product+" value={{ $product->id }}>
                                             {{ $product->title }}
                                         </option>
                                     @endforeach
@@ -158,13 +157,21 @@
     <script src="/assets/dashboard/vendor/datatables/jquery.dataTables.min.js"></script>
     <script src="/assets/dashboard/vendor/datatables/dataTables.bootstrap4.min.js"></script>
     <script src="/assets/dashboard/vendor/summernote/summernote-bs4.min.js"></script>
+    <script src="/assets/dashboard/vendor/selectize/selectize.js"></script>
 
     <!-- Page level custom scripts -->
     <script src="/assets/dashboard/js/demo/datatables-demo.js"></script>
 
     <script>
         let formDelete = $('#deleteForm');
-
+        let $selectProduct = $('#product_id').selectize({
+            plugins: ["remove_button", "restore_on_backspace"],
+            preload: true,
+            create: true,
+            persist: false,
+            allowEmptyOption: false,
+            maxItems: 5
+        });
         $('#deskripsi').summernote({
             tabsize: 2,
             height: 250,

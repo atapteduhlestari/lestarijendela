@@ -33,7 +33,7 @@ class Product extends Model
 
     public function projects()
     {
-        return $this->hasMany(Project::class, 'product_id');
+        return $this->belongsToMany('App\Models\Project', 'product_project');
     }
 
     public function getTakeImageAttribute()

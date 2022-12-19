@@ -9,10 +9,11 @@ class Project extends Model
 {
     use HasFactory;
     protected $guarded = ['id'];
+    protected $with = ['products'];
 
-    public function product()
+    public function products()
     {
-        return $this->belongsTo('App\Models\Product', 'product_id');
+        return $this->belongsToMany('App\Models\Product', 'product_project');
     }
 
     public function category()

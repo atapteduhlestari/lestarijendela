@@ -34,16 +34,17 @@ class ProjectController extends Controller
             'year' => 'max:4'
         ]);
 
-        $data = $request->all();
+        $data = $request->except('product_id');
         $data['slug'] = Str::slug($request->title);
 
-        Project::create($data);
+        $project = Project::create($data);
+        $project->products()->sync($request->product_id);
         return redirect()->back()->with('success', 'Success!');
     }
 
     public function show(Project $project)
     {
-        //
+        return $project;
     }
 
     public function edit(Project $project)

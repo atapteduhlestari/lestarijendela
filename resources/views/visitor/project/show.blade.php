@@ -78,7 +78,15 @@
                                     <th>Product</th>
                                     <td>:</td>
                                     <td>
-                                        {{ $project->product->title }}
+                                        <ul>
+                                            @foreach ($project->products as $product)
+                                                <li>
+                                                    <a class="cl1" href="/home/product/{{ $product->slug }}">
+                                                        {{ $product->title }}
+                                                    </a>
+                                                </li>
+                                            @endforeach
+                                        </ul>
                                     </td>
                                 </tr>
                                 <tr>

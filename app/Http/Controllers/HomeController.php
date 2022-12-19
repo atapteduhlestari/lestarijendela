@@ -100,6 +100,8 @@ class HomeController extends Controller
 
     public function galleryShow(Project $project)
     {
+        // return $project->products;
+
         return view('visitor.project.show', compact('project'));
     }
 
