@@ -48,9 +48,9 @@ class Project extends Model
             );
         });
 
-        $query->when($filters['product'] ?? false, function ($query, $product) {
+        $query->when($filters['products'] ?? false, function ($query, $product) {
             return $query->whereHas(
-                'product',
+                'products',
                 fn ($q) => ($q->where('slug', $product))
             );
         });
