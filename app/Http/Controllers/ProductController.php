@@ -90,6 +90,7 @@ class ProductController extends Controller
             Storage::delete($doc->url);
         }
 
+        $product->projects()->detach();
         $product->delete();
         return redirect()->back()->with('success', 'Success!');
     }

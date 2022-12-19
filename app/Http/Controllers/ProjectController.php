@@ -75,7 +75,7 @@ class ProjectController extends Controller
         foreach ($project->images as $image) {
             Storage::delete($image->url);
         }
-
+        $project->products()->detach();
         $project->delete();
         return redirect()->back()->with('success', 'Success!');
     }
