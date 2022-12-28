@@ -15,7 +15,7 @@
                         <div class="wrap-pic-w how-pos5-parent">
                             <a href="/home/blog/{{ $post->slug }}"" class="hov-img0 how-pos5-parent">
                                 <img loading="lazy" data-src="{{ $post->firstImage }}" src="{{ $post->firstImage }}"
-                                    alt="{{ $post->slug }}" class="img-responsive h-300 lazy">
+                                    alt="{{ $post->title }}" class="img-responsive h-300 lazy">
 
                                 <div class="flex-col-c-m size-123 bg9 how-pos5">
                                     <span class="ltext-107 cl2 txt-center">

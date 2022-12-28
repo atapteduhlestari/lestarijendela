@@ -43,7 +43,7 @@
                                 <th>Sub Category</th>
                                 <th class="text-center">Actions</th>
                             </tr>
-                        </thead>~
+                        </thead>
                         <tbody>
                             @foreach ($products as $product)
                                 <tr>

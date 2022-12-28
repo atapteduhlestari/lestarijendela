@@ -36,14 +36,14 @@
                             <div class="slick3 gallery-lb">
                                 @if ($product->images->isEmpty())
                                     <img loading="lazy" data-src="/assets/img/no-image.png" src="/assets/img/no-image.png"
-                                        class="img-responsive h-350 rounded lazy" alt="IMG-PRODUCT">
+                                        class="img-responsive h-350 rounded lazy" alt="{{ $product->title }}">
                                 @endif
                                 @foreach ($product->images as $image)
                                     <div class="item-slick3" data-thumb="{{ '/uploads/' . $image->url }}">
                                         <div class="wrap-pic-w pos-relative">
                                             <img loading="lazy" data-src="{{ '/uploads/' . $image->url }}"
                                                 src="{{ '/uploads/' . $image->url }}"
-                                                class="img-responsive h-350 rounded lazy" alt="{{ $product->slug }}">
+                                                class="img-responsive h-350 rounded lazy" alt="{{ $product->title }}">
 
                                             <a class="flex-c-m size-108 how-pos1 bor0 fs-16 cl10 bg0 hov-btn3 trans-04"
                                                 href="{{ '/uploads/' . $image->url }}">
@@ -104,9 +104,9 @@
                         <!-- - -->
                         <div class="tab-pane fade show active" id="spesification" role="tabpanel">
                             <div class="how-pos2 p-lr-15-md">
-                                <p class="stext-102 cl6">
+                                <div class="stext-102 cl6">
                                     {!! $product->spesifikasi !!}
-                                </p>
+                                </div>
                             </div>
                         </div>
 
@@ -159,7 +159,7 @@
                                 <div class="block2-pic hov-img0">
                                     <img loading="lazy" data-src="{{ $related->firstImage }}"
                                         src="{{ $related->firstImage }}" class="img-responsive h-200 lazy"
-                                        alt="IMG-PRODUCT">
+                                        alt="{{ $related->title }}">
 
                                     <a href="/home/product/{{ $related->slug }}"
                                         class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04">

@@ -15,7 +15,8 @@
                             {{ $about->name }}
                         </h3> --}}
                         <div class="text-center">
-                            <img loading="lazy" class="col-6 mb-3 text-center" src="/assets/img/logo.png" alt="Logo">
+                            <img loading="lazy" class="col-6 mb-3 text-center" src="/assets/img/logo.png"
+                                alt="Lestari Jendela">
                         </div>
                         <p class="mtext-107 cl6">
                             {{-- {{ $about->description }} --}}
@@ -45,13 +46,13 @@
                 <div class="col-11 col-md-11 col-lg-11 p-b-26 p-t-26">
                     <div class="row">
                         <div class="hov-img0 col-4">
-                            <img loading="lazy" src="/assets/img/mockup-1.png" alt="mockup 1">
+                            <img loading="lazy" src="/assets/img/mockup-1.png" alt="Lestari Jendela Mockup">
                         </div>
                         <div class="hov-img0 col-4">
-                            <img loading="lazy" src="/assets/img/mockup-2.png" alt="mockup 2">
+                            <img loading="lazy" src="/assets/img/mockup-2.png" alt="Lestari Jendela Mockup">
                         </div>
                         <div class="hov-img0 col-4">
-                            <img loading="lazy" src="/assets/img/mockup-3.png" alt="mockup 3">
+                            <img loading="lazy" src="/assets/img/mockup-3.png" alt="Lestari Jendela Mockup">
                         </div>
                     </div>
                     <div class="p-t-10">
@@ -79,8 +80,10 @@
                 </div>
                 <div class="col-11 col-md-7 col-lg-7">
                     <div class="row">
-                        <img loading="lazy" class="col" src="/assets/img/cnc.JPG" alt="cnc cutting machine">
-                        <img loading="lazy" class="col" src="/assets/img/seamless.JPG" alt="seamless wielding machine">
+                        <img loading="lazy" class="col" src="/assets/img/cnc.JPG"
+                            alt="Lestari Jendela cnc cutting machine">
+                        <img loading="lazy" class="col" src="/assets/img/seamless.JPG"
+                            alt="Lestari Jendela seamless wielding machine">
                     </div>
                 </div>
             </div>

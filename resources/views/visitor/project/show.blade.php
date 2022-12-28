@@ -34,7 +34,7 @@
                             <div class="slick3 gallery-lb">
                                 @if ($project->images->isEmpty())
                                     <img loading="lazy" data-src="/assets/img/no-image.png" src="/assets/img/no-image.png"
-                                        class="img-responsive h-350 rounded" alt="IMG-project">
+                                        class="img-responsive h-350 rounded" alt="{{ $project->title }}">
                                 @endif
 
                                 @foreach ($project->images as $image)
@@ -42,7 +42,7 @@
                                         <div class="wrap-pic-w pos-relative">
                                             <img loading="lazy" data-src="{{ '/uploads/' . $image->url }}"
                                                 src="{{ '/uploads/' . $image->url }}"
-                                                class="img-responsive h-350 rounded lazy" alt="{{ $project->slug }}">
+                                                class="img-responsive h-350 rounded lazy" alt="{{ $project->title }}">
 
                                             <a class="flex-c-m size-108 how-pos1 bor0 fs-16 cl10 bg0 hov-btn3 trans-04"
                                                 href="{{ '/uploads/' . $image->url }}">
