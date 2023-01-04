@@ -44,6 +44,18 @@
     @stack('styles')
     <link rel="stylesheet" type="text/css" href="/assets/visitor/css/util.css">
     <link rel="stylesheet" type="text/css" href="/assets/visitor/css/main.css">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-G85CG5J76P"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'G-G85CG5J76P');
+    </script>
 </head>
 
 <body class="bg3">
