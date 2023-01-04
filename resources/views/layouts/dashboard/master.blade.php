@@ -21,6 +21,18 @@
     <link href="/assets/dashboard/css/styles.css" rel="stylesheet">
     @stack('styles')
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-G85CG5J76P"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'G-G85CG5J76P');
+    </script>
 </head>
 
 <body id="page-top">
