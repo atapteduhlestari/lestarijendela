@@ -2,6 +2,18 @@
 <html lang="en">
 
 <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-S42RQ69SXX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'G-S42RQ69SXX');
+    </script>
     <title>@yield('title', 'Lestari Jendela - Premium Windows & Doors')</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -44,18 +56,6 @@
     @stack('styles')
     <link rel="stylesheet" type="text/css" href="/assets/visitor/css/util.css">
     <link rel="stylesheet" type="text/css" href="/assets/visitor/css/main.css">
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-G85CG5J76P"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-
-        function gtag() {
-            dataLayer.push(arguments);
-        }
-        gtag('js', new Date());
-
-        gtag('config', 'G-G85CG5J76P');
-    </script>
 </head>
 
 <body class="bg3">
