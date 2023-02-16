@@ -30,6 +30,17 @@
                     </div>
                 </div>
             </div>
+            <div class="row mb-4">
+                <div class="hov-img0 col-4">
+                    <img loading="lazy" src="/assets/img/mockup-1.png" alt="Lestari Jendela Mockup">
+                </div>
+                <div class="hov-img0 col-4">
+                    <img loading="lazy" src="/assets/img/mockup-2.png" alt="Lestari Jendela Mockup">
+                </div>
+                <div class="hov-img0 col-4">
+                    <img loading="lazy" src="/assets/img/mockup-3.png" alt="Lestari Jendela Mockup">
+                </div>
+            </div>
             <div class="row">
                 <div class="col-11 col-md-11 col-lg-11">
                     <div class="p-r-85 p-r-15-lg p-r-0-md">
@@ -43,19 +54,28 @@
                         </p>
                     </div>
                 </div>
-                <div class="col-11 col-md-11 col-lg-11 p-b-26 p-t-26">
+                <div class="col-md-11 p-b-26 p-t-26">
                     <div class="row">
-                        <div class="hov-img0 col-4">
-                            <img loading="lazy" src="/assets/img/mockup-1.png" alt="Lestari Jendela Mockup">
+                        <div class="hov-img0 col-lg-3 col-sm-6 mb-4">
+                            <img loading="lazy" src="/assets/img/1.JPG" alt="Lestari Jendela">
                         </div>
-                        <div class="hov-img0 col-4">
-                            <img loading="lazy" src="/assets/img/mockup-2.png" alt="Lestari Jendela Mockup">
+                        <div class="hov-img0 col-lg-3  col-sm-6 mb-4">
+                            <img loading="lazy" src="/assets/img/2.JPG" alt="Lestari Jendela">
                         </div>
-                        <div class="hov-img0 col-4">
-                            <img loading="lazy" src="/assets/img/mockup-3.png" alt="Lestari Jendela Mockup">
+                        <div class="hov-img0 col-lg-3  col-sm-6 mb-4">
+                            <img loading="lazy" src="/assets/img/3.JPG" alt="Lestari Jendela">
+                        </div>
+                        <div class="hov-img0 col-lg-3  col-sm-6 mb-4">
+                            <img loading="lazy" src="/assets/img/4.JPG" alt="Lestari Jendela">
+                        </div>
+                        <div class="hov-img0 col-lg-6  col-sm-6 mb-4">
+                            <img loading="lazy" src="/assets/img/5.JPG" alt="Lestari Jendela">
+                        </div>
+                        <div class="hov-img0 col-lg-6  col-sm-6 mb-4">
+                            <img loading="lazy" src="/assets/img/6.JPG" alt="Lestari Jendela">
                         </div>
                     </div>
-                    <div class="p-t-10">
+                    <div class="p-t-5">
                         <p class="mtext-107 cl6">
                             uPVC yang digunakan mengandung senyawa kimia <b>TiO2(Titanium dioxide)</b>, dimana membuat
                             profil
