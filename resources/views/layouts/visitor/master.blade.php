@@ -3,7 +3,7 @@
 
 <head>
     <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-S42RQ69SXX"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-G85CG5J76P"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
 
@@ -12,7 +12,7 @@
         }
         gtag('js', new Date());
 
-        gtag('config', 'G-S42RQ69SXX');
+        gtag('config', 'G-G85CG5J76P');
     </script>
     <title>@yield('title', 'Lestari Jendela - Premium Windows & Doors')</title>
     <meta charset="UTF-8">
