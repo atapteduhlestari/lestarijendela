@@ -93,6 +93,13 @@
                     </a>
                 </li>
 
+                <li class="p-b-10">
+                    <a href="/home/brochure/download" class="stext-112 cl7 hov-cl1 trans-04">
+                        <i class="zmdi zmdi-download"></i>
+                        Brochure
+                    </a>
+                </li>
+
                 <div class="p-t-27">
                     <a href="https://www.facebook.com/lestarijendela" class="fs-18 cl7 hov-cl1 trans-04 m-r-16">
                         <i class="fa fa-facebook"></i>

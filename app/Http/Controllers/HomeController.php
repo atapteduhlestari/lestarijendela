@@ -88,6 +88,12 @@ class HomeController extends Controller
         return Storage::download($document->url);
     }
 
+    public function download()
+    {
+        $path = public_path('/assets/media/lestari-jendela-brochure.pdf');
+        return response()->file($path);
+    }
+
     public function galleryIndex()
     {
         $data = request()->all();

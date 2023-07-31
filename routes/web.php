@@ -30,6 +30,8 @@ Route::prefix('home')->group(function () {
     Route::get('/product/sub-category/{productSubCategory:slug}', [HomeController::class, 'productSubCategory']);
     Route::get('/product/download/{id}', [HomeController::class, 'productDownload']);
 
+    Route::get('/brochure/download', [HomeController::class, 'download']);
+
     Route::get('/gallery', [HomeController::class, 'galleryIndex']);
     Route::get('/gallery/{project:slug}', [HomeController::class, 'galleryShow']);
     Route::get('/gallery/category/{projectCategory:slug}', [HomeController::class, 'galleryCategory']);

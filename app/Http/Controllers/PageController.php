@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Profile;
 use App\Models\PostCategory;
-use App\Models\PostImage;
 use App\Models\Post;
 use App\Models\Faq;
 use Carbon\Carbon;
@@ -75,7 +74,6 @@ class PageController extends Controller
     public function faqIndex()
     {
         $faqs = Faq::get();
-
         return view('visitor.faq.index', compact('faqs'));
     }
 
@@ -108,33 +106,5 @@ class PageController extends Controller
                 return Carbon::parse($date->created_at)->format('m'); // grouping by months
             });
         return view('visitor.blog.index', compact('posts', 'categories', 'archives'));
-    }
-
-    public function create()
-    {
-    }
-
-    public function store(Request $request)
-    {
-    }
-
-    public function show($id)
-    {
-        //
-    }
-
-    public function edit($id)
-    {
-        //
-    }
-
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    public function destroy($id)
-    {
-        //
     }
 }
