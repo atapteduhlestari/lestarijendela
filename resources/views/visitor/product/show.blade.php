@@ -77,8 +77,13 @@
                         <p class="stext-102 cl3 p-t-23">
                             {!! $product->deskripsi ??
                                 'uPVC stands for unplasticised polyvinyl chloride, it is a strong and low-maintenance but lightweight plastic building material.' !!}
-                        </p>
 
+                        </p>
+                        <p class="stext-102 cl3 p-t-23">
+                            Product test results:
+                            <a
+                                href="https://tkdn.kemenperin.go.id/sertifikat_perush.php?id=fizR0_3puSpv37UNggx-wCqOgxcxfm4ZGGy1gCz21to,">TKDN</a>
+                        </p>
                     </div>
                 </div>
             </div>
