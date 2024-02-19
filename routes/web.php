@@ -29,6 +29,7 @@ Route::prefix('home')->group(function () {
     Route::get('/product/category/{productCategory:slug}', [HomeController::class, 'productCategory']);
     Route::get('/product/sub-category/{productSubCategory:slug}', [HomeController::class, 'productSubCategory']);
     Route::get('/product/download/{id}', [HomeController::class, 'productDownload']);
+    Route::get('/product/download-document/{param}', [HomeController::class, 'productDownloadDocument']);
 
     Route::get('/brochure/download', [HomeController::class, 'download']);
 

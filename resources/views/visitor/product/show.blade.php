@@ -112,9 +112,20 @@
                                     <img class="img-fluid img-responsive h-350"
                                         src="/assets/img/tkdn-lestarijendela-upvc.png" alt="Sertifikat TKDN UPVC">
                                     <p class="stext-102 cl3 p-t-23">
-                                        Product test results:
-                                        <a
-                                            href="https://tkdn.kemenperin.go.id/sertifikat_perush.php?id=fizR0_3puSpv37UNggx-wCqOgxcxfm4ZGGy1gCz21to,">TKDN</a>
+                                        Product CERTIFICATION
+                                    <ul>
+                                        <li>
+                                            <a href="/home/product/download-document/tkdn">TKDN
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="/home/product/download-document/hasil-uji">Hasil
+                                                Uji
+                                            </a>
+                                        </li>
+                                    </ul>
+
+
                                     </p>
                                 </div>
 
