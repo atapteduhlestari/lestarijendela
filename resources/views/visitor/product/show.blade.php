@@ -87,16 +87,15 @@
                 <div class="tab01">
                     <!-- Nav tabs -->
                     <ul class="nav nav-tabs" role="tablist">
-
                         <li class="nav-item p-b-10">
                             <a class="nav-link" data-toggle="tab" href="#spesification" role="tab">
                                 Spesification
                             </a>
                         </li>
 
-                        <li class="nav-item p-b-10">
+                        {{-- <li class="nav-item p-b-10">
                             <a class="nav-link" data-toggle="tab" href="#downloads" role="tab">Download</a>
-                        </li>
+                        </li> --}}
                     </ul>
 
                     <!-- Tab panes -->
@@ -111,16 +110,21 @@
                                     <hr>
                                     <img class="img-fluid img-responsive h-350"
                                         src="/assets/img/tkdn-lestarijendela-upvc.png" alt="Sertifikat TKDN UPVC">
-                                    <p class="stext-102 cl3 p-t-23">
-                                        Product CERTIFICATION
+                                    <p class="stext-103 cl2 p-t-23 font-weight-bold pb-2">
+                                        Product Certification :
                                     <ul>
                                         <li>
                                             <a href="/home/product/download-document/tkdn">TKDN
                                             </a>
                                         </li>
                                         <li>
-                                            <a href="/home/product/download-document/hasil-uji">Hasil
-                                                Uji
+                                            <a href="/home/product/download-document/hasil-uji-jendela">Hasil
+                                                Uji Jendela
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="/home/product/download-document/hasil-uji-pintu">Hasil
+                                                Uji Pintu
                                             </a>
                                         </li>
                                     </ul>
@@ -132,8 +136,8 @@
                             </div>
                         </div>
 
-                        <!-- - -->
-                        <div class="tab-pane fade" id="downloads" role="tabpanel">
+
+                        {{-- <div class="tab-pane fade" id="downloads" role="tabpanel">
                             <div class="row">
                                 <div class="col-sm-10 col-md-8 col-lg-6 mx-auto">
                                     <div class="p-b-30 m-lr-15-sm">
@@ -153,7 +157,7 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div> --}}
                     </div>
                 </div>
             </div>

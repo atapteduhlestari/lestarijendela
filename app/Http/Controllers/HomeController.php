@@ -96,13 +96,14 @@ class HomeController extends Controller
 
     public function productDownloadDocument($param)
     {
-        $var = $param;
         $path = '';
 
-        if ($var === 'tkdn') {
+        if ($param === 'tkdn') {
             $path = public_path('/assets/visitor/file/LJ-TKDN.pdf');
-        } elseif ($var === 'hasil-uji') {
-            $path = public_path('/assets/visitor/file/LJ-hasil-uji.pdf');
+        } elseif ($param === 'hasil-uji-jendela') {
+            $path = public_path('/assets/visitor/file/LJ-hasil-uji-jendela.pdf');
+        } elseif ($param === 'hasil-uji-pintu') {
+            $path = public_path('/assets/visitor/file/LJ-hasil-uji-pintu.pdf');
         } else {
             $path = '';
         }
