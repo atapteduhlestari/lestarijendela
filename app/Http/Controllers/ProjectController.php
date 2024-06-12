@@ -101,7 +101,7 @@ class ProjectController extends Controller
         $file = $request->file('image');
         $hashName = $file->hashName();
         $imageUrl = $file->storeAs('assets/dashboard/project', $hashName);
-        $data['image'] = $imageUrl;
+        $data['url'] = $imageUrl;
 
         ProjectImage::create($data);
         return redirect()->back()->with('success', 'Success!');

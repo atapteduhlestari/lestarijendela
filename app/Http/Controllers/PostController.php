@@ -95,7 +95,7 @@ class PostController extends Controller
 
         $file = $request->file('image');
         $imageUrl = $file->storeAs('assets/dashboard/post', $file->hashName());
-        $data['image'] = $imageUrl;
+        $data['url'] = $imageUrl;
 
         PostImage::create($data);
         return redirect()->back()->with('success', 'Success!');
