@@ -40,6 +40,9 @@
                                 <input type="file" class="custom-file-input @error('url') is-invalid @enderror"
                                     name="url" id="url" accept="image/*">
                                 <label class="custom-file-label" for="url">Choose file...</label>
+                                @error('url')
+                                    <div class="alert alert-danger">{{ $message }}</div>
+                                @enderror
                             </div>
                         </div>
                     </div>

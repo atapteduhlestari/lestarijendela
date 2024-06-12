@@ -99,7 +99,8 @@ class ProjectController extends Controller
         $data = $request->all();
 
         $file = $request->file('url');
-        $imageUrl = $file->storeAs('assets/dashboard/project', $file->hashName());
+        $hashName = $file->hashName();
+        $imageUrl = $file->storeAs('assets/dashboard/project', $hashName);
         $data['url'] = $imageUrl;
 
         ProjectImage::create($data);

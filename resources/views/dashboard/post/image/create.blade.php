@@ -38,6 +38,9 @@
                                     name="url" id="url" accept="image/*">
                                 <label class="custom-file-label" for="url">Choose file...</label>
                             </div>
+                            @error('url')
+                                <div class="alert alert-danger">{{ $message }}</div>
+                            @enderror
                         </div>
                     </div>
                     <div class="col-md">
