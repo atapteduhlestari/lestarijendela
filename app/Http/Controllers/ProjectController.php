@@ -93,15 +93,15 @@ class ProjectController extends Controller
     public function saveImage(Request $request)
     {
         $request->validate([
-            'url' => 'required|file|max:2048'
+            'image' => 'required|file|max:2048'
         ]);
 
         $data = $request->all();
 
-        $file = $request->file('url');
+        $file = $request->file('image');
         $hashName = $file->hashName();
         $imageUrl = $file->storeAs('assets/dashboard/project', $hashName);
-        $data['url'] = $imageUrl;
+        $data['image'] = $imageUrl;
 
         ProjectImage::create($data);
         return redirect()->back()->with('success', 'Success!');

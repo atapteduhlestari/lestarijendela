@@ -8,11 +8,11 @@
             <div class="card-header py-3">
                 <h6 class="m-0 font-weight-bold text-primary">Project Images</h6>
             </div>
-            <div>
-                <p>{{ $project->title }}</p>
-            </div>
             <div class="card-body">
                 <div class="mb-5 p-2">
+                    <div class="font-weight-bold text-dark mb-3">
+                        {{ $project->title }}
+                    </div>
                     <div class="row">
                         @foreach ($project->images as $image)
                             <div class="col-md-6 mb-3">
@@ -35,13 +35,15 @@
                     <input type="hidden" name="project_id" value="{{ $project->id }}">
                     <div class="col-md-6">
                         <div class="form-group mb-3">
-                            <label for="url">Add Image</label>
+                            <label for="image">Add Image</label>
                             <div class="custom-file mb-3">
-                                <input type="file" class="custom-file-input @error('url') is-invalid @enderror"
-                                    name="url" id="url" accept="image/*">
-                                <label class="custom-file-label" for="url">Choose file...</label>
-                                @error('url')
-                                    <div class="alert alert-danger">{{ $message }}</div>
+                                <input type="file" class="custom-file-input @error('image') is-invalid @enderror"
+                                    name="image" id="image" accept="image/*">
+                                <label class="custom-file-label" for="image">Choose file...</label>
+                                @error('image')
+                                    <div id="image" class="invalid-feedback">
+                                        {{ $message }}
+                                    </div>
                                 @enderror
                             </div>
                         </div>
@@ -81,7 +83,7 @@
         });
 
 
-        $('#url').on('change', function(e) {
+        $('#image').on('change', function(e) {
             var fileName = $(this).val();
             $(this).next('.custom-file-label').html(e.target.files[0].name);
         })

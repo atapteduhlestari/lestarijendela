@@ -88,14 +88,14 @@ class PostController extends Controller
     public function saveImage(Request $request)
     {
         $request->validate([
-            'url' => 'required|max:2048'
+            'image' => 'required|max:2048'
         ]);
 
         $data = $request->all();
 
-        $file = $request->file('url');
+        $file = $request->file('image');
         $imageUrl = $file->storeAs('assets/dashboard/post', $file->hashName());
-        $data['url'] = $imageUrl;
+        $data['image'] = $imageUrl;
 
         PostImage::create($data);
         return redirect()->back()->with('success', 'Success!');
