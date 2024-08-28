@@ -24,7 +24,7 @@
                         </div>
                         <div class="col-md-6 mb-3">
                             <label for="category_id">Email</label>
-                            <input type="email" class="form-control" name="email"
+                            <input type="email" class="form-control  @error('email') is-invalid @enderror" name="email"
                                 value="{{ old('email', $user->email) }}">
                         </div>
 

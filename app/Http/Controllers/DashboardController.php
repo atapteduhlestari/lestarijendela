@@ -22,10 +22,7 @@ class DashboardController extends Controller
 
     public function profile($username)
     {
-
-        if (!isSuperadmin() && auth()->user()->username != $username) {
-            return redirect()->back()->with('warning', 'Access Forbidden!');
-        }
+        if (!isSuperadmin() && auth()->user()->username != $username) return redirect()->back()->with('warning', 'Access Forbidden!');
 
         $user = User::firstWhere('username', $username);
         return view('auth.profile.index', compact('user'));
@@ -33,12 +30,22 @@ class DashboardController extends Controller
 
     public function profileUpdate($username)
     {
-        $data =  request()->all();
-        $data['password'] = Hash::make(request('password'));
+        request()->validate([
+            'name' => 'required',
+            'email' => 'required|email',
+            'password' => 'nullable|min:8'
+        ]);
 
-        User::firstWhere('username', $username)
-            ->update($data);
+        $user = User::firstWhere('username', $username);
 
+        if (!$user) return redirect()->back()->with('warning', 'User Not Found!');
+
+        $data =  request()->only('password', 'email', 'name');
+
+        if ($data['password']) $data['password'] = Hash::make(request('password'));
+        else unset($data['password']);
+
+        $user->update($data);
         return redirect()->back()->with('success', 'Success!');
     }
 }
