@@ -12,7 +12,7 @@ class HighlightController extends Controller
     public function index()
     {
         $sliders = Slider::get();
-        return view('dashboard.highlight.indexHighlight', compact('sliders'));
+        return view('dashboard.highlight.index', compact('sliders'));
     }
 
     public function saveSlider(Request $request)

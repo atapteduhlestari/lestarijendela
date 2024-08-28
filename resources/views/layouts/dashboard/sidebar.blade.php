@@ -68,6 +68,12 @@
             <span>Highlight</span></a>
     </li>
 
+    <li class="nav-item {{ request()->is('branch*') ? 'active' : '' }}">
+        <a class="nav-link" href="/branch">
+            <i class="fas fa-chevron-right"></i>
+            <span>Branch</span></a>
+    </li>
+
     <!-- Divider -->
     <hr class="sidebar-divider d-none d-md-block">
 
