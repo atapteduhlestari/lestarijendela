@@ -24,7 +24,7 @@
         <!-- DataTales Example -->
         <div class="card shadow mb-4">
             <div class="card-header py-3">
-                <h6 class="m-0 font-weight-bold text-primary">List Post</h6>
+                <h6 class="m-0 font-weight-bold text-primary">List Branch</h6>
             </div>
             <div class="card-body">
                 <div class="table-responsive">
@@ -82,7 +82,7 @@
         <div class="modal-dialog modal-xl modal-dialog-scrollable">
             <div class="modal-content">
                 <div class="modal-header bg-gradient-dark">
-                    <h5 class="modal-title text-white" id="addNewRecordLabel">Form - Add New post</h5>
+                    <h5 class="modal-title text-white" id="addNewRecordLabel">Form - Add New Branch</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span class="text-white" aria-hidden="true">&times;</span>
                     </button>
