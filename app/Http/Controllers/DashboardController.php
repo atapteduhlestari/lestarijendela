@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Post;
+use App\Models\Product;
+use App\Models\Project;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
 
@@ -9,7 +12,12 @@ class DashboardController extends Controller
 {
     public function index()
     {
-        return view('dashboard.index');
+        $count = [
+            'products' => Product::count(),
+            'projects' => Project::count(),
+            'posts' => Post::count(),
+        ];
+        return view('dashboard.index', compact('count'));
     }
 
     public function profile($username)

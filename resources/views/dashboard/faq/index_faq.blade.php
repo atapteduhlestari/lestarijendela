@@ -1,5 +1,5 @@
 @extends('layouts.dashboard.master')
-@section('title', 'FAQ')
+@section('title', 'FAQs')
 @push('styles')
     <link href="/assets/dashboard/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
 @endpush
@@ -44,8 +44,7 @@
                                         </a>
                                         <div class="d-flex justify-content">
 
-                                            <a href="/faq/{{ $faqs[$x]['id'] }}/edit"
-                                                class="btn btn-outline-dark text-xs">
+                                            <a href="/faq/{{ $faqs[$x]['id'] }}/edit" class="btn btn-outline-dark text-xs">
                                                 Edit
                                             </a>
                                             <form action="/faq/{{ $faqs[$x]['id'] }}" method="post" class="d-inline"
