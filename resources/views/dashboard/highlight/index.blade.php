@@ -18,9 +18,9 @@
                         Add <i class="fas fa-plus-circle"></i>
                     </button>
                 </div>
-                <a href="/banner" class="btn btn-info btn-sm mr-1">
+                {{-- <a href="/banner" class="btn btn-info btn-sm mr-1">
                     Banners
-                </a>
+                </a> --}}
                 {{-- <a href="/product-sub-category" class="btn btn-success btn-sm">
                 Sub Category
             </a> --}}
